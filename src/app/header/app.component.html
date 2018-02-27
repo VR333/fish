@@ -1,22 +1,44 @@
 <span class='fish-title'
 	(click)='makeActive()'
 	[ngClass]="{'active' : isActive}"
-	>Fmail
+	>
+	Fmail<span class='triangle'>⏷</span>
 </span>
 
 <div class='left-buttons'>
-	<div class='btn left'>
-		<div class='square'></div> ▾
+	<div class='btn btn-wrap'>
+		<div class='square'></div>
+		<span class='triangle'>⏷</span>
 	</div>
-	<div class='btn left'>↻</div>
-	<div class='btn left more'>More▾</div>
+	<div class='btn btn-wrap'>
+		<div class='reload'>↻</div>
+	</div>
+	<div class='btn btn-wrap more'>
+		More<span class='triangle'>⏷</span>
+	</div>
 </div>
 
-<!-- <div class='header-btn'>square</div>
-<div class='header-btn'>refresh ^</div>
-<div class='header-btn'>More ^</div>
+<div class='right-buttons'>
+	<span class='messages-counter'>1-50 of 88</span>
 
-<span>1-10 of 20</span>
-<div class='header-btn'>arrows</div>
-<div class='header-btn'>En +  ^</div>
-<div class='header-btn'>Settings ^</div> -->
+	<div class='btn-wrap arrows'>
+		<div class='btn arrow'>
+			<
+		</div>
+		<div class='btn arrow'>
+			>
+		</div>
+	</div>
+
+	<div class='btn-wrap language'>
+		<div class='btn language-show'>En</div>
+		<div class='btn language-choose'>
+			<span class='triangle'>⏷</span>
+		</div>
+	</div>
+
+	<div class='btn btn-wrap settings'>
+		<span class='cogwheel'>⚙</span>
+		<span class='triangle'>⏷</span>
+	</div>
+</div>
