@@ -1,8 +1,19 @@
 <span class='fish-title'
 	(click)='makeActive()'
-	[ngClass]="{'active' : isActive}"
+	[ngClass]="{'fish-title-active' : isActive}"
 	>
 	Fmail<span class='triangle'>⏷</span>
+	<ul class='tooltip-title'>
+		<li class='fmail-title-option option-logo'>
+			<a href='#' class='link'>Fmail</a>
+		</li>
+		<li class='fmail-title-option'>
+			<a href='#' class='link'>Contacts</a>
+		</li>
+		<li class='fmail-title-option'>
+			<a href='#' class='link'>Tasks</a>
+		</li>
+	</ul>
 </span>
 
 <div class='left-buttons'>
