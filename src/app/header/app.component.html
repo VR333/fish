@@ -1,6 +1,6 @@
 <span class='fish-title'
-	(click)='makeActive()'
-	[ngClass]="{'fish-title-active' : isActive}"
+	(click)='showTitles()'
+	[ngClass]="{'fish-title-active' : isTitleActive}"
 	>
 	Fmail<span class='triangle'>⏷</span>
 
@@ -18,11 +18,22 @@
 </span>
 
 <div class='left-buttons'>
-	<div class='btn btn-wrap actions tooltip-anchor'>
+	<div class='btn btn-wrap actions tooltip-anchor' (click)='showActions()'>
 		<div class='square'></div>
 		<span class='triangle'>⏷</span>
 
 		<span class='tooltip'>Actions</span>
+
+		<ul class='tooltip-title'
+			[ngClass]="{'tooltip-title-active' : isActoinsActive}">
+
+			<li class='fmail-title-option'>All</li>
+			<li class='fmail-title-option'>None</li>
+			<li class='fmail-title-option'>Read</li>
+			<li class='fmail-title-option'>Unread</li>
+			<li class='fmail-title-option'>Starred</li>
+			<li class='fmail-title-option'>Not Starred</li>
+		</ul>
 	</div>
 
 	<div class='btn btn-wrap refresh tooltip-anchor'>
@@ -30,8 +41,14 @@
 		<span class='tooltip'>Refresh</span>
 	</div>
 
-	<div class='btn btn-wrap more'>
+	<div class='btn btn-wrap more' (click)='showMore()'>
 		More<span class='triangle'>⏷</span>
+
+		<ul class='tooltip-title'
+			[ngClass]="{'tooltip-title-active' : isMoreActive}">
+			<li class='fmail-title-option'>Mark all as read</li>
+			<div class='system-message'>Choose message to show more actions</div>
+		</ul>
 	</div>
 </div>
 
@@ -58,18 +75,53 @@
 	<div class='btn-wrap language'>
 		<div class='btn language-show tooltip-anchor'>
 			En
-			<span class='tooltip'>On/off translitteration (Ctrl-Shift-K)</span>
+			<span class='tooltip'>On/off transliteration (Ctrl-Shift-K)</span>
 		</div>
-		<div class='btn language-choose tooltip-anchor'>
+		<div class='btn language-choose tooltip-anchor' (click)='showLanguageChoice()'>
 			<span class='triangle'>⏷</span>
 			<span class='tooltip'>Choose language</span>
+
+			<ul class='tooltip-title'
+				[ngClass]="{'tooltip-title-active' : isLanguageChoiceActive}">
+				<li class='fmail-title-option'>Transliteration</li>
+				<li class='fmail-title-option'>Screen keyboard</li>
+				<li class='fmail-title-option'>english</li>
+
+				<hr class='separation-line'/>
+
+				<div class='additioanl-option'>Input tools settings</div>
+			</ul>
 		</div>
 	</div>
 
-	<div class='btn btn-wrap settings tooltip-anchor'>
+	<div class='btn btn-wrap settings tooltip-anchor' (click)='showSettings()'>
 		<span class='cogwheel'>⚙</span>
 		<span class='triangle'>⏷</span>
 
 		<span class='tooltip'>Settings</span>
+		<ul class='tooltip-title'
+			[ngClass]="{'tooltip-title-active' : isSettingsActive}">
+			<li class='fmail-title-option'>Usual (for average screen)</li>
+			<li class='fmail-title-option'>Medium screen (for wide screen)</li>
+			<li class='fmail-title-option'>Compact (for small screen)</li>
+
+			<hr class='separation-line'/>
+
+			<div class='additioanl-option'>Set up folder 'Income'</div>
+
+			<hr class='separation-line'/>
+
+			<div class='additioanl-option'>Settings</div>
+			<div class='additioanl-option'>Themes</div>
+
+			<hr class='separation-line'/>
+
+			<div class='additioanl-option'>Download add-on</div>
+
+			<hr class='separation-line'/>
+
+			<div class='additioanl-option'>Send responce</div>
+			<div class='additioanl-option'>Сertificate</div>
+		</ul>
 	</div>
 </div>

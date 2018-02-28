@@ -6,9 +6,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class HeaderComponent {
-    isActive :boolean = false;
+    isTitleActive :boolean = false;
+    isActoinsActive :boolean = false;
+    isMoreActive :boolean = false;
+    isLanguageChoiceActive :boolean = false;
+    isSettingsActive :boolean = false;
 
-    makeActive() {
-        this.isActive = !this.isActive;
+    showTitles() {
+        this.isTitleActive = !this.isTitleActive;
+    }
+
+    showActions() {
+        this.isActoinsActive = !this.isActoinsActive;
+    }
+
+    showMore() {
+        this.isMoreActive = !this.isMoreActive;
+    }
+
+    showLanguageChoice() {
+        this.isLanguageChoiceActive = !this.isLanguageChoiceActive;
+    }
+
+    showSettings() {
+        this.isSettingsActive = !this.isSettingsActive;
     }
 }
