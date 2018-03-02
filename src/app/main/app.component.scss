@@ -110,7 +110,7 @@
 
 				.star {
 					margin-left: 8px;
-					margin-right: 18px;
+					margin-right: 10px;
 					font-size: 16px;
 					color: #ffd76e;
 				}
@@ -147,6 +147,36 @@
 					}
 				}
 			}
+		}
+	}
+
+
+	.footer {
+		margin-top: 15px;
+		color: grey;
+		font-size: 11px;
+
+		.storage {
+			width: 33%;
+			display: inline-block;
+			text-align: left;
+
+			.storage-info {
+				font-weight: bold;
+			}
+		}
+
+		.legal-info {
+			width: 33%;
+			display: inline-block;
+			text-align: center;
+			vertical-align: top;
+		}
+
+		.activity {
+			width: 33%;
+			display: inline-block;
+			text-align: right;
 		}
 	}
 }
