@@ -6,8 +6,7 @@
 	overflow: auto;
 
 	.messages-category {
-		overflow: hidden;
-		text-overflow: ellipsis;
+		min-width: 400px;
 
 		.category {
 			width: 32%;
@@ -70,6 +69,7 @@
 
 		.message {
 			height: 25px;
+			min-width: 510px;
 			border-width: 1px;
 	        border-style: solid;
 	        border-color: transparent transparent #e2e2e2 transparent;
@@ -155,6 +155,7 @@
 		margin-top: 15px;
 		color: grey;
 		font-size: 11px;
+		min-width: 600px;
 
 		.storage {
 			width: 33%;
@@ -175,6 +176,7 @@
 
 		.activity {
 			width: 33%;
+			margin-right: -4px;
 			display: inline-block;
 			text-align: right;
 		}
