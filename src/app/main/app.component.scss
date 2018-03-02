@@ -6,7 +6,8 @@
 	overflow: auto;
 
 	.messages-category {
-		margin-top: 20px;
+		overflow: hidden;
+		text-overflow: ellipsis;
 
 		.category {
 			width: 32%;
@@ -21,7 +22,6 @@
 
 		.category-common {
 			height: 25px;
-			margin-top: -16px;
 			vertical-align: middle;
 			line-height: 22px;
 			display: inline-block;
@@ -123,6 +123,7 @@
 				.message-content {
 					width: calc(100% - 108px);
 					display: inline-block;
+					color: #a2a2a2;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					white-space: nowrap;
@@ -130,6 +131,7 @@
 
 				.additional-info {
 					display: inline-block;
+					vertical-align: top;
 					z-index: 2;
 
 					.document-symbol {
