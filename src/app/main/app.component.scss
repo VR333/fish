@@ -1,8 +1,7 @@
 :host {
 	height: calc(100% - 109px);
 	margin-left: 220px;
-	margin-right: 20px;
-	padding-left: 5%;
+	margin-right: 38px;
 	display: block;
 	overflow: auto;
 
@@ -11,7 +10,7 @@
 
 		.category {
 			width: 32%;
-			margin-right: -6px;
+			margin-right: -7px;
 			padding-left: 10px;
 			font-size: 13px;
 			text-align: left;
@@ -24,7 +23,7 @@
 			height: 25px;
 			margin-top: -16px;
 			vertical-align: middle;
-			line-height: 25px;
+			line-height: 22px;
 			display: inline-block;
 			background-color: #f1f1f1;
 			cursor: pointer;
@@ -59,6 +58,93 @@
 
 		.green:hover {
 			border-top: 2px solid green;
+		}
+	}
+
+	.messages-container {
+		margin-top: 5px;
+		font-size: 13px;
+		background-color: #f1f1f1;
+		border-top: 1px solid #e2e2e2;
+		cursor: pointer;
+
+		.message {
+			height: 25px;
+			border-width: 1px;
+	        border-style: solid;
+	        border-color: transparent transparent #e2e2e2 transparent;
+
+			&:hover .message-actions .drag-symbol {
+				visibility: visible;
+			}
+
+			.message-actions {
+				display: inline-block;
+				width: 250px;
+
+				.inline-info {
+					display: inline-block;
+				}
+
+				.drag-symbol {
+					width: 5px;
+					height: 22px;
+					margin: 0 2px;
+					margin-bottom: -4px;
+					cursor: grab;
+					border-left: 2px dotted #c6c6c6;
+					border-right: 2px dotted #c6c6c6;
+					visibility: hidden;
+				}
+
+				.square {
+					width: 13px;
+					height: 13px;
+					display: inline-block;
+					border: 1px solid #c6c6c6;
+
+					&:hover {
+						border-color: #a6a6a6;
+					}
+				}
+
+				.star {
+					margin-left: 8px;
+					margin-right: 18px;
+					font-size: 16px;
+					color: #ffd76e;
+				}
+			}
+
+			.message-info {
+				width: calc(100% - 254px);
+				display: inline-block;
+
+				.message-content {
+					width: calc(100% - 108px);
+					display: inline-block;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+
+				.additional-info {
+					display: inline-block;
+					z-index: 2;
+
+					.document-symbol {
+						width: 20px;
+						display: inline-block;
+
+					}
+
+					.message-date {
+						width: 80px;
+						display: inline-block;
+						text-align: center;
+					}
+				}
+			}
 		}
 	}
 }
