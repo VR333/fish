@@ -1,7 +1,64 @@
 :host {
 	height: calc(100% - 109px);
 	margin-left: 220px;
+	margin-right: 20px;
 	padding-left: 5%;
 	display: block;
 	overflow: auto;
+
+	.messages-category {
+		margin-top: 20px;
+
+		.category {
+			width: 32%;
+			margin-right: -6px;
+			padding-left: 10px;
+			font-size: 13px;
+			text-align: left;
+			border: 1px solid #d7d7d7;
+			border-right: 1px solid transparent;
+			border-top: 2px solid transparent;
+		}
+
+		.category-common {
+			height: 25px;
+			margin-top: -16px;
+			vertical-align: middle;
+			line-height: 25px;
+			display: inline-block;
+			background-color: #f1f1f1;
+			cursor: pointer;
+		}
+
+		.category-active {
+			border-top: 2px solid grey;
+			border-bottom: 2px solid transparent;
+			background-color: white;
+		}
+
+		.add-category {
+			width: 18px;
+			font-weight: bold;
+			font-size: 16px;
+			text-align: center;
+			color: grey;
+			border: 1px solid #e5e5e5;
+
+			&:hover {
+				color: black;
+			}
+		}
+
+		.grey:hover {
+			border-top: 2px solid grey;
+		}
+
+		.blue:hover {
+			border-top: 2px solid blue;
+		}
+
+		.green:hover {
+			border-top: 2px solid green;
+		}
+	}
 }

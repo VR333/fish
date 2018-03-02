@@ -17,6 +17,16 @@
         color: white;
         background-color: #dd4b39;
         border-radius: 2px;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            background-color: #cc4b39;
+        }
+
+        &:active {
+            background-color: #bb4b39;
+        }
     }
 
     .menu-item {
