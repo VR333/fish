@@ -3,6 +3,7 @@
     width: 220px;
     display: block;
     position: absolute;
+    user-select: none;
 
     .write-btn {
         width: 120px;
@@ -27,6 +28,34 @@
         }
     }
 
+    .income-messages {
+        position: relative;
+
+        .income-arrow {
+            height: 12px;
+            line-height: 9px;
+            position: absolute;
+            top: 4px;
+            right: 5px;
+            font-size: 10px;
+            color: black;
+            background-color: white;
+            border: 1px solid #aeaeae;
+            border-radius: 2px;
+            visibility: hidden;
+
+            &:hover {
+                color: white;
+                background-color: black;
+                border-color: transparent;
+            }
+        }
+
+        &:hover .income-arrow {
+            visibility: visible;
+        }
+    }
+
     .menu-item {
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
@@ -35,12 +64,61 @@
         .menu-item-text {
             margin: 0px 8px;
             padding: 2px 0px 2px 28px;
-            font-size: 13px;
+            font-size: 12px;
 
             &:hover {
                 background-color: #eee;
             }
         }
+
+        .menu-item-text-back-white {
+            &:hover {
+                background-color: white;
+            }
+        }
+
+        // .extended-menu {
+        // }
+
+        .less-border {
+            margin-bottom: 1px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category {
+            margin-top: 5px;
+            position: relative;
+
+            &::before {
+                content: "⏵";
+                position: absolute;
+                left: 12px;
+                top: -1px;
+                color: #595959;
+            }
+        }
+
+        .extend-category-text {
+            font-weight: bold;
+
+            &::before {
+                font-weight: normal;
+            }
+        }
+
+        .normal-category-text::before {
+            content: "⏷";
+        }
+
+        .extended-menu-link {
+            text-decoration: none;
+            color: #15c;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
     }
 
     .active-item {

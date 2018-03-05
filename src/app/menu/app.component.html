@@ -1,20 +1,63 @@
 <div class='write-btn'>WRITE</div>
 
-<div class='menu-item active-item'>
-	<div class='menu-item-text'>Income</div>
+<div class='menu-item'
+	 *ngFor="let option of coreMenuOptions"
+	 [ngClass]="{ 'active-item' : option.text === 'Income',
+ 				  'income-messages' : option.text === 'Income'
+			  	}">
+	<div class='menu-item-text'
+		 [ngClass]="{ 'income-messages' : option.text === 'Income' }"
+		 >
+		{{option.text}}
+		<div class='income-arrow' *ngIf="option.text === 'Income'">⏷</div>
+	</div>
 </div>
-<div class='menu-item'>
-	<div class='menu-item-text'>Starred</div>
+
+<div class='menu-item' *ngIf="!showExtendedMenu" (click)='toShowExtendedMenu()' >
+	<div class='menu-item-text menu-item-text-back-white'>More⏷</div>
 </div>
-<div class='menu-item'>
-	<div class='menu-item-text'>Sent</div>
+
+<div class='menu-item' *ngIf="showExtendedMenu" (click)='toShowExtendedMenu()'>
+	<div class='menu-item-text menu-item-text-back-white less-border'>Less⏶</div>
 </div>
-<div class='menu-item'>
-	<div class='menu-item-text'>Draft</div>
+
+<div class='extended-menu' *ngIf="showExtendedMenu">
+	<div class='menu-item'
+		 *ngFor="let option of extendedMenuOptions">
+		<div class='menu-item-text'>{{option.text}}</div>
+	</div>
+
+	<div class='menu-item' (click)='toShowExtendedCategory()'>
+		<div class='menu-item-text category'
+			[ngClass]="showExtendedCategory ? 'normal-category-text' : 'extend-category-text' "
+		>Category
+		</div>
+	</div>
+
+	<div class='extended-category' *ngIf="showExtendedCategory">
+		<div class='menu-item'
+			 *ngFor="let option of extendedCategoryOptions">
+			<div class='menu-item-text'>{{option.text}}</div>
+		</div>
+	</div>
+
+	<div class='menu-item'>
+		<div class='menu-item-text menu-item-text-back-white'>
+			<a class='extended-menu-link' href='#'>Manage marks</a>
+		</div>
+	</div>
+
+	<div class='menu-item'>
+		<div class='menu-item-text menu-item-text-back-white'>
+			<a class='extended-menu-link' href='#'>Create new mark</a>
+		</div>
+	</div>
 </div>
-<div class='menu-item'>
-	<div class='menu-item-text'>More⏷</div>
-</div>
+
+
+
+
+
 
 <div class='user-profile-icon'></div>
 
