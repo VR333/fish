@@ -7,7 +7,8 @@ export const MESSAGES = [
     date: '2nd of March',
     clip: true,
     category: 'income',
-    starred: true
+    starred: true,
+    read: false
   },
   {
     id: 1,
@@ -17,7 +18,8 @@ export const MESSAGES = [
     date: '2nd of March',
     clip: false,
     category: 'sent',
-    starred: true
+    starred: true,
+    read: true
   },
   {
     id: 2,
@@ -27,7 +29,8 @@ export const MESSAGES = [
     date: '2nd of March',
     clip: false,
     category: 'income',
-    starred: true
+    starred: true,
+    read: true
   },
   {
     id: 3,
@@ -37,6 +40,7 @@ export const MESSAGES = [
     date: '2nd of March',
     clip: false,
     category: 'income',
-    starred: true
+    starred: true,
+    read: true
   }
 ];

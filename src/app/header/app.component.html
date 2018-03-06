@@ -32,12 +32,10 @@
 			<ul class='tooltip-title'
 				[ngClass]="{'tooltip-title-active' : isActoinsActive}">
 
-				<li class='fmail-title-option'>All</li>
-				<li class='fmail-title-option'>None</li>
-				<li class='fmail-title-option'>Read</li>
-				<li class='fmail-title-option'>Unread</li>
-				<li class='fmail-title-option'>Starred</li>
-				<li class='fmail-title-option'>Not Starred</li>
+				<li class='fmail-title-option'
+						*ngFor='let select of selectActiveOptions'
+						(click)='msg.selectMessages(select)'>{{select}}
+				</li>
 			</ul>
 		</div>
 

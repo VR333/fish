@@ -12,6 +12,14 @@ export class HeaderComponent {
     isMoreActive :boolean = false;
     isLanguageChoiceActive :boolean = false;
     isSettingsActive :boolean = false;
+    selectActiveOptions = [
+      'All',
+      'None',
+      'Read',
+      'Unread',
+      'Starred',
+      'Not Starred'
+    ];
 
     constructor(private msg: ManageMessagesService) {}
 
