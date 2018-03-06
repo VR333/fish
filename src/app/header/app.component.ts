@@ -15,6 +15,11 @@ export class HeaderComponent {
 
     constructor(private msg: ManageMessagesService) {}
 
+    makeInactive(event) {
+        event.stopPropagation();
+        this.msg.makeMessagesInactive();
+    }
+
     showTitles() {
         this.isTitleActive = !this.isTitleActive;
     }

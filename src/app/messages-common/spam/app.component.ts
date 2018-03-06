@@ -7,7 +7,7 @@ import { MESSAGES } from './../messages'
   styleUrls: ['./../app.component.scss']
 })
 export class SpamComponent {
-    messages = MESSAGES.filter( message => message.spam);
+    messages = MESSAGES.filter( message => message.category === 'spam');
 
     makeMessageActive(message) {
         message.active = !message.active;

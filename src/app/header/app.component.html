@@ -22,7 +22,9 @@
 
 	<div class='left-buttons'>
 		<div class='btn btn-wrap actions tooltip-anchor' (click)='showActions()'>
-			<div class='square'></div>
+			<div class='square' (click)='makeInactive($event)'>
+					<div *ngIf="msg.showActiveMessageButton" class='horiz-line'></div>
+			</div>
 			<span class='triangle-fix'>&#9701;</span>
 
 			<span class='tooltip'>Actions</span>

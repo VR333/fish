@@ -8,7 +8,7 @@ import { ManageMessagesService } from './../../services/manageMessage';
   styleUrls: ['./../app.component.scss']
 })
 export class InboxComponent {
-    messages = MESSAGES.filter( message => message.income);
+    messages = MESSAGES.filter( message => message.category === 'income');
 
     constructor(private msg: ManageMessagesService) {}
 

@@ -7,5 +7,5 @@ import { MESSAGES } from './../messages'
   styleUrls: ['./../app.component.scss']
 })
 export class SentComponent {
-    messages = MESSAGES.filter( message => message.sent);
+    messages = MESSAGES.filter( message => message.category === 'sent');
 }

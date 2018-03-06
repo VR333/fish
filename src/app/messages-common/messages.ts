@@ -6,16 +6,8 @@ export const MESSAGES = [
     content: 'Hi, my name is Rostyslavfgdfghdfghdfgfghdfghfghdfghhdfghdgfhgfhdfghdfgh',
     date: '2nd of March',
     clip: true,
-    income: true,
-    sent: false,
-    starred: true,
-    spam: false,
-    deleted: false,
-    chat: false,
-    important: false,
-    social: false,
-    advertisment: false,
-    draft: false
+    category: 'income',
+    starred: true
   },
   {
     id: 1,
@@ -24,16 +16,8 @@ export const MESSAGES = [
     content: 'Hi, my name is Rostyslavfgdfghdfghdfgfghdfghfghdfghhdfghdgfhgfhdfghdfgh',
     date: '2nd of March',
     clip: false,
-    income: false,
-    sent: true,
-    starred: true,
-    spam: false,
-    deleted: false,
-    chat: false,
-    important: false,
-    social: false,
-    advertisment: false,
-    draft: false
+    category: 'sent',
+    starred: true
   },
   {
     id: 2,
@@ -42,16 +26,8 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '2nd of March',
     clip: false,
-    income: true,
-    sent: false,
-    starred: true,
-    spam: false,
-    deleted: false,
-    chat: false,
-    important: false,
-    social: false,
-    advertisment: false,
-    draft: false
+    category: 'income',
+    starred: true
   },
   {
     id: 3,
@@ -60,15 +36,7 @@ export const MESSAGES = [
     content: 'Hi, my name is ololol',
     date: '2nd of March',
     clip: false,
-    income: false,
-    sent: false,
-    starred: true,
-    spam: false,
-    deleted: false,
-    chat: false,
-    important: false,
-    social: false,
-    advertisment: false,
-    draft: false
+    category: 'income',
+    starred: true
   }
 ];

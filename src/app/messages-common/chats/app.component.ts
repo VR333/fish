@@ -7,7 +7,7 @@ import { MESSAGES } from './../messages'
   styleUrls: ['./../app.component.scss']
 })
 export class ChatsComponent {
-    messages = MESSAGES.filter( message => message.deleted);
+    messages = MESSAGES.filter( message => message.category === 'deleted');
 
     makeMessageActive(message) {
         message.active = !message.active;

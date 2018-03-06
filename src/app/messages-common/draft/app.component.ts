@@ -7,7 +7,7 @@ import { MESSAGES } from './../messages'
   styleUrls: ['./../app.component.scss']
 })
 export class DraftComponent {
-    messages = MESSAGES.filter( message => message.draft);
+    messages = MESSAGES.filter( message => message.category === 'draft');
 
     makeMessageActive(message) {
         message.active = !message.active;
