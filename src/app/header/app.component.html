@@ -2,7 +2,7 @@
 	(click)='showTitles()'
 	[ngClass]="{'fish-title-active' : isTitleActive}"
 	>
-	Fmail<span class='triangle'>⏷</span>
+	Fmail <span class='triangle-fix'>&#9701;</span>
 
 	<ul class='tooltip-title'>
 		<li class='fmail-title-option option-logo'>
@@ -20,7 +20,7 @@
 <div class='left-buttons'>
 	<div class='btn btn-wrap actions tooltip-anchor' (click)='showActions()'>
 		<div class='square'></div>
-		<span class='triangle'>⏷</span>
+		<span class='triangle-fix'>&#9701;</span>
 
 		<span class='tooltip'>Actions</span>
 
@@ -42,7 +42,7 @@
 	</div>
 
 	<div class='btn btn-wrap more' (click)='showMore()'>
-		More<span class='triangle'>⏷</span>
+		More<span class='triangle-fix'>&#9701;</span>
 
 		<ul class='tooltip-title'
 			[ngClass]="{'tooltip-title-active' : isMoreActive}">
@@ -78,7 +78,7 @@
 			<span class='tooltip'>On/off transliteration (Ctrl-Shift-K)</span>
 		</div>
 		<div class='btn language-choose tooltip-anchor' (click)='showLanguageChoice()'>
-			<span class='triangle'>⏷</span>
+			<span class='triangle-fix'>&#9701;</span>
 			<span class='tooltip'>Choose language</span>
 
 			<ul class='tooltip-title'
@@ -96,7 +96,7 @@
 
 	<div class='btn btn-wrap settings tooltip-anchor' (click)='showSettings()'>
 		<span class='cogwheel'>⚙</span>
-		<span class='triangle'>⏷</span>
+		<span class='triangle-fix'>&#9701;</span>
 
 		<span class='tooltip'>Settings</span>
 		<ul class='tooltip-title'

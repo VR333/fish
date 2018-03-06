@@ -32,17 +32,24 @@
         position: relative;
 
         .income-arrow {
+            width: 13px;
             height: 12px;
             line-height: 9px;
             position: absolute;
             top: 4px;
             right: 5px;
             font-size: 10px;
+            text-align: center;
             color: black;
             background-color: white;
             border: 1px solid #aeaeae;
             border-radius: 2px;
             visibility: hidden;
+
+            .triangle-fix {
+              top: -2px;
+              font-size: 6px;
+            }
 
             &:hover {
                 color: white;
@@ -54,6 +61,19 @@
         &:hover .income-arrow {
             visibility: visible;
         }
+    }
+
+    span.triangle-up {
+      top: 1px;
+      transform: rotate(-45deg);
+    }
+
+    .triangle-fix {
+      display: inline-block;
+      position: relative;
+      top: -3px;
+      font-size: 7px;
+      transform: rotate(135deg);
     }
 
     .menu-item {
@@ -90,11 +110,13 @@
             position: relative;
 
             &::before {
-                content: "⏵";
+                content: "◥";
                 position: absolute;
                 left: 12px;
-                top: -1px;
+                top: 4px;
                 color: #595959;
+                font-size: 8px;
+                transform: rotate(45deg);
             }
         }
 
@@ -107,7 +129,9 @@
         }
 
         .normal-category-text::before {
-            content: "⏷";
+            content: "◥";
+            top: 6px;
+            transform: rotate(-45deg);
         }
 
         .extended-menu-link {

@@ -17,6 +17,17 @@
 	border-bottom: 1px solid #e5e5e5;
 	user-select: none;
 
+	.triangle-fix {
+		width: 0px;
+		height: 0px;
+		display: inline-block;
+		position: relative;
+		top: 7px;
+    right: -14px;
+		font-size: 7px;
+		transform: rotate(135deg);
+	}
+
 	.forbidden-signs {
 		height: 60px;
 		background-color: #f1f1f1;
@@ -29,6 +40,13 @@
 		cursor: pointer;
 		border: 2px solid transparent;
 		position: relative;
+
+		.triangle-fix {
+			width: auto;
+			height: auto;
+			top: -6px;
+	    right: -3px;
+		}
 	}
 
 	ul.tooltip-title-active {
@@ -155,11 +173,6 @@
 		display: inline-block;
 	}
 
-	.triangle {
-		font-size: 13px;
-		vertical-align: top;
-	}
-
 	.left-buttons{
 		height: 60%;
 		display: inline-block;
@@ -184,6 +197,12 @@
 		.more {
 			font-size: 12px;
 			font-weight: bold;
+
+			.triangle-fix {
+				width: 12px;
+				right: -7px;
+				top: 10px;
+			}
 		}
 	}
 
@@ -263,6 +282,12 @@
 				padding: 5px 0;
 				display: inline-block;
 
+				.triangle-fix {
+					width: 12px;
+					right: -6px;
+					top: 10px;
+				}
+
 
 				&:hover {
 					border: 1px solid #d9d9d9;
@@ -289,6 +314,12 @@
 
 		.settings {
 			height: 28px;
+
+			.triangle-fix {
+				width: 12px;
+				right: -2px;
+				top: 6px;
+			}
 
 			.cogwheel {
 				font-size: 26px;

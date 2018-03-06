@@ -9,16 +9,22 @@
 		 [ngClass]="{ 'income-messages' : option.text === 'Income' }"
 		 >
 		{{option.text}}
-		<div class='income-arrow' *ngIf="option.text === 'Income'">⏷</div>
+		<div class='income-arrow' *ngIf="option.text === 'Income'">
+			<span class='triangle-fix'>&#9701;</span>
+		</div>
 	</div>
 </div>
 
 <div class='menu-item' *ngIf="!showExtendedMenu" (click)='toShowExtendedMenu()' >
-	<div class='menu-item-text menu-item-text-back-white'>More⏷</div>
+	<div class='menu-item-text menu-item-text-back-white'>
+		More <span class='triangle-fix'>&#9701;</span>
+	</div>
 </div>
 
 <div class='menu-item' *ngIf="showExtendedMenu" (click)='toShowExtendedMenu()'>
-	<div class='menu-item-text menu-item-text-back-white less-border'>Less⏶</div>
+	<div class='menu-item-text menu-item-text-back-white less-border'>
+		Less <span class='triangle-fix triangle-up'>&#9701;</span>
+	</div>
 </div>
 
 <div class='extended-menu' *ngIf="showExtendedMenu">
