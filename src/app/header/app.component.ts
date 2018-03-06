@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ManageMessagesService } from './../services/manageMessage';
 
 @Component({
   selector: 'fish-header',
@@ -11,6 +12,8 @@ export class HeaderComponent {
     isMoreActive :boolean = false;
     isLanguageChoiceActive :boolean = false;
     isSettingsActive :boolean = false;
+
+    constructor(private msg: ManageMessagesService) {}
 
     showTitles() {
         this.isTitleActive = !this.isTitleActive;

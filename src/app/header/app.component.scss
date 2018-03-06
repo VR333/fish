@@ -5,10 +5,16 @@
 // 	top: -16px;
 // 	border-left: 1px solid white;
 // }
+.header-floated-right-buttons {
+		min-width: 1095px;
+}
 
-:host {
-	min-width: 820px;
-	height: 50px;
+.header-inlineblock-right-buttons {
+		min-width: 820px;
+}
+
+.header {
+	height: 49px;
 	line-height: 47px;
 	margin-bottom: 10px;
 	padding: 0 25px;
@@ -173,10 +179,15 @@
 		display: inline-block;
 	}
 
+	.btn-inline {
+			margin-right: -6px;
+			display: inline-block;
+	}
+
 	.left-buttons{
 		height: 60%;
 		display: inline-block;
-		margin-left: 123px;
+		margin-left: 110px;
 
 		.square {
 			width: 13px;
@@ -206,10 +217,18 @@
 		}
 	}
 
+
+.floated-version {
+		display: inline;
+		float: right;
+}
+
+.block-version {
+	min-width: calc(100% - 460px);
+	display: inline-block;
+	text-align: right;
+}
 	.right-buttons {
-		min-width: calc(100% - 460px);
-		display: inline-block;
-		text-align: right;
 
 		.messages-counter {
 			position: relative;
@@ -322,7 +341,9 @@
 			}
 
 			.cogwheel {
-				font-size: 26px;
+				font-size: 18px;
+		    position: relative;
+		    top: -2px;
 			}
 
 			.tooltip-title {

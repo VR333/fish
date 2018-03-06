@@ -1,0 +1,164 @@
+:host {
+	display: block;
+	background-color: white;
+
+	.messages-category {
+		min-width: 400px;
+		margin-bottom: 10px;
+
+		.category {
+			width: 32%;
+			margin-right: -7px;
+			padding-left: 10px;
+			font-size: 13px;
+			text-align: left;
+			border: 1px solid #d7d7d7;
+			border-right: 1px solid transparent;
+			border-top: 2px solid transparent;
+		}
+
+		.category-common {
+			height: 25px;
+			vertical-align: middle;
+			line-height: 22px;
+			display: inline-block;
+			background-color: #f1f1f1;
+			cursor: pointer;
+		}
+
+		.category-active {
+			border-top: 2px solid grey;
+			border-bottom: 2px solid transparent;
+			background-color: white;
+		}
+
+		.add-category {
+			width: 18px;
+			font-weight: bold;
+			font-size: 16px;
+			text-align: center;
+			color: grey;
+			border: 1px solid #e5e5e5;
+
+			&:hover {
+				color: black;
+			}
+		}
+
+		.grey:hover {
+			border-top: 2px solid grey;
+		}
+
+		.blue:hover {
+			border-top: 2px solid blue;
+		}
+
+		.green:hover {
+			border-top: 2px solid green;
+		}
+	}
+
+
+	div.active-message {
+		background-color: #ffc;
+	}
+
+
+	.message {
+		height: 25px;
+		min-width: 510px;
+		background-color: #f1f1f1;
+		border-width: 1px;
+		border-style: solid;
+		border-color: transparent transparent #e2e2e2 transparent;
+
+		&:hover .message-actions .drag-symbol {
+			visibility: visible;
+		}
+
+		.message-actions {
+			display: inline-block;
+			width: 250px;
+
+			.inline-info {
+				display: inline-block;
+			}
+
+			.drag-symbol {
+				width: 5px;
+				height: 22px;
+				margin: 0 2px;
+				margin-bottom: -4px;
+				cursor: grab;
+				border-left: 2px dotted #c6c6c6;
+				border-right: 2px dotted #c6c6c6;
+				visibility: hidden;
+			}
+
+			.square {
+				width: 13px;
+				height: 13px;
+				display: inline-block;
+				position: relative;
+				border: 1px solid #c6c6c6;
+				cursor: default;
+
+				&:hover {
+					border-color: #a6a6a6;
+				}
+
+				.check-symbol {
+					position: absolute;
+			    color: grey;
+			    font-size: 21px;
+			    top: -7px;
+					visibility: hidden;
+				}
+
+				.check-symbol-show {
+					visibility: visible;
+				}
+			}
+
+			.star {
+				margin-left: 8px;
+				margin-right: 10px;
+				font-size: 16px;
+				color: #ffd76e;
+			}
+		}
+
+		.message-info {
+			width: calc(100% - 254px);
+			display: inline-block;
+
+			.message-content {
+				width: calc(100% - 108px);
+				display: inline-block;
+				color: #a2a2a2;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.additional-info {
+				display: inline-block;
+				vertical-align: top;
+				z-index: 2;
+
+				.document-symbol {
+					width: 20px;
+					display: inline-block;
+
+				}
+
+				.message-date {
+					width: 80px;
+					display: inline-block;
+					text-align: center;
+				}
+			}
+		}
+	}
+
+}

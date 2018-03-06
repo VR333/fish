@@ -11,49 +11,58 @@ export class MenuComponent {
 
     coreMenuOptions = [
         {
-            text: 'Income'
+            text: 'Вхідні',
+            link: 'inbox'
         },
         {
-            text: 'Starred'
+            text: 'Із зірочкою',
+            link: 'starred'
         },
         {
-            text: 'Sent'
+            text: 'Надіслані',
+            link: 'sent'
         },
         {
-            text: 'Draft'
+            text: 'Чернетки',
+            link: 'draft'
         }
     ];
 
     extendedMenuOptions = [
         {
-            text: 'Important'
+            text: 'Важливі',
+            link: 'important'
         },
         {
-            text: 'Chats'
+            text: 'Чати',
+            link: 'chats'
         },
         {
-            text: 'All'
+            text: 'Уся пошта',
+            link: 'all'
         },
         {
-            text: 'Spam'
+            text: 'Спам',
+            link: 'spam'
         },
         {
-            text: 'Basket'
+            text: 'Кошик',
+            link: 'basket'
         }
     ];
 
     extendedCategoryOptions = [
         {
-            text: 'IMG Social network'
+            text: 'IMG Соцмережі'
         },
         {
-            text: 'IMG Advertisment'
+            text: 'IMG Реклама'
         },
         {
-            text: 'IMG Updates'
+            text: 'IMG Оновлення'
         },
         {
-            text: 'IMG Forums'
+            text: 'IMG Форуми'
         }
     ];
 

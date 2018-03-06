@@ -1,10 +1,12 @@
-<div class='write-btn'>WRITE</div>
+<div class='write-btn'>НАПИСАТИ</div>
 
 <div class='menu-item'
 	 *ngFor="let option of coreMenuOptions"
-	 [ngClass]="{ 'active-item' : option.text === 'Income',
- 				  'income-messages' : option.text === 'Income'
-			  	}">
+	 routerLink='{{option.link}}'
+	 routerLinkActive='active-item'
+	 [ngClass]="{ 'income-messages' : option.text === 'Income' }"
+	 >
+
 	<div class='menu-item-text'
 		 [ngClass]="{ 'income-messages' : option.text === 'Income' }"
 		 >
@@ -17,26 +19,28 @@
 
 <div class='menu-item' *ngIf="!showExtendedMenu" (click)='toShowExtendedMenu()' >
 	<div class='menu-item-text menu-item-text-back-white'>
-		More <span class='triangle-fix'>&#9701;</span>
+		Більше <span class='triangle-fix'>&#9701;</span>
 	</div>
 </div>
 
 <div class='menu-item' *ngIf="showExtendedMenu" (click)='toShowExtendedMenu()'>
 	<div class='menu-item-text menu-item-text-back-white less-border'>
-		Less <span class='triangle-fix triangle-up'>&#9701;</span>
+		Менше <span class='triangle-fix triangle-up'>&#9701;</span>
 	</div>
 </div>
 
 <div class='extended-menu' *ngIf="showExtendedMenu">
 	<div class='menu-item'
-		 *ngFor="let option of extendedMenuOptions">
+		 *ngFor="let option of extendedMenuOptions"
+		 routerLink='{{option.link}}'
+		 routerLinkActive='active-item'>
 		<div class='menu-item-text'>{{option.text}}</div>
 	</div>
 
 	<div class='menu-item' (click)='toShowExtendedCategory()'>
 		<div class='menu-item-text category'
 			[ngClass]="showExtendedCategory ? 'normal-category-text' : 'extend-category-text' "
-		>Category
+		>Категорії
 		</div>
 	</div>
 

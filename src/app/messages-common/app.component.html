@@ -1,0 +1,29 @@
+<div class='messages-category'>
+	<div class="category-common category grey category-active">R Main</div>
+	<div class="category-common category blue">R Social</div>
+	<div class="category-common category green">R Advertisement</div>
+	<div class="category-common add-category">+</div>
+</div>
+
+<div class='message' *ngFor='let message of messages'
+		[ngClass]="{'active-message': message.active}">
+  <div class='message-actions'>
+    <div class='inline-info drag-symbol'></div>
+    <div class='inline-info square' (click)='makeMessageActive(message)'>
+			<span class='check-symbol'
+						[ngClass]="{'check-symbol-show': message.active}"
+						>&#10003;
+			</span>
+		</div>
+    <div class='inline-info star'>★</div>
+    <div class='inline-info name'>{{message.title}}</div>
+  </div>
+
+  <div class='message-info'>
+    <div class='message-content'>{{message.content}}</div>
+    <div class='additional-info'>
+      <div class='document-symbol'>clip</div>
+      <div class='message-date'>{{message.date}}</div>
+    </div>
+  </div>
+</div>
