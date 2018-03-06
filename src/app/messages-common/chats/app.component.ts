@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MESSAGES } from './../messages'
+import { MESSAGES } from './../messages';
+import { ManageMessagesService } from './../../services/manageMessage';
 
 @Component({
   selector: 'fish-basket-messages',
@@ -7,9 +8,7 @@ import { MESSAGES } from './../messages'
   styleUrls: ['./../app.component.scss']
 })
 export class ChatsComponent {
+    constructor(private msg: ManageMessagesService) {}
+    
     messages = MESSAGES.filter( message => message.category === 'deleted');
-
-    makeMessageActive(message) {
-        message.active = !message.active;
-    }
 }

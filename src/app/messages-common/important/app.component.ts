@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MESSAGES } from './../messages'
+import { MESSAGES } from './../messages';
+import { ManageMessagesService } from './../../services/manageMessage';
 
 @Component({
   selector: 'fish-important-messages',
@@ -7,9 +8,7 @@ import { MESSAGES } from './../messages'
   styleUrls: ['./../app.component.scss']
 })
 export class ImportantComponent {
+    constructor(private msg: ManageMessagesService) {}
+    
     messages = MESSAGES.filter( message => message.category === 'important');
-
-    makeMessageActive(message) {
-        message.active = !message.active;
-    }
 }

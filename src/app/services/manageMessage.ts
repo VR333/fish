@@ -7,6 +7,16 @@ export class ManageMessagesService {
 
   messages = MESSAGES;
 
+  makeMessageActive(message) {
+      message.active = !message.active;
+
+      if (this.messages.filter( message => message.active).length) {
+          this.showActiveMessageButton = true;
+      } else {
+        this.showActiveMessageButton = false;
+      }
+  }
+
   makeMessagesInactive() {
     this.showActiveMessageButton = false;
     this.messages.map( msg => msg.active = false);

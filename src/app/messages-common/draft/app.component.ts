@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MESSAGES } from './../messages'
+import { MESSAGES } from './../messages';
+import { ManageMessagesService } from './../../services/manageMessage';
 
 @Component({
   selector: 'fish-draft-messages',
@@ -7,9 +8,7 @@ import { MESSAGES } from './../messages'
   styleUrls: ['./../app.component.scss']
 })
 export class DraftComponent {
-    messages = MESSAGES.filter( message => message.category === 'draft');
+    constructor(private msg: ManageMessagesService) {}
 
-    makeMessageActive(message) {
-        message.active = !message.active;
-    }
+    messages = MESSAGES.filter( message => message.category === 'draft');
 }

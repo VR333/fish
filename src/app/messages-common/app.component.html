@@ -9,7 +9,7 @@
 		[ngClass]="{'active-message': message.active}">
   <div class='message-actions'>
     <div class='inline-info drag-symbol'></div>
-    <div class='inline-info square' (click)='makeMessageActive(message)'>
+    <div class='inline-info square' (click)='msg.makeMessageActive(message)'>
 			<span class='check-symbol'
 						[ngClass]="{'check-symbol-show': message.active}"
 						>&#10003;
