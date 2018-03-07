@@ -8,7 +8,8 @@ export const MESSAGES = [
     clip: true,
     category: 'income',
     starred: true,
-    read: true
+    read: true,
+    important: false
   },
   {
     id: 1,
@@ -19,7 +20,8 @@ export const MESSAGES = [
     clip: true,
     category: 'income',
     starred: true,
-    read: true
+    read: true,
+    important: false
   },
   {
     id: 2,
@@ -30,7 +32,8 @@ export const MESSAGES = [
     clip: false,
     category: 'income',
     starred: true,
-    read: false
+    read: false,
+    important: true
   },
   {
     id: 3,
@@ -41,7 +44,8 @@ export const MESSAGES = [
     clip: false,
     category: 'income',
     starred: true,
-    read: true
+    read: true,
+    important: true
   },
   {
     id: 4,
@@ -51,8 +55,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 5,
@@ -62,8 +67,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 6,
@@ -73,8 +79,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 7,
@@ -84,8 +91,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 8,
@@ -95,8 +103,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 9,
@@ -106,8 +115,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 10,
@@ -117,8 +127,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 11,
@@ -128,8 +139,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 12,
@@ -139,8 +151,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 13,
@@ -150,8 +163,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 14,
@@ -161,8 +175,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 15,
@@ -172,8 +187,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 16,
@@ -183,8 +199,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 17,
@@ -194,8 +211,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 18,
@@ -205,8 +223,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 19,
@@ -216,8 +235,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 20,
@@ -227,8 +247,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 21,
@@ -238,8 +259,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 22,
@@ -249,8 +271,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 23,
@@ -260,8 +283,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 24,
@@ -271,8 +295,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 25,
@@ -282,8 +307,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 26,
@@ -293,8 +319,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 27,
@@ -304,8 +331,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 28,
@@ -315,8 +343,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 29,
@@ -326,8 +355,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 30,
@@ -337,8 +367,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 31,
@@ -348,8 +379,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 32,
@@ -359,8 +391,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 33,
@@ -370,8 +403,9 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   },
   {
     id: 34,
@@ -381,7 +415,8 @@ export const MESSAGES = [
     date: '07.03.18',
     clip: false,
     category: 'income',
-    starred: true,
-    read: true
+    starred: false,
+    read: true,
+    important: true
   }
 ];

@@ -19,6 +19,20 @@ export class ManageMessagesService {
       this.checkIfActive();
     }
 
+    makeMessageChangeStar(message) {
+      message.starred = !message.starred;
+    }
+
+    deleteMessage() {
+        this.messages.map( msg => {
+            if (msg.active) {
+                msg.category = 'deleted';
+                msg.active = false;
+                this.checkIfActive();
+            }
+        });
+    }
+
     selectMessages(selectOption){
       switch (selectOption) {
         case 'All':
@@ -72,5 +86,33 @@ export class ManageMessagesService {
         this.showActiveMessageButton = false;
         this.messages.map( msg => msg.active = false);
         this.checkIfActive();
+    }
+
+    markAllasRead() {
+        this.messages.map( msg => msg.read = true);
+    }
+
+    changeReadState(wantAsRead) {
+        this.messages.map( msg => {
+            if (msg.active) {
+                msg.read = wantAsRead;
+            }
+        });
+    }
+
+    changeImportantState(wantAsImportant) {
+        this.messages.map( msg => {
+            if (msg.active) {
+                msg.important= wantAsImportant;
+            }
+        });
+    }
+
+    changeStarredState(wantAsStarred) {
+        this.messages.map( msg => {
+            if (msg.active) {
+                msg.starred = wantAsStarred;
+            }
+        });
     }
 }

@@ -53,7 +53,7 @@
 					<div class='btn btn-inline'>
 						<i class="fas fa-exclamation-circle"></i>
 					</div>
-					<div class='btn btn-inline'>
+					<div class='btn btn-inline' (click)='msg.deleteMessage()'>
 						<i class="fas fa-exclamation-circle"></i>
 					</div>
 				</div>
@@ -73,8 +73,17 @@
 
 			<ul class='tooltip-title'
 				[ngClass]="{'tooltip-title-active' : isMoreActive}">
-				<li class='fmail-title-option'>Mark all as read</li>
-				<div class='system-message'>Choose message to show more actions</div>
+				<li *ngIf='!msg.showActiveMessageButton' class='fmail-title-option' (click)='msg.markAllasRead()'>Позначити всі як прочитані</li>
+				<li *ngIf='!msg.showActiveMessageButton' class='system-message'>Виберіть повідомлення, щоб відобразити більше дій</li>
+				<li *ngIf='msg.showActiveMessageButton' class='fmail-title-option' (click)='msg.changeReadState(true)'>Позначити як прочитане</li>
+				<li *ngIf='msg.showActiveMessageButton' class='fmail-title-option' (click)='msg.changeReadState(false)'>Позначити як непрочитане</li>
+				<li *ngIf='msg.showActiveMessageButton' class='fmail-title-option' (click)='msg.changeImportantState(true)'>Позначити як важливе</li>
+				<li *ngIf='msg.showActiveMessageButton' class='fmail-title-option' (click)='msg.changeImportantState(false)'>Позначити як неважливе</li>
+				<li *ngIf='msg.showActiveMessageButton' class='fmail-title-option'>Додати до завдань</li>
+				<li *ngIf='msg.showActiveMessageButton' class='fmail-title-option' (click)='msg.changeStarredState(true)'>Додати зірочку</li>
+				<li *ngIf='msg.showActiveMessageButton' class='fmail-title-option' (click)='msg.changeStarredState(false)'>Зняти зірочку</li>
+				<li *ngIf='msg.showActiveMessageButton' class='fmail-title-option'>Фільтрувати схожі повідомлення</li>
+				<li *ngIf='msg.showActiveMessageButton' class='fmail-title-option'>Ігнорувати</li>
 			</ul>
 		</div>
 	</div>

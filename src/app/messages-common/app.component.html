@@ -19,8 +19,10 @@
 			</span>
 		</div>
 
-	    <div class='inline-info star'>★</div>
-		
+	    <div class='inline-info star'
+			 [ngClass]="{ 'star-active': message.starred}"
+			 (click)='msg.makeMessageChangeStar(message)'>★</div>
+
 	    <div class='inline-info name'>{{message.title}}</div>
 	  </div>
 
