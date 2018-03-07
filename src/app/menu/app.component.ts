@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class MenuComponent {
     showExtendedMenu:boolean = false;
     showExtendedCategory:boolean = false;
+    showChatCreation:boolean = false;
 
     coreMenuOptions = [
         {
@@ -72,5 +73,9 @@ export class MenuComponent {
 
     toShowExtendedCategory() {
         this.showExtendedCategory = !this.showExtendedCategory;
+    }
+
+    createChat() {
+        this.showChatCreation = !this.showChatCreation;
     }
 }

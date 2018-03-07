@@ -66,17 +66,15 @@
 
 
 
-
-
-
 <div class='user-profile-icon'>
 		<div class='drag-symbol'>
 			<i class="fas fa-ellipsis-h"></i>
 		</div>
 		<img src='./assets/menu/user.png' class='user-image'/>
 		<span class='user-name'>Username</span>
-		<span class='create-chat-btn'>
-			<i class="fas fa-times-circle"></i>
+		<span class='create-chat-btn' 
+					(click)='createChat()'
+					[ngClass]="{'create-chat-btn-active': showChatCreation}">+
 		</span>
 </div>
 
