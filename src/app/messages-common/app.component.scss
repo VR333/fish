@@ -58,104 +58,114 @@
 		}
 	}
 
-
-	div.active-message {
-		background-color: #ffc;
-	}
-
-
-	.message {
-		height: 25px;
-		min-width: 510px;
-		background-color: #f1f1f1;
+	.messages-wrapper {
 		border-width: 1px;
 		border-style: solid;
-		border-color: transparent transparent #e2e2e2 transparent;
+		border-color: #e2e2e2 transparent transparent transparent;
 
-		&:hover .message-actions .drag-symbol {
-			visibility: visible;
+		div.unread-message {
+			font-weight: bold;
+			color: black;
+			background-color: white;
 		}
 
-		.message-actions {
-			display: inline-block;
-			width: 250px;
+		div.active-message {
+			background-color: #ffc;
+		}
 
-			.inline-info {
-				display: inline-block;
+		.message {
+			height: 25px;
+			min-width: 510px;
+			background-color: #f1f1f1;
+			border-width: 1px;
+			border-style: solid;
+			border-color: transparent transparent #e2e2e2 transparent;
+
+			&:hover .message-actions .drag-symbol {
+				visibility: visible;
 			}
 
-			.drag-symbol {
-				width: 5px;
-				height: 22px;
-				margin: 0 2px;
-				margin-bottom: -4px;
-				cursor: grab;
-				border-left: 2px dotted #c6c6c6;
-				border-right: 2px dotted #c6c6c6;
-				visibility: hidden;
-			}
-
-			.square {
-				width: 13px;
-				height: 13px;
+			.message-actions {
 				display: inline-block;
-				position: relative;
-				border: 1px solid #c6c6c6;
-				cursor: default;
+				width: 250px;
 
-				&:hover {
-					border-color: #a6a6a6;
+				.inline-info {
+					display: inline-block;
 				}
 
-				.check-symbol {
-					position: absolute;
-			    	color: grey;
-			    	font-size: 17px;
-			    	top: -7px;
+				.drag-symbol {
+					width: 5px;
+					height: 22px;
+					margin: 0 2px;
+					margin-bottom: -4px;
+					cursor: grab;
+					border-left: 2px dotted #c6c6c6;
+					border-right: 2px dotted #c6c6c6;
 					visibility: hidden;
 				}
 
-				.check-symbol-show {
-					visibility: visible;
+				.square {
+					width: 13px;
+					height: 13px;
+					display: inline-block;
+					position: relative;
+					border: 1px solid #c6c6c6;
+					cursor: default;
+
+					&:hover {
+						border-color: #a6a6a6;
+					}
+
+					.check-symbol {
+						position: absolute;
+				    	color: grey;
+				    	font-size: 17px;
+				    	top: -7px;
+						visibility: hidden;
+					}
+
+					.check-symbol-show {
+						visibility: visible;
+					}
+				}
+
+				.star {
+					margin-left: 8px;
+					margin-right: 10px;
+					font-size: 16px;
+					color: #ffd76e;
 				}
 			}
 
-			.star {
-				margin-left: 8px;
-				margin-right: 10px;
-				font-size: 16px;
-				color: #ffd76e;
-			}
-		}
-
-		.message-info {
-			width: calc(100% - 254px);
-			display: inline-block;
-
-			.message-content {
-				width: calc(100% - 108px);
+			.message-info {
+				width: calc(100% - 254px);
 				display: inline-block;
-				color: #a2a2a2;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-			}
 
-			.additional-info {
-				display: inline-block;
-				vertical-align: top;
-				z-index: 2;
-
-				.document-symbol {
-					width: 20px;
+				.message-content {
+					width: calc(100% - 108px);
 					display: inline-block;
-
+					color: #a2a2a2;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 
-				.message-date {
-					width: 80px;
+				.additional-info {
 					display: inline-block;
-					text-align: center;
+					vertical-align: top;
+					z-index: 2;
+
+					.document-symbol {
+						width: 20px;
+						display: inline-block;
+
+					}
+
+					.message-date {
+						width: 80px;
+						display: inline-block;
+						text-align: center;
+					}
 				}
 			}
 		}
