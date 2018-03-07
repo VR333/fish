@@ -193,6 +193,7 @@
 			width: 13px;
 			height: 13px;
 			display: inline-block;
+			position: relative;
 			border: 1px solid #c6c6c6;
 
 			&:hover {
@@ -204,8 +205,16 @@
 					height: 2px;
 					margin: auto;
 					position: relative;
-    			top: 40%;
+    				top: 40%;
 					background-color: grey;
+			}
+
+			.check-symbol {
+				position: absolute;
+				color: grey;
+				font-size: 17px;
+				top: -2px;
+				left: 0px;
 			}
 		}
 

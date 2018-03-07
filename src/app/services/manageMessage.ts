@@ -3,24 +3,23 @@ import { MESSAGES } from './../messages-common/messages'
 
 @Injectable()
 export class ManageMessagesService {
-  showActiveMessageButton: boolean = false;
+    showActiveMessageButton: boolean = false;
+    allMessagesActive: boolean = false;
 
-  messages = MESSAGES;
+    messages = MESSAGES;
 
-  checkIfActive() {
-    if (this.messages.filter( message => message.active).length) {
-        this.showActiveMessageButton = true;
-    } else {
-      this.showActiveMessageButton = false;
+    checkIfActive() {
+        let tempExpression = (this.messages.filter( message => message.active).length);
+        this.showActiveMessageButton = (tempExpression) ? true : false;
+        this.allMessagesActive = (tempExpression === this.messages.length) ? true : false;
     }
-  }
 
-  makeMessageActive(message) {
+    makeMessageActive(message) {
       message.active = !message.active;
       this.checkIfActive();
-  }
+    }
 
-  selectMessages(selectOption){
+    selectMessages(selectOption){
       switch (selectOption) {
         case 'All':
           this.makeMessagesInactive();
@@ -67,10 +66,11 @@ export class ManageMessagesService {
           this.checkIfActive();
           break;
       }
-  }
+    }
 
-  makeMessagesInactive() {
-    this.showActiveMessageButton = false;
-    this.messages.map( msg => msg.active = false);
-  }
+    makeMessagesInactive() {
+        this.showActiveMessageButton = false;
+        this.messages.map( msg => msg.active = false);
+        this.checkIfActive();
+    }
 }
