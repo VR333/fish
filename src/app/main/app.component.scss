@@ -1,22 +1,20 @@
 :host {
-	height: calc(100% - 109px);
+	height: calc(100% - 118px);
 	margin-left: 202px;
-	margin-right: 38px;
+	padding-right: 20px;
 	display: block;
 	overflow: auto;
 	user-select: none;
 
 	.messages-container {
-		margin-top: 5px;
 		font-size: 13px;
-		background-color: #f1f1f1;
-		border-top: 1px solid #e2e2e2;
 		cursor: pointer;
 	}
 
 
 	.footer {
 		margin-top: 15px;
+		margin-bottom: 200px;
 		color: grey;
 		font-size: 11px;
 		min-width: 600px;
