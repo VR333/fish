@@ -32,22 +32,38 @@ export class ManageMessagesService {
           break;
         case 'Read':
           this.makeMessagesInactive();
-          this.messages.map( msg => if(msg.read) { msg.active = true; } );
+          this.messages.map( msg => {
+              if(msg.read) {
+                  msg.active = true;
+               }
+            });
           this.checkIfActive();
           break;
         case 'Unread':
           this.makeMessagesInactive();
-          this.messages.map( msg => if(!msg.read) { msg.active = true; } );
+          this.messages.map( msg => {
+              if(!msg.read) {
+                  msg.active = true;
+              }
+          });
           this.checkIfActive();
           break;
         case 'Starred':
           this.makeMessagesInactive();
-          this.messages.map( msg => if(msg.starred) { msg.active = true; } );
+          this.messages.map( msg => {
+              if(msg.starred) {
+                  msg.active = true;
+              }
+          });
           this.checkIfActive();
           break;
         case 'Not Starred':
           this.makeMessagesInactive();
-          this.messages.map( msg => if(!msg.starred) { msg.active = true; } );
+          this.messages.map( msg => {
+              if(!msg.starred) {
+                  msg.active = true;
+              }
+          });
           this.checkIfActive();
           break;
       }
