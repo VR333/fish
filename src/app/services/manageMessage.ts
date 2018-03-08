@@ -26,9 +26,14 @@ export class ManageMessagesService {
     deleteMessage() {
         this.messages.map( msg => {
             if (msg.active) {
-                msg.category = 'deleted';
-                msg.active = false;
-                this.checkIfActive();
+                if (msg.category === 'basket') {
+                    let indexPoint = this.messages.findIndex( a => a === msg );
+                    this.messages.splice(indexPoint, 1);
+                } else {
+                    msg.category = 'basket';
+                    msg.active = false;
+                    this.checkIfActive();
+                }
             }
         });
     }

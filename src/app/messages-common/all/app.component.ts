@@ -9,6 +9,6 @@ import { ManageMessagesService } from './../../services/manageMessage';
 })
 export class AllComponent {
     constructor(private msg: ManageMessagesService) {}
-    
+
     messages = MESSAGES;
 }
