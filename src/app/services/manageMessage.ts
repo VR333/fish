@@ -40,15 +40,15 @@ export class ManageMessagesService {
 
     selectMessages(selectOption){
       switch (selectOption) {
-        case 'All':
+        case 'Усі':
           this.makeMessagesInactive();
           this.messages.map( msg => msg.active = true);
           this.checkIfActive();
           break;
-        case 'None':
+        case 'Нічого':
           this.makeMessagesInactive();
           break;
-        case 'Read':
+        case 'Прочитані':
           this.makeMessagesInactive();
           this.messages.map( msg => {
               if(msg.read) {
@@ -57,7 +57,7 @@ export class ManageMessagesService {
             });
           this.checkIfActive();
           break;
-        case 'Unread':
+        case 'Непрочитані':
           this.makeMessagesInactive();
           this.messages.map( msg => {
               if(!msg.read) {
@@ -66,7 +66,7 @@ export class ManageMessagesService {
           });
           this.checkIfActive();
           break;
-        case 'Starred':
+        case 'Із зірочкою':
           this.makeMessagesInactive();
           this.messages.map( msg => {
               if(msg.starred) {
@@ -75,7 +75,7 @@ export class ManageMessagesService {
           });
           this.checkIfActive();
           break;
-        case 'Not Starred':
+        case 'Без зірочки':
           this.makeMessagesInactive();
           this.messages.map( msg => {
               if(!msg.starred) {

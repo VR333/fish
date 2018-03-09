@@ -1,24 +1,16 @@
 <div class='header' [ngClass]="{
-		'header-floated-right-buttons': msg.showActiveMessageButton,
-		'header-inlineblock-right-buttons': !msg.showActiveMessageButton}">
-	<span class='fish-title'
-		(click)='showTitles()'
-		[ngClass]="{'fish-title-active' : isTitleActive}"
-		>
-		Fmail <span class='triangle-fix'>&#9701;</span>
+		'header-min-width-1100px': msg.showActiveMessageButton,
+		'header-min-width-820px': !msg.showActiveMessageButton}">
+		<span class='fish-title' (click)='showTitles()'
+			[ngClass]="{'fish-title-active' : isTitleActive}">Fmail
+			<span class='triangle-fix'>&#9701;</span>
 
-		<ul class='tooltip-title'>
-			<li class='fmail-title-option option-logo'>
-				<a href='#' class='title-link'>Fmail</a>
-			</li>
-			<li class='fmail-title-option'>
-				<a href='#' class='title-link'>Contacts</a>
-			</li>
-			<li class='fmail-title-option'>
-				<a href='#' class='title-link'>Tasks</a>
-			</li>
-		</ul>
-	</span>
+			<ul class='tooltip-title'>
+				<li *ngFor="let item of tooltipTitleOptions" [ngClass]='item.class'>
+					<a [href]='item.link' class='title-link'>{{item.text}}</a>
+				</li>
+			</ul>
+		</span>
 
 	<div class='left-buttons'>
 		<div class='btn btn-wrap actions tooltip-anchor' (click)='showActions()'>
@@ -28,7 +20,7 @@
 			</div>
 			<span class='triangle-fix'>&#9701;</span>
 
-			<span class='tooltip'>Actions</span>
+			<span class='tooltip'>Вибрати</span>
 
 			<ul class='tooltip-title'
 				[ngClass]="{'tooltip-title-active' : isActoinsActive}">
@@ -44,7 +36,7 @@
 			<div class='reload'>
 				<i class="fas fa-redo-alt"></i>
 			</div>
-			<span class='tooltip'>Refresh</span>
+			<span class='tooltip'>Оновити</span>
 		</div>
 
 		<div class='btn-wrap active-msg-actions' *ngIf="msg.showActiveMessageButton">
@@ -71,7 +63,7 @@
 		</div>
 
 		<div class='btn btn-wrap more' (click)='showMore()'>
-			More<span class='triangle-fix'>&#9701;</span>
+			Більше<span class='triangle-fix'>&#9701;</span>
 
 			<ul class='tooltip-title'
 				[ngClass]="{'tooltip-title-active' : isMoreActive}">
@@ -90,46 +82,44 @@
 		</div>
 	</div>
 
-	<div class='right-buttons'
-			[ngClass]="{'floated-version': msg.showActiveMessageButton,
-									'block-version': !msg.showActiveMessageButton}">
+	<div class='right-buttons'>
 		<span class='messages-counter'>
 			<b>1-50 of 88</b>
 			<ul class='tooltip-title'>
-				<li class='fmail-title-option option-disabled'>Newest</li>
-				<li class='fmail-title-option'>Latest</li>
+				<li class='fmail-title-option option-disabled'>Найновіші</li>
+				<li class='fmail-title-option'>Найстаріші</li>
 			</ul>
 		</span>
 
 		<div class='btn-wrap arrows'>
 			<div class='btn arrow arrow-left tooltip-anchor'>
 				<i class="fas fa-chevron-left"></i>
-				<span class='tooltip'>Newer</span>
+				<span class='tooltip'>Новіші</span>
 			</div>
 			<div class='btn arrow arrow-right tooltip-anchor'>
 				<i class="fas fa-chevron-right"></i>
-				<span class='tooltip'>Later</span>
+				<span class='tooltip'>Старіші</span>
 			</div>
 		</div>
 
 		<div class='btn-wrap language'>
 			<div class='btn language-show tooltip-anchor'>
-				En
-				<span class='tooltip'>On/off transliteration (Ctrl-Shift-K)</span>
+				Ук
+				<span class='tooltip'>Увімкнення/вимкнення транслітерації (Ctrl-Shift-K)</span>
 			</div>
 			<div class='btn language-choose tooltip-anchor' (click)='showLanguageChoice()'>
 				<span class='triangle-fix'>&#9701;</span>
-				<span class='tooltip'>Choose language</span>
+				<span class='tooltip'>Вибрати мову</span>
 
 				<ul class='tooltip-title'
 					[ngClass]="{'tooltip-title-active' : isLanguageChoiceActive}">
-					<li class='fmail-title-option'>Transliteration</li>
-					<li class='fmail-title-option'>Screen keyboard</li>
-					<li class='fmail-title-option'>english</li>
+					<li class='fmail-title-option'>Транслітерація</li>
+					<li class='fmail-title-option'>Екранна клавіатура</li>
+					<li class='fmail-title-option'>українська</li>
 
 					<hr class='separation-line'/>
 
-					<div class='additioanl-option'>Input tools settings</div>
+					<div class='additioanl-option'>Налаштування інструментів вводу</div>
 				</ul>
 			</div>
 		</div>
@@ -141,7 +131,7 @@
 
 			<span class='triangle-fix'>&#9701;</span>
 
-			<span class='tooltip'>Settings</span>
+			<span class='tooltip'>Налаштування</span>
 			<ul class='tooltip-title'
 				[ngClass]="{'tooltip-title-active' : isSettingsActive}">
 				<li class='fmail-title-option'>Usual (for average screen)</li>

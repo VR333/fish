@@ -13,12 +13,30 @@ export class HeaderComponent {
     isLanguageChoiceActive :boolean = false;
     isSettingsActive :boolean = false;
     selectActiveOptions = [
-      'All',
-      'None',
-      'Read',
-      'Unread',
-      'Starred',
-      'Not Starred'
+      'Усі',
+      'Нічого',
+      'Прочитані',
+      'Непрочитані',
+      'Із зірочкою',
+      'Без зірочки'
+    ];
+
+    tooltipTitleOptions = [
+        {
+            text: 'Fmail',
+            class: 'fmail-title-option option-logo',
+            link: '#'
+        },
+        {
+            text: 'Контакти',
+            class: 'fmail-title-option',
+            link: '#'
+        },
+        {
+            text: 'Завдання',
+            class: 'fmail-title-option',
+            link: '#'
+        }
     ];
 
     constructor(private msg: ManageMessagesService) {}
