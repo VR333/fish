@@ -54,16 +54,20 @@ export class MenuComponent {
 
     extendedCategoryOptions = [
         {
-            text: 'IMG Соцмережі'
+            text: 'Соцмережі',
+            img: 'fas fa-users'
         },
         {
-            text: 'IMG Реклама'
+            text: 'Реклама',
+            img: 'fas fa-tags'
         },
         {
-            text: 'IMG Оновлення'
+            text: 'Оновлення',
+            img: 'fas fa-info-circle'
         },
         {
-            text: 'IMG Форуми'
+            text: 'Форуми',
+            img: 'fas fa-comments'
         }
     ];
 
