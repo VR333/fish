@@ -14,7 +14,7 @@
 
 	<div class='left-buttons'>
 		<div class='btn btn-wrap actions tooltip-anchor' (click)='showActions()'>
-			<div class='square' (click)='makeInactive($event)'>
+			<div class='square' (click)='changeActiveness($event)'>
 				<div *ngIf="(msg.showActiveMessageButton && !msg.allMessagesActive)" class='horiz-line'></div>
 				<span class='check-symbol' *ngIf="msg.showActiveMessageButton && msg.allMessagesActive">&#10003;</span>
 			</div>

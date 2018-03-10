@@ -41,9 +41,9 @@ export class HeaderComponent {
 
     constructor(private msg: ManageMessagesService) {}
 
-    makeInactive(event) {
+    changeActiveness(event) {
         event.stopPropagation();
-        this.msg.makeMessagesChangeActiveness(false);
+        this.msg.makeMessagesChangeActiveness(!this.msg.showActiveMessageButton);
     }
 
     showTitles() {
