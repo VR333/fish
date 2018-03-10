@@ -24,7 +24,9 @@ export class ManageMessagesService {
     }
 
     deleteMessage() {
-        this.messages.map( msg => {
+        let duplicate = this.messages.slice(0);
+
+        duplicate.map( msg => {
             if (msg.active) {
                 if (msg.category === 'basket') {
                     let indexPoint = this.messages.findIndex( a => a === msg );
@@ -32,10 +34,10 @@ export class ManageMessagesService {
                 } else {
                     msg.category = 'basket';
                     msg.active = false;
-                    this.checkIfActive();
                 }
             }
         });
+        this.checkIfActive();
     }
 
     selectMessages(selectOption){
