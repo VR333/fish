@@ -43,55 +43,44 @@ export class ManageMessagesService {
     selectMessages(selectOption){
       switch (selectOption) {
         case 'Усі':
-          this.makeMessagesInactive();
-          this.messages.map( msg => msg.active = true);
-          this.checkIfActive();
+          this.makeMessagesChangeActiveness(true);
           break;
         case 'Нічого':
-          this.makeMessagesInactive();
+          this.makeMessagesChangeActiveness(false);
           break;
         case 'Прочитані':
-          this.makeMessagesInactive();
-          this.messages.map( msg => {
-              if(msg.read) {
-                  msg.active = true;
-               }
-            });
-          this.checkIfActive();
+          this.makeMessagesActiveDueToRead(true);
           break;
         case 'Непрочитані':
-          this.makeMessagesInactive();
-          this.messages.map( msg => {
-              if(!msg.read) {
-                  msg.active = true;
-              }
-          });
-          this.checkIfActive();
+          this.makeMessagesActiveDueToRead(false);
           break;
         case 'Із зірочкою':
-          this.makeMessagesInactive();
-          this.messages.map( msg => {
-              if(msg.starred) {
-                  msg.active = true;
-              }
-          });
-          this.checkIfActive();
+          this.makeMessagesActiveDueToStarred(true);
           break;
         case 'Без зірочки':
-          this.makeMessagesInactive();
-          this.messages.map( msg => {
-              if(!msg.starred) {
-                  msg.active = true;
-              }
-          });
-          this.checkIfActive();
+          this.makeMessagesActiveDueToStarred(false);
           break;
       }
     }
 
-    makeMessagesInactive() {
-        this.showActiveMessageButton = false;
-        this.messages.map( msg => msg.active = false);
+    makeMessagesChangeActiveness(wantActive) {
+        this.messages.map( msg => msg.active = wantActive);
+        this.checkIfActive();
+    }
+
+    makeMessagesActiveDueToRead(wantRead) {
+      this.messages.map( msg => {
+          let condition = (wantRead) ? msg.read : !msg.read;
+          msg.active = condition;
+        });
+        this.checkIfActive();
+    }
+
+    makeMessagesActiveDueToStarred(wantStarred) {
+      this.messages.map( msg => {
+          let condition = (wantStarred) ? msg.starred : !msg.starred;
+          msg.active = condition;
+        });
         this.checkIfActive();
     }
 

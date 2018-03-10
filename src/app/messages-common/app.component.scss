@@ -19,18 +19,28 @@
 		}
 
 		.category-common {
-			height: 25px;
+			height: 30px;
 			vertical-align: middle;
-			line-height: 22px;
+			line-height: 24px;
 			display: inline-block;
 			background-color: #f1f1f1;
 			cursor: pointer;
+		}
+
+		.category-icon {
+			margin-right: 5px;
+			font-size: 15px;
+			color: grey;
 		}
 
 		.category-active {
 			border-top: 2px solid grey;
 			border-bottom: 2px solid transparent;
 			background-color: white;
+
+			.category-icon {
+				color: black;
+			}
 		}
 
 		.add-category {

@@ -43,7 +43,7 @@ export class HeaderComponent {
 
     makeInactive(event) {
         event.stopPropagation();
-        this.msg.makeMessagesInactive();
+        this.msg.makeMessagesChangeActiveness(false);
     }
 
     showTitles() {
