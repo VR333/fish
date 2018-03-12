@@ -1,110 +1,39 @@
-<div class='write-btn'>НАПИСАТИ</div>
+<div id='menu' (click)='resize()'>
+	<fish-menu-options></fish-menu-options>
 
-<div class='menu-links'>
-	<div class='menu-item'
-		 *ngFor="let option of coreMenuOptions"
-		 routerLink='{{option.link}}'
-		 routerLinkActive='active-item' >
+	<div class="user-profile" id='drag'>
+		<div class='user-profile-icon'>
+				<div class='drag-symbol'>
+					<i class="fas fa-ellipsis-h"></i>
+				</div>
+				<img src='./assets/menu/user.png' class='user-image'/>
+				<span class='user-name'>Username</span>
+				<span class='create-chat-btn'
+							(click)='createChat()'
+							[ngClass]="{'create-chat-btn-active': showChatCreation}">+
+				</span>
+		</div>
 
-		<div class='menu-item-text'
-			 [ngClass]="{ 'income-messages' : option.text === 'Вхідні' }"
-			 >
-			{{option.text}}
-			<div class='income-arrow' *ngIf="option.text === 'Вхідні'">
-				<span class='triangle-fix'>&#9701;</span>
+		<div class='option-box'>
+			<div class='contact-option-active'>
+				<i class="fas fa-quote-right"></i>
 			</div>
+			<div class='contact-option-text'>Немає нещодавніх бесід</div>
+			<div class='contact-option-text blue-text'>Розпочати новий сеанс</div>
 		</div>
 	</div>
 
-	<div class='menu-item' *ngIf="!showExtendedMenu" (click)='toShowExtendedMenu()' >
-		<div class='menu-item-text menu-item-text-back-white'>
-			Більше <span class='triangle-fix'>&#9701;</span>
-		</div>
-	</div>
-
-	<div class='menu-item' *ngIf="showExtendedMenu" (click)='toShowExtendedMenu()'>
-		<div class='menu-item-text menu-item-text-back-white less-border'>
-			Менше <span class='triangle-fix triangle-up'>&#9701;</span>
-		</div>
-	</div>
-
-	<div class='extended-menu' *ngIf="showExtendedMenu">
-		<div class='menu-item'
-			 *ngFor="let option of extendedMenuOptions"
-			 routerLink='{{option.link}}'
-			 routerLinkActive='active-item'>
-			<div class='menu-item-text'>{{option.text}}</div>
+	<div class='contacts'>
+		<div class='contact-option'>
+			<i class="fas fa-user"></i>
 		</div>
 
-		<div class='menu-item' (click)='toShowExtendedCategory()'>
-			<div class='menu-item-text category'
-				[ngClass]="showExtendedCategory ? 'normal-category-text' : 'extend-category-text' "
-			>Категорії
-			</div>
-		</div>
-
-		<div class='extended-category' *ngIf="showExtendedCategory">
-			<div class='menu-item'
-				 *ngFor="let option of extendedCategoryOptions">
-				<div class='menu-item-text'>
-					<span class='extended-category-icon'>
-	   					<i [ngClass]="option.img"></i>
-	   			 	</span>
-				 	{{option.text}}
-					<div class='income-arrow' [ngClass]="option.class">
-						<span class='triangle-fix'>&#9660;</span>
-					</div>
-			 	</div>
-			</div>
-		</div>
-
-		<div class='menu-item'>
-			<div class='menu-item-text menu-item-text-back-white'>
-				<a class='extended-menu-link' href='#'>Керувати мітками</a>
-			</div>
-		</div>
-
-		<div class='menu-item'>
-			<div class='menu-item-text menu-item-text-back-white'>
-				<a class='extended-menu-link' href='#'>Створити нову мітку</a>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="user-profile">
-	<div class='user-profile-icon'>
-			<div class='drag-symbol'>
-				<i class="fas fa-ellipsis-h"></i>
-			</div>
-			<img src='./assets/menu/user.png' class='user-image'/>
-			<span class='user-name'>Username</span>
-			<span class='create-chat-btn'
-						(click)='createChat()'
-						[ngClass]="{'create-chat-btn-active': showChatCreation}">+
-			</span>
-	</div>
-
-	<div class='option-box'>
-		<div class='contact-option-active'>
+		<div class='contact-option'>
 			<i class="fas fa-quote-right"></i>
 		</div>
-		<div class='contact-option-text'>Немає нещодавніх бесід</div>
-		<div class='contact-option-text blue-text'>Розпочати новий сеанс</div>
-	</div>
-</div>
 
-<div class='contacts'>
-	<div class='contact-option'>
-		<i class="fas fa-user"></i>
-	</div>
-
-	<div class='contact-option'>
-		<i class="fas fa-quote-right"></i>
-	</div>
-
-	<div class='contact-option'>
-		<i class="fas fa-phone"></i>
+		<div class='contact-option'>
+			<i class="fas fa-phone"></i>
+		</div>
 	</div>
 </div>

@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routes.module';
 
-
 import { AppComponent } from './app.component';
 import { ForbiddenComponent } from './forbidden/app.component';
 import { HeaderComponent } from './header/app.component';
 import { MenuComponent } from './menu/app.component';
+import { MenuOptionsComponent } from './menu/menu-options/app.component';
 import { MainContentComponent } from './main/app.component';
 import { InboxComponent } from './messages-common/inbox/app.component';
 import { SentComponent } from './messages-common/sent/app.component';
@@ -36,7 +36,8 @@ import { ManageMessagesService } from './services/manageMessage';
     BasketComponent,
     AllComponent,
     ImportantComponent,
-    SpamComponent
+    SpamComponent,
+    MenuOptionsComponent
   ],
   imports: [
     BrowserModule,

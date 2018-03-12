@@ -6,84 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class MenuComponent {
-    showExtendedMenu:boolean = false;
-    showExtendedCategory:boolean = false;
     showChatCreation:boolean = false;
 
-    coreMenuOptions = [
-        {
-            text: 'Вхідні',
-            link: 'inbox'
-        },
-        {
-            text: 'Із зірочкою',
-            link: 'starred'
-        },
-        {
-            text: 'Надіслані',
-            link: 'sent'
-        },
-        {
-            text: 'Чернетки',
-            link: 'draft'
-        }
-    ];
-
-    extendedMenuOptions = [
-        {
-            text: 'Важливі',
-            link: 'important'
-        },
-        {
-            text: 'Чати',
-            link: 'chats'
-        },
-        {
-            text: 'Уся пошта',
-            link: 'all'
-        },
-        {
-            text: 'Спам',
-            link: 'spam'
-        },
-        {
-            text: 'Кошик',
-            link: 'basket'
-        }
-    ];
-
-    extendedCategoryOptions = [
-        {
-            text: 'Соцмережі',
-            img: 'fas fa-users',
-            class: 'category-style-arrow blue-style-arrow'
-        },
-        {
-            text: 'Реклама',
-            img: 'fas fa-tags',
-            class: 'category-style-arrow green-style-arrow'
-        },
-        {
-            text: 'Оновлення',
-            img: 'fas fa-info-circle',
-            class: 'category-style-arrow yellow-style-arrow'
-        },
-        {
-            text: 'Форуми',
-            img: 'fas fa-comments',
-            class: 'category-style-arrow purple-style-arrow'
-        }
-    ];
-
-    toShowExtendedMenu() {
-        this.showExtendedMenu = !this.showExtendedMenu;
-    }
-
-    toShowExtendedCategory() {
-        this.showExtendedCategory = !this.showExtendedCategory;
-    }
-
-    createChat() {
-        this.showChatCreation = !this.showChatCreation;
+    resize() {
+        let menu = document.getElementById('menu');
+        let drag = document.getElementById('drag');
+        let options = document.getElementById('msg-opt');
+        let freeSpace = menu.offsetHeight - options.offsetHeight - 42;
+        drag.style.height = `${freeSpace}px`;
     }
 }
