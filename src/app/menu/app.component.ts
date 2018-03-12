@@ -55,19 +55,23 @@ export class MenuComponent {
     extendedCategoryOptions = [
         {
             text: 'Соцмережі',
-            img: 'fas fa-users'
+            img: 'fas fa-users',
+            class: 'category-style-arrow blue-style-arrow'
         },
         {
             text: 'Реклама',
-            img: 'fas fa-tags'
+            img: 'fas fa-tags',
+            class: 'category-style-arrow green-style-arrow'
         },
         {
             text: 'Оновлення',
-            img: 'fas fa-info-circle'
+            img: 'fas fa-info-circle',
+            class: 'category-style-arrow yellow-style-arrow'
         },
         {
             text: 'Форуми',
-            img: 'fas fa-comments'
+            img: 'fas fa-comments',
+            class: 'category-style-arrow purple-style-arrow'
         }
     ];
 

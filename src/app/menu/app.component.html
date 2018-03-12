@@ -4,15 +4,13 @@
 	<div class='menu-item'
 		 *ngFor="let option of coreMenuOptions"
 		 routerLink='{{option.link}}'
-		 routerLinkActive='active-item'
-		 [ngClass]="{ 'income-messages' : option.text === 'Income' }"
-		 >
+		 routerLinkActive='active-item' >
 
 		<div class='menu-item-text'
-			 [ngClass]="{ 'income-messages' : option.text === 'Income' }"
+			 [ngClass]="{ 'income-messages' : option.text === 'Вхідні' }"
 			 >
 			{{option.text}}
-			<div class='income-arrow' *ngIf="option.text === 'Income'">
+			<div class='income-arrow' *ngIf="option.text === 'Вхідні'">
 				<span class='triangle-fix'>&#9701;</span>
 			</div>
 		</div>
@@ -53,6 +51,9 @@
 	   					<i [ngClass]="option.img"></i>
 	   			 	</span>
 				 	{{option.text}}
+					<div class='income-arrow' [ngClass]="option.class">
+						<span class='triangle-fix'>&#9660;</span>
+					</div>
 			 	</div>
 			</div>
 		</div>
