@@ -55,22 +55,26 @@ export class MenuOptionsComponent {
         {
             text: 'Соцмережі',
             img: 'fas fa-users',
-            class: 'category-style-arrow blue-style-arrow'
+            class: 'category-style-arrow blue-style-arrow',
+            link: 'category/social'
         },
         {
             text: 'Реклама',
             img: 'fas fa-tags',
-            class: 'category-style-arrow green-style-arrow'
+            class: 'category-style-arrow green-style-arrow',
+            link: 'category/advertisment'
         },
         {
             text: 'Оновлення',
             img: 'fas fa-info-circle',
-            class: 'category-style-arrow yellow-style-arrow'
+            class: 'category-style-arrow yellow-style-arrow',
+            link: 'category/updates'
         },
         {
             text: 'Форуми',
             img: 'fas fa-comments',
-            class: 'category-style-arrow purple-style-arrow'
+            class: 'category-style-arrow purple-style-arrow',
+            link: 'category/forums'
         }
     ];
 

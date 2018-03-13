@@ -20,6 +20,11 @@ import { AllComponent } from './messages-common/all/app.component';
 import { ImportantComponent } from './messages-common/important/app.component';
 import { SpamComponent } from './messages-common/spam/app.component';
 
+import { AdvertismentComponent } from './messages-common/advertisment/app.component';
+import { UpdatesComponent } from './messages-common/updates/app.component';
+import { SocialComponent } from './messages-common/social/app.component';
+import { ForumsComponent } from './messages-common/forums/app.component';
+
 import { ManageMessagesService } from './services/manageMessage';
 
 @NgModule({
@@ -39,7 +44,11 @@ import { ManageMessagesService } from './services/manageMessage';
     ImportantComponent,
     SpamComponent,
     MenuOptionsComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    AdvertismentComponent,
+    UpdatesComponent,
+    SocialComponent,
+    ForumsComponent
   ],
   imports: [
     BrowserModule,

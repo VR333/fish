@@ -46,7 +46,9 @@
 
 			<div class='extended-category' *ngIf="showExtendedCategory">
 				<div class='menu-item'
-					 *ngFor="let option of extendedCategoryOptions">
+				 		*ngFor="let option of extendedCategoryOptions"
+				 		routerLink="{{option.link}}"
+						routerLinkActive='active-item'>
 					<div class='menu-item-text'>
 						<span class='extended-category-icon'>
 		   					<i [ngClass]="option.img"></i>
