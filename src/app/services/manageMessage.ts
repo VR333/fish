@@ -1,26 +1,60 @@
 import { Injectable } from '@angular/core';
-import { MESSAGES } from './../messages-common/messages'
+import { MESSAGES } from './../messages-common/messages';
 
 @Injectable()
 export class ManageMessagesService {
     showActiveMessageButton: boolean = false;
     allMessagesActive: boolean = false;
+    currentMessagesCategory;
 
     messages = MESSAGES;
 
+    // general methods
+
+    getNeededMessages() {
+        if (this.currentMessagesCategory === 'starred') {
+            return this.messages.filter( msg => msg.starred );
+        } else if (this.currentMessagesCategory) {
+            return this.messages.filter(
+                msg => msg.category === this.currentMessagesCategory
+            );
+        } else {
+            return this.messages;
+        }
+    }
+
     checkIfActive() {
-        let tempExpression = (this.messages.filter( message => message.active).length);
+        let tempExpression = (this.getNeededMessages().filter( msg => msg.active).length);
         this.showActiveMessageButton = (tempExpression) ? true : false;
-        this.allMessagesActive = (tempExpression === this.messages.length) ? true : false;
+        this.allMessagesActive = (tempExpression === this.getNeededMessages().length) ? true : false;
     }
 
-    makeMessageActive(message) {
-      message.active = !message.active;
-      this.checkIfActive();
-    }
+    // Used by Header
 
-    makeMessageChangeStar(message) {
-      message.starred = !message.starred;
+    selectMessages(selectOption) {
+        debugger;
+        let neededMessages = this.getNeededMessages();
+
+        switch (selectOption) {
+            case 'Усі':
+              this.makeMessagesChangeActiveness(true, neededMessages);
+              break;
+            case 'Нічого':
+              this.makeMessagesChangeActiveness(false, neededMessages);
+              break;
+            case 'Прочитані':
+              this.makeMessagesActiveDueToRead(true, neededMessages);
+              break;
+            case 'Непрочитані':
+              this.makeMessagesActiveDueToRead(false, neededMessages);
+              break;
+            case 'Із зірочкою':
+              this.makeMessagesActiveDueToStarred(true, neededMessages);
+              break;
+            case 'Без зірочки':
+              this.makeMessagesActiveDueToStarred(false, neededMessages);
+              break;
+        }
     }
 
     deleteMessage() {
@@ -34,50 +68,28 @@ export class ManageMessagesService {
                 } else {
                     msg.category = 'basket';
                     msg.active = false;
+                    msg.starred = false;
                 }
             }
         });
         this.checkIfActive();
     }
 
-    selectMessages(selectOption){
-      switch (selectOption) {
-        case 'Усі':
-          this.makeMessagesChangeActiveness(true);
-          break;
-        case 'Нічого':
-          this.makeMessagesChangeActiveness(false);
-          break;
-        case 'Прочитані':
-          this.makeMessagesActiveDueToRead(true);
-          break;
-        case 'Непрочитані':
-          this.makeMessagesActiveDueToRead(false);
-          break;
-        case 'Із зірочкою':
-          this.makeMessagesActiveDueToStarred(true);
-          break;
-        case 'Без зірочки':
-          this.makeMessagesActiveDueToStarred(false);
-          break;
-      }
-    }
-
-    makeMessagesChangeActiveness(wantActive) {
-        this.messages.map( msg => msg.active = wantActive);
+    makeMessagesChangeActiveness( wantActive, neededMessages=this.getNeededMessages() ) {
+        neededMessages.map( msg => msg.active = wantActive);
         this.checkIfActive();
     }
 
-    makeMessagesActiveDueToRead(wantRead) {
-      this.messages.map( msg => {
+    makeMessagesActiveDueToRead(wantRead, neededMessages) {
+      neededMessages.map( msg => {
           let condition = (wantRead) ? msg.read : !msg.read;
           msg.active = condition;
         });
         this.checkIfActive();
     }
 
-    makeMessagesActiveDueToStarred(wantStarred) {
-      this.messages.map( msg => {
+    makeMessagesActiveDueToStarred(wantStarred, neededMessages) {
+      neededMessages.map( msg => {
           let condition = (wantStarred) ? msg.starred : !msg.starred;
           msg.active = condition;
         });
@@ -85,7 +97,7 @@ export class ManageMessagesService {
     }
 
     markAllasRead() {
-        this.messages.map( msg => msg.read = true);
+        this.getNeededMessages().map( msg => msg.read = true);
     }
 
     changeReadState(wantAsRead) {
@@ -110,5 +122,16 @@ export class ManageMessagesService {
                 msg.starred = wantAsStarred;
             }
         });
+    }
+
+    // Used by Main
+
+    makeMessageActive(message) {
+      message.active = !message.active;
+      this.checkIfActive();
+    }
+
+    makeMessageChangeStar(message) {
+      message.starred = !message.starred;
     }
 }

@@ -1,4 +1,4 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { MESSAGES } from './../messages';
 import { ManageMessagesService } from './../../services/manageMessage';
 
@@ -7,11 +7,16 @@ import { ManageMessagesService } from './../../services/manageMessage';
   templateUrl: './../app.component.html',
   styleUrls: ['./../app.component.scss']
 })
-export class SentComponent implements DoCheck {
+export class SentComponent implements OnInit, DoCheck {
     constructor(private msg: ManageMessagesService) {}
 
     messages = MESSAGES.filter( message => message.category === 'sent');
-    
+
+    ngOnInit() {
+        this.msg.currentMessagesCategory = 'sent';
+        this.msg.checkIfActive();
+    }
+
     ngDoCheck() {
         this.messages = MESSAGES.filter( message => message.category === 'sent');
     }
