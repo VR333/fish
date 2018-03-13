@@ -6,8 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class MenuComponent {
-    showChatCreation:boolean = false;
-
     resize() {
         let menu = document.getElementById('menu');
         let drag = document.getElementById('drag');

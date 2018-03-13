@@ -8,6 +8,7 @@ import { ForbiddenComponent } from './forbidden/app.component';
 import { HeaderComponent } from './header/app.component';
 import { MenuComponent } from './menu/app.component';
 import { MenuOptionsComponent } from './menu/menu-options/app.component';
+import { UserProfileComponent } from './menu/user-profile/app.component';
 import { MainContentComponent } from './main/app.component';
 import { InboxComponent } from './messages-common/inbox/app.component';
 import { SentComponent } from './messages-common/sent/app.component';
@@ -37,7 +38,8 @@ import { ManageMessagesService } from './services/manageMessage';
     AllComponent,
     ImportantComponent,
     SpamComponent,
-    MenuOptionsComponent
+    MenuOptionsComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

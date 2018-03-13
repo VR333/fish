@@ -1,0 +1,144 @@
+.user-profile {
+    height: 657px;
+    position: relative;
+    background-color: white;
+
+    &:hover .user-profile-icon .drag-symbol {
+        visibility: visible;
+    }
+
+    .user-profile-icon {
+        height: 50px;
+        line-height: 37px;
+        margin: 3px 24px;
+        padding-left: 5px;
+        position: relative;
+        font-size: 13px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #eee transparent #eee transparent;
+        // box-shadow: 0px -1px 3px rgba(173,173,173,0.3);
+
+        &::before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          bottom: 8px;
+          left: 25px;
+          border-radius: 100%;
+          background-color: #31b531;
+        }
+
+        .drag-symbol {
+          width: 100%;
+          height: 5px;
+          position: relative;
+          line-height: 5px;
+          top: -3px;
+          cursor: ns-resize;
+          text-align: center;
+          color: #c2c2c2;
+          visibility: hidden;
+        }
+
+        .user-image {
+          width: 26px;
+          height: 26px;
+          vertical-align: middle;
+        }
+
+        .user-name {
+            position: relative;
+            margin-right: 26px;
+
+            &::after {
+                content: "◥";
+                position: absolute;
+                right: -13px;
+                top: -12px;
+                color: #c2c2c2;
+                font-size: 7px;
+                transform: rotate(135deg);
+            }
+        }
+
+        .create-chat-btn {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 24px;
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            color: #c2c2c2;
+            text-align: center;
+            border-radius: 100%;
+        }
+
+        .create-chat-btn-active {
+            color: #31b531;
+            background-color: #e2e2e2;
+        }
+    }
+}
+
+.option-box {
+    height: calc(100% - 50px);
+    padding-top: calc(100% - 50%);
+
+    .contact-option-text {
+        font-size: 12px;
+        text-align: center;
+        color: grey;
+    }
+
+    .blue-text {
+        color: #15c;
+    }
+
+    .contact-option-active {
+        height: 70px;
+        width: 70px;
+        line-height: 78px;
+        margin: auto;
+        margin-bottom: 40px;
+        position: relative;
+        font-size: 25px;
+        text-align: center;
+        color: white;
+        background-color: #f2f2f2;
+        border-radius: 50%;
+
+        &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            display: inline-block;
+            right: 10px;
+            bottom: -13px;
+            border-top: 25px solid #f2f2f2;
+            border-right: 25px solid transparent;
+        }
+    }
+}
+
+.contacts {
+    margin: 3px 24px;
+    border-top: 1px solid #eee;
+    padding: 0 20px;
+    position: absolute;
+    bottom: -10px;
+    background-color: white;
+
+    .contact-option {
+        width: 40px;
+        margin-right: -5px;
+        padding: 8px 10px;
+        display: inline-block;
+        font-size: 14px;
+        text-align: center;
+        color: #c2c2c2;
+    }
+}
