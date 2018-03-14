@@ -1,3 +1,5 @@
+
+
 .menu-options {
     .write-btn {
         width: 115px;
@@ -28,7 +30,7 @@
         height: 12px;
         line-height: 9px;
         position: absolute;
-        top: 4px;
+        top: 20%;
         right: 5px;
         font-size: 10px;
         text-align: center;
@@ -91,6 +93,8 @@
     }
 
     .menu-item {
+        height: 19px;
+        line-height: 19px;
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
         cursor: pointer;
@@ -105,7 +109,7 @@
 
         .menu-item-text {
             margin: 0px 8px;
-            padding: 2px 0px 2px 19px;
+            padding-left: 19px;
             font-size: 13px;
             position: relative;
 
@@ -120,9 +124,6 @@
             }
         }
 
-        // .extended-menu {
-        // }
-
         .less-border {
             margin-bottom: 1px;
             border-bottom: 1px solid #eee;
@@ -136,7 +137,6 @@
                 content: "◥";
                 position: absolute;
                 left: 4px;
-                top: 4px;
                 color: #595959;
                 font-size: 8px;
                 transform: rotate(45deg);
@@ -153,7 +153,7 @@
 
         .normal-category-text::before {
             content: "◥";
-            top: 2px;
+            top: -2px;
             transform: rotate(135deg);
         }
 
