@@ -1,3 +1,65 @@
+@media screen and (max-width: 1059px) {
+	.category {
+		width: 32%;
+		padding-left: 10px;
+	}
+
+	.category-common {
+		height: 30px;
+		line-height: 30px;
+	}
+
+	div.category-active {
+		line-height: 28px;
+	}
+
+	.jump-fix:hover {
+		line-height: 28px
+	}
+
+	.category-horiz-line {
+		width: calc(100% - 796px);
+	}
+
+	.message {
+		height: 23px;
+	}
+}
+
+@media screen and (min-width: 1060px) {
+	.category {
+		width: 250px;
+		padding-left: 20px;
+	}
+
+	.category-common {
+		height: 42px;
+		line-height: 42px;
+	}
+
+	div.category-active {
+		line-height: 40px;
+	}
+
+	.jump-fix:hover {
+		line-height: 40px
+	}
+
+	.category-horiz-line {
+		width: calc(100% - 758px);
+	}
+
+	.message {
+		height: 33px;
+	}
+}
+
+@media screen and (min-width: 1252px) {
+	.message {
+		height: 38px;
+	}
+}
+
 :host {
 	display: block;
 	background-color: white;
@@ -6,25 +68,22 @@
 		min-width: 400px;
 		margin-top: 10px;
 		margin-bottom: 7px;
+		cursor: default;
 
 		.category {
-			width: 32%;
 			margin-right: -7px;
-			padding-left: 10px;
 			font-size: 13px;
 			text-align: left;
 			border: 1px solid #d7d7d7;
 			border-right: 1px solid transparent;
-			border-top: 2px solid transparent;
+			border-top: 1px solid #d7d7d7;
 		}
 
 		.category-common {
-			height: 30px;
-			vertical-align: middle;
-			line-height: 24px;
 			display: inline-block;
 			background-color: #f1f1f1;
 			cursor: pointer;
+			vertical-align: middle;
 		}
 
 		.category-icon {
@@ -35,7 +94,7 @@
 
 		.category-active {
 			border-top: 2px solid grey;
-			border-bottom: 2px solid transparent;
+			border-bottom: 1px solid transparent;
 			background-color: white;
 
 			.category-icon {
@@ -45,15 +104,22 @@
 
 		.add-category {
 			width: 18px;
+			margin-right: -4px;
 			font-weight: bold;
 			font-size: 16px;
 			text-align: center;
 			color: grey;
-			border: 1px solid #e5e5e5;
+			border: 1px solid #d7d7d7;
 
 			&:hover {
 				color: black;
 			}
+		}
+
+		.category-horiz-line {
+		    display: inline-block;
+		    vertical-align: bottom;
+		    border-bottom: 1px solid #d7d7d7;
 		}
 
 		.grey:hover {
@@ -85,7 +151,6 @@
 		}
 
 		.message {
-			height: 25px;
 			min-width: 510px;
 			background-color: #f1f1f1;
 			border-width: 1px;

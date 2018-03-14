@@ -1,4 +1,35 @@
+@media screen and (max-width: 1059px) {
+    .menu-item {
+        height: 19px;
+        line-height: 19px;
+    }
 
+    .income-arrow {
+        top: 20%;
+    }
+}
+
+@media screen and (min-width: 1060px) {
+    .menu-item {
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .income-arrow {
+        top: 25%;
+    }
+}
+
+@media screen and (min-width: 1252px) {
+    .menu-item {
+        height: 28px;
+        line-height: 28px;
+    }
+
+    .income-arrow {
+        top: 30%;
+    }
+}
 
 .menu-options {
     .write-btn {
@@ -25,76 +56,7 @@
         }
     }
 
-    .income-arrow {
-        width: 12px;
-        height: 12px;
-        line-height: 9px;
-        position: absolute;
-        top: 20%;
-        right: 5px;
-        font-size: 10px;
-        text-align: center;
-        color: black;
-        background-color: white;
-        border: 1px solid #aeaeae;
-        border-radius: 2px;
-        visibility: hidden;
-
-        .triangle-fix {
-          top: -2px;
-          font-size: 7px;
-        }
-
-        &:hover {
-            color: white;
-            background-color: black;
-            border-color: transparent;
-        }
-    }
-
-    .category-style-arrow {
-        color: white;
-        border: none;
-
-        span.triangle-fix {
-            top: 0px;
-            font-size: 9px;
-            transform: rotate(0deg);
-        }
-    }
-
-    .blue-style-arrow {
-        background-color: skyblue;
-    }
-
-    .green-style-arrow {
-        background-color: green;
-    }
-
-    .yellow-style-arrow {
-        background-color: orange;
-    }
-
-    .purple-style-arrow {
-        background-color: purple;
-    }
-
-    span.triangle-up {
-      top: 1px;
-      transform: rotate(-45deg);
-    }
-
-    .triangle-fix {
-      display: inline-block;
-      position: relative;
-      top: -3px;
-      font-size: 7px;
-      transform: rotate(135deg);
-    }
-
     .menu-item {
-        height: 19px;
-        line-height: 19px;
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
         cursor: pointer;
@@ -166,6 +128,72 @@
             }
         }
 
+    }
+
+    .income-arrow {
+        width: 12px;
+        height: 12px;
+        line-height: 9px;
+        position: absolute;
+        right: 5px;
+        font-size: 10px;
+        text-align: center;
+        color: black;
+        background-color: white;
+        border: 1px solid #aeaeae;
+        border-radius: 2px;
+        visibility: hidden;
+
+        .triangle-fix {
+          top: -2px;
+          font-size: 7px;
+        }
+
+        &:hover {
+            color: white;
+            background-color: black;
+            border-color: transparent;
+        }
+    }
+
+    .category-style-arrow {
+        color: white;
+        border: none;
+
+        span.triangle-fix {
+            top: 0px;
+            font-size: 9px;
+            transform: rotate(0deg);
+        }
+    }
+
+    .blue-style-arrow {
+        background-color: skyblue;
+    }
+
+    .green-style-arrow {
+        background-color: green;
+    }
+
+    .yellow-style-arrow {
+        background-color: orange;
+    }
+
+    .purple-style-arrow {
+        background-color: purple;
+    }
+
+    span.triangle-up {
+      top: 1px;
+      transform: rotate(-45deg);
+    }
+
+    .triangle-fix {
+      display: inline-block;
+      position: relative;
+      top: -3px;
+      font-size: 7px;
+      transform: rotate(135deg);
     }
 
     .active-item {
