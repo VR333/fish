@@ -8,10 +8,24 @@
 
 @media screen and (max-width: 1069px) {
 	div.compact-version {
-		min-width: 930px;
+		min-width: 916px;
 		div.btn {
 			width: auto;
 			max-width: 73px;
+		}
+
+		.right-buttons {
+			div.settings {
+				span.cogwheel {
+					right: 0px;
+				}
+
+				span.triangle-fix {
+					width: 0px;
+					right: -10px;
+					top: 4px;
+				}
+			}
 		}
 	}
 }
@@ -360,8 +374,8 @@
 
 			.cogwheel {
 				font-size: 18px;
-			    position: relative;
-			    top: -2px;
+		    position: relative;
+		    top: -2px;
 				right: -5px;
 			}
 
