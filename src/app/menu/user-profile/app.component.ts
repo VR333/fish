@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class UserProfileComponent {
     showChatCreation:boolean = false;
+
+    createChat() {
+        this.showChatCreation = !this.showChatCreation;
+    }
 }
