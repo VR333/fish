@@ -7,6 +7,37 @@
 	overflow-x: hidden;
 	user-select: none;
 
+	&::-webkit-scrollbar {
+    	width: 12px;
+	}
+
+	&::-webkit-scrollbar-track {
+	    background: white;
+
+		&:hover {
+			background-color: #f1f1f1;
+			border-left: 1px solid #d7d7d7;
+		}
+	}
+
+	&::-webkit-scrollbar-thumb {
+	    background: #d7d7d7;
+		border-top: 1px solid #a1a1a1;
+		border-left: 1px solid #a1a1a1;
+
+		&:hover {
+			background: #a1a1a1;
+			border-top: 1px solid grey;
+			border-left: 1px solid grey;
+		}
+
+		&:active {
+			background: grey;
+			border-top: 1px solid #888;
+			border-left: 1px solid #888;
+		}
+	}
+
 	.footer {
 		margin-top: 15px;
 		margin-bottom: 200px;
