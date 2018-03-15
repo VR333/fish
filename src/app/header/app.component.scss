@@ -30,6 +30,18 @@
 	}
 }
 
+@media screen and (max-width: 885px) {
+	div.compact-version {
+		min-width: 848px;
+
+		div.right-buttons {
+			span.messages-counter {
+				display: none;
+			}
+		}
+	}
+}
+
 .header-min-width-1100px {
 		min-width: 1100px;
 }
