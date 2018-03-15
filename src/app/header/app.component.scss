@@ -1,11 +1,3 @@
-// @mixin tooltip($content) {
-// 	height: 59px;
-// 	content: $content;
-// 	position: absolute;
-// 	top: -16px;
-// 	border-left: 1px solid white;
-// }
-
 @media screen and (max-width: 1069px) {
 	div.compact-version {
 		min-width: 916px;
@@ -30,9 +22,9 @@
 	}
 }
 
-@media screen and (max-width: 885px) {
+@media screen and (max-width: 918px) {
 	div.compact-version {
-		min-width: 848px;
+		min-width: 850px;
 
 		div.right-buttons {
 			span.messages-counter {
@@ -52,7 +44,7 @@
 
 .header {
 	height: 49px;
-	line-height: 47px;
+	line-height: 45px;
 	padding: 0 25px;
 	display: block;
 	border-top: 1px solid #e5e5e5;
@@ -77,17 +69,18 @@
 
 	.fish-title {
 		padding: 5px 0px 5px 5px;
+		position: relative;
+		top: 2px;
 		font-size: 18px;
 		color: #dd4b53;
 		cursor: pointer;
 		border: 2px solid transparent;
-		position: relative;
 
 		.triangle-fix {
 			width: auto;
 			height: auto;
 			top: -6px;
-	    right: -3px;
+	    	right: -3px;
 		}
 	}
 
@@ -377,6 +370,7 @@
 
 		.settings {
 			height: 28px;
+			margin-right: 12px;
 
 			.triangle-fix {
 				width: 12px;
@@ -386,9 +380,14 @@
 
 			.cogwheel {
 				font-size: 18px;
-		    position: relative;
-		    top: -2px;
+		    	position: relative;
+		    	top: -2px;
 				right: -5px;
+			}
+
+			.tooltip {
+				left: unset;
+				right: -16px;
 			}
 
 			.tooltip-title {

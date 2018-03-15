@@ -26,6 +26,7 @@ import { SocialComponent } from './messages-common/social/app.component';
 import { ForumsComponent } from './messages-common/forums/app.component';
 
 import { ManageMessagesService } from './services/manageMessage';
+import { ManageViewService } from './services/manageView';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,10 @@ import { ManageMessagesService } from './services/manageMessage';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ManageMessagesService],
+  providers: [
+      ManageMessagesService,
+      ManageViewService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

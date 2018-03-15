@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ManageViewService } from './../../services/manageView';
 
 @Component({
   selector: 'fish-menu-options',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class MenuOptionsComponent {
+    constructor( private view: ManageViewService) {}
+
     showExtendedMenu:boolean = false;
     showExtendedCategory:boolean = false;
 

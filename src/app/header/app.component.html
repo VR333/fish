@@ -44,9 +44,11 @@
 					<div class='btn btn-inline'>
 						<i class="fas fa-archive"></i>
 					</div>
+
 					<div class='btn btn-inline'>
 						<i class="fas fa-exclamation-circle"></i>
 					</div>
+
 					<div class='btn btn-inline' (click)='msg.deleteMessage()'>
 						<i class="fas fa-trash-alt"></i>
 					</div>
@@ -134,27 +136,27 @@
 			<span class='tooltip'>Налаштування</span>
 			<ul class='tooltip-title'
 				[ngClass]="{'tooltip-title-active' : isSettingsActive}">
-				<li class='fmail-title-option'>Usual (for average screen)</li>
-				<li class='fmail-title-option'>Medium screen (for wide screen)</li>
-				<li class='fmail-title-option'>Compact (for small screen)</li>
+				<li class='fmail-title-option' (click)="view.manageSize('usual')">Звичайний</li>
+				<li class='fmail-title-option' (click)="view.manageSize('medium')">Середній</li>
+				<li class='fmail-title-option' (click)="view.manageSize('compact')">Компактний</li>
 
 				<hr class='separation-line'/>
 
-				<div class='additioanl-option'>Set up folder 'Income'</div>
+				<div class='additioanl-option'>Налаштувати папку "Вхідні"</div>
 
 				<hr class='separation-line'/>
 
-				<div class='additioanl-option'>Settings</div>
-				<div class='additioanl-option'>Themes</div>
+				<div class='additioanl-option'>Налаштування</div>
+				<div class='additioanl-option'>Теми</div>
 
 				<hr class='separation-line'/>
 
-				<div class='additioanl-option'>Download add-on</div>
+				<div class='additioanl-option'>Завантажити доповнення</div>
 
 				<hr class='separation-line'/>
 
-				<div class='additioanl-option'>Send responce</div>
-				<div class='additioanl-option'>Сertificate</div>
+				<div class='additioanl-option'>Надіслати відгук</div>
+				<div class='additioanl-option'>Довідка</div>
 			</ul>
 		</div>
 	</div>

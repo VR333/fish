@@ -1,6 +1,7 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { MESSAGES } from './../messages';
 import { ManageMessagesService } from './../../services/manageMessage';
+import { ManageViewService } from './../../services/manageView';
 
 @Component({
   selector: 'fish-advertisment-messages',
@@ -8,7 +9,10 @@ import { ManageMessagesService } from './../../services/manageMessage';
   styleUrls: ['./../app.component.scss']
 })
 export class AdvertismentComponent implements OnInit, DoCheck {
-    constructor(private msg: ManageMessagesService) {}
+    constructor(
+        private msg: ManageMessagesService,
+        private view: ManageViewService
+    ) {}
 
     messages = MESSAGES.filter( message => message.category === 'advertisment');
 

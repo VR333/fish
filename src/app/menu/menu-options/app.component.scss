@@ -1,29 +1,7 @@
-@media screen and (max-width: 1059px) {
-    .menu-item {
-        height: 19px;
-        line-height: 19px;
-    }
-
-    .income-arrow {
-        top: 20%;
-    }
-}
-
-@media screen and (min-width: 1060px) {
-    .menu-item {
-        height: 25px;
-        line-height: 25px;
-    }
-
-    .income-arrow {
-        top: 25%;
-    }
-}
-
-@media screen and (min-width: 1252px) {
+@mixin usual {
     .menu-item {
         height: 28px;
-        line-height: 28px;
+        line-height: 29px;
     }
 
     .income-arrow {
@@ -31,13 +9,60 @@
     }
 }
 
+@mixin medium {
+    .menu-item {
+        height: 25px;
+        line-height: 26px;
+    }
+
+    .income-arrow {
+        top: 25%;
+    }
+}
+
+@mixin compact {
+    .menu-item {
+        height: 18px;
+        line-height: 20px;
+    }
+
+    .income-arrow {
+        top: 20%;
+    }
+}
+
+@media screen and (max-width: 1059px) {
+    @include compact;
+}
+
+@media screen and (min-width: 1060px) {
+    @include medium;
+}
+
+@media screen and (min-width: 1252px) {
+    @include usual;
+}
+
+div.usual-version {
+    @include usual;
+}
+
+div.medium-version {
+    @include medium;
+}
+
+div.compact-version {
+    @include compact;
+}
+
 .menu-options {
     .write-btn {
         width: 115px;
-        margin-top: 10px;
+        margin-top: 9px;
         margin-left: 31px;
-        margin-bottom: 10px;
-        padding: 9px 0px;
+        margin-bottom: 8px;
+        padding-top: 8px;
+        padding-bottom: 9px;
         font-weight: bold;
         font-size: 11px;
         text-align: center;
@@ -54,6 +79,10 @@
         &:active {
             background-color: #bb4b39;
         }
+    }
+
+    .extended-menu {
+            margin-top: 12px;
     }
 
     .menu-item {
@@ -84,11 +113,11 @@
             &:hover {
                 background-color: white;
             }
-        }
 
-        .less-border {
-            margin-bottom: 1px;
-            border-bottom: 1px solid #eee;
+            .less-border {
+                margin: 2px 2px;
+                border-bottom: 1px solid #d7d7d7;
+            }
         }
 
         .category {

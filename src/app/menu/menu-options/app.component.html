@@ -1,4 +1,9 @@
-<div class='menu-options' id='msg-opt'>
+<div class='menu-options'
+	 id='msg-opt'
+	 [ngClass]="{ 'usual-version': view.viewSizeType === 'usual',
+		 		  'medium-version': view.viewSizeType === 'medium',
+		 	  	  'compact-version': view.viewSizeType === 'compact'
+	}">
 	<div class='write-btn'>НАПИСАТИ</div>
 
 	<div class='menu-links'>
@@ -24,8 +29,9 @@
 		</div>
 
 		<div class='menu-item' *ngIf="showExtendedMenu" (click)='toShowExtendedMenu()'>
-			<div class='menu-item-text menu-item-text-back-white less-border'>
+			<div class='menu-item-text menu-item-text-back-white'>
 				Менше <span class='triangle-fix triangle-up'>&#9701;</span>
+				<div class='less-border'></div>
 			</div>
 		</div>
 

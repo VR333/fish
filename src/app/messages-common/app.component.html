@@ -1,46 +1,53 @@
-<div class='messages-category' *ngIf="msg.currentMessagesCategory === 'income' " >
-	<div *ngFor="let btn of categoryButtons"
-		 [class]="btn.class"
-		 [ngClass]="{ 'category-active': btn.id === categoryButtonActive }"
-		 (click)="makeCategoryActive(btn.id)">
-		<span class='category-icon'>
-			<i [ngClass]="btn.icon"></i>
-		</span>
-		{{btn.text}}
-	</div>
-	<div class="category-common add-category">+</div>
-	<div class="category-horiz-line"></div>
-</div>
-
-<div class='messages-wrapper'>
-	<div class='message' *ngFor='let message of messages'
-		 [ngClass]="{'active-message': message.active,
-					 'unread-message': !message.read}">
-	  <div class='message-actions'>
-	    <div class='inline-info drag-symbol'></div>
-
-	    <div class='inline-info square' (click)='msg.makeMessageActive(message)'>
-			<span class='check-symbol'
-				[ngClass]="{'check-symbol-show': message.active}"
-				>&#10003;
+<div class='messages-container'
+	[ngClass]="{
+		'usual-version': view.viewSizeType === 'usual',
+		'medium-version': view.viewSizeType === 'medium',
+		'compact-version': view.viewSizeType === 'compact'
+}">
+	<div class='messages-category' *ngIf="msg.currentMessagesCategory === 'income' " >
+		<div *ngFor="let btn of categoryButtons"
+			 [class]="btn.class"
+			 [ngClass]="{ 'category-active': btn.id === categoryButtonActive }"
+			 (click)="makeCategoryActive(btn.id)">
+			<span class='category-icon'>
+				<i [ngClass]="btn.icon"></i>
 			</span>
+			<span class='category-text'>{{btn.text}}</span>
 		</div>
+		<div class="category-common add-category">+</div>
+		<div class="category-horiz-line"></div>
+	</div>
 
-	    <div class='inline-info star'
-			 [ngClass]="{ 'star-active': message.starred}"
-			 (click)='msg.makeMessageChangeStar(message)'>★</div>
+	<div class='messages-wrapper'>
+		<div class='message' *ngFor='let message of messages'
+			 [ngClass]="{'active-message': message.active,
+						 'unread-message': !message.read}">
+		  <div class='message-actions'>
+		    <div class='inline-info drag-symbol'></div>
 
-	    <div class='inline-info name'>{{message.title}}</div>
-	  </div>
+		    <div class='inline-info square' (click)='msg.makeMessageActive(message)'>
+				<span class='check-symbol'
+					[ngClass]="{'check-symbol-show': message.active}"
+					>&#10003;
+				</span>
+			</div>
 
-	  <div class='message-info'>
-	    <div class='message-content'>{{message.content}}</div>
-	    <div class='additional-info'>
-	      <div class='document-symbol'>
-					<i *ngIf='message.clip' class="fas fa-paperclip"></i>
-				</div>
-	      <div class='message-date'>{{message.date}}</div>
-	    </div>
-	  </div>
+		    <div class='inline-info star'
+				 [ngClass]="{ 'star-active': message.starred}"
+				 (click)='msg.makeMessageChangeStar(message)'>★</div>
+
+		    <div class='inline-info name'>{{message.title}}</div>
+		  </div>
+
+		  <div class='message-info'>
+		    <div class='message-content'>{{message.content}}</div>
+		    <div class='additional-info'>
+		      <div class='document-symbol'>
+						<i *ngIf='message.clip' class="fas fa-paperclip"></i>
+					</div>
+		      <div class='message-date'>{{message.date}}</div>
+		    </div>
+		  </div>
+		</div>
 	</div>
 </div>

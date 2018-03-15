@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ManageMessagesService } from './../services/manageMessage';
+import { ManageViewService } from './../services/manageView';
 
 @Component({
   selector: 'fish-header',
@@ -7,6 +8,11 @@ import { ManageMessagesService } from './../services/manageMessage';
   styleUrls: ['./app.component.scss']
 })
 export class HeaderComponent {
+    constructor(
+        private msg: ManageMessagesService,
+        private view: ManageViewService
+    ) {}
+
     isTitleActive :boolean = false;
     isActoinsActive :boolean = false;
     isMoreActive :boolean = false;
@@ -38,8 +44,6 @@ export class HeaderComponent {
             link: '#'
         }
     ];
-
-    constructor(private msg: ManageMessagesService) {}
 
     changeActiveness(event) {
         event.stopPropagation();
