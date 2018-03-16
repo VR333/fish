@@ -37,22 +37,30 @@
 
 @media screen and (min-width: 1060px) {
     @include medium;
+
+    .medium-version {
+        @include medium;
+    }
+
+    .compact-version {
+        @include compact;
+    }
 }
 
 @media screen and (min-width: 1252px) {
     @include usual;
-}
 
-div.usual-version {
-    @include usual;
-}
+    .usual-version {
+        @include usual;
+    }
 
-div.medium-version {
-    @include medium;
-}
+    .medium-version {
+        @include medium;
+    }
 
-div.compact-version {
-    @include compact;
+    .compact-version {
+        @include compact;
+    }
 }
 
 .menu-options {
