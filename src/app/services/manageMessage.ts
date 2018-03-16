@@ -32,7 +32,6 @@ export class ManageMessagesService {
     // Used by Header
 
     selectMessages(selectOption) {
-        debugger;
         let neededMessages = this.getNeededMessages();
 
         switch (selectOption) {

@@ -5,119 +5,47 @@
 }
 
 @mixin medium {
-	.category {
-		width: 260px;
-		padding-left: 17px;
-	}
-
-	.category-common {
-		height: 43px;
-		line-height: 43px;
-	}
-
-	div.category-active {
-		line-height: 40px;
-	}
-
-	.jump-fix:hover {
-		line-height: 40px
-	}
-
-	.category-horiz-line {
-		width: calc(100% - 782px);
-	}
-
-	.category-icon {
-		font-size: 20px;
-	}
-
-	.category-text {
-		position: relative;
-		top: -3px;
-	}
-
 	.message {
 		height: 33px;
 	}
 }
 
 @mixin compact {
-	.category {
-		width: 33.3%;
-		padding-left: 10px;
-	}
-
-	.category-common {
-		height: 29px;
-		line-height: 28px;
-	}
-
-	div.category-active {
-		line-height: 26px;
-	}
-
-	.jump-fix:hover {
-		line-height: 26px
-	}
-
-	.category-horiz-line {
-		display: none;
-	}
-
-	.category-icon {
-		font-size: 15px;
-	}
-
 	.message {
 		height: 26px;
 	}
 }
 
-@media screen and (max-width: 1020px) {
-	div.messages-container {
-		@include compact;
-	}
-}
-
-@media screen and (min-width: 1021px) and (max-width: 1059px) {
-	div.messages-container {
-		@include compact;
-
-		.category {
-			width: 260px;
-		}
-
-		.category-horiz-line {
-			min-width: calc(100% - 781px);
-		}
-	}
+@media screen and (max-width: 1059px) {
+	@include compact;
 }
 
 @media screen and (min-width: 1060px) {
-	div.messages-container {
-		@include medium;
+	@include medium;
+
+	.compact-version {
+	    @include compact;
+	}
+
+	.medium-version {
+	    @include medium;
 	}
 }
 
 @media screen and (min-width: 1252px) {
-	div.messages-container {
-		@include usual;
+	@include usual;
+
+	.compact-version {
+	    @include compact;
 	}
-}
 
-.compact-version {
-    @include compact;
-	.category {
-		width: 260px;
+	.usual-version {
+	    @include usual;
 	}
-}
 
-.usual-version {
-    @include usual;
-}
-
-.medium-version {
-    @include medium;
+	.medium-version {
+	    @include medium;
+	}
 }
 
 .messages-container {
@@ -127,76 +55,6 @@
 	font-size: 13px;
 	cursor: pointer;
 	background-color: white;
-
-	.messages-category {
-		min-width: 400px;
-		margin-top: 10px;
-		margin-bottom: 7px;
-		cursor: default;
-
-		.category {
-			margin-right: -7px;
-			font-size: 13px;
-			text-align: left;
-			border: 1px solid #d7d7d7;
-			border-right: 1px solid transparent;
-			border-top: 1px solid #d7d7d7;
-		}
-
-		.category-common {
-			display: inline-block;
-			background-color: #f1f1f1;
-			cursor: pointer;
-			vertical-align: middle;
-		}
-
-		.category-icon {
-			margin-right: 5px;
-			color: grey;
-		}
-
-		.category-active {
-			border-top: 2px solid grey;
-			border-bottom: 1px solid transparent;
-			background-color: white;
-
-			.category-icon {
-				color: black;
-			}
-		}
-
-		.add-category {
-			width: 18px;
-			margin-right: -4px;
-			font-weight: bold;
-			font-size: 16px;
-			text-align: center;
-			color: grey;
-			border: 1px solid #d7d7d7;
-
-			&:hover {
-				color: black;
-			}
-		}
-
-		.category-horiz-line {
-		    display: inline-block;
-		    vertical-align: bottom;
-		    border-bottom: 1px solid #d7d7d7;
-		}
-
-		.grey:hover {
-			border-top: 2px solid grey;
-		}
-
-		.blue:hover {
-			border-top: 2px solid blue;
-		}
-
-		.green:hover {
-			border-top: 2px solid green;
-		}
-	}
 
 	.messages-wrapper {
 		border-width: 1px;
@@ -307,9 +165,9 @@
 						width: 20px;
 						position: relative;
 						top: 4px;
-				    display: inline-block;
-				    color: #c2c2c2;
-				    transform: rotate(45deg);
+					    display: inline-block;
+					    color: #c2c2c2;
+					    transform: rotate(45deg);
 					}
 
 					.message-date {
@@ -321,5 +179,4 @@
 			}
 		}
 	}
-
 }

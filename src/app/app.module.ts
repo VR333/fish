@@ -19,6 +19,8 @@ import { BasketComponent } from './messages-common/basket/app.component';
 import { AllComponent } from './messages-common/all/app.component';
 import { ImportantComponent } from './messages-common/important/app.component';
 import { SpamComponent } from './messages-common/spam/app.component';
+import { MessagesCategoryComponent } from './messages-common/message-category/app.component';
+
 
 import { AdvertismentComponent } from './messages-common/advertisment/app.component';
 import { UpdatesComponent } from './messages-common/updates/app.component';
@@ -49,7 +51,8 @@ import { ManageViewService } from './services/manageView';
     AdvertismentComponent,
     UpdatesComponent,
     SocialComponent,
-    ForumsComponent
+    ForumsComponent,
+    MessagesCategoryComponent
   ],
   imports: [
     BrowserModule,

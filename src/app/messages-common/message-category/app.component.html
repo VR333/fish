@@ -1,0 +1,17 @@
+<div class='messages-category' [ngClass]="{
+	'usual-version': view.viewSizeType === 'usual',
+	'medium-version': view.viewSizeType === 'medium',
+	'compact-version': view.viewSizeType === 'compact'
+}">
+	<div *ngFor="let btn of categoryButtons"
+		 [class]="btn.class"
+		 [ngClass]="{ 'category-active': btn.id === categoryButtonActive }"
+		 (click)="makeCategoryActive(btn.id)">
+		<span class='category-icon'>
+			<i [ngClass]="btn.icon"></i>
+		</span>
+		<span class='category-text'>{{btn.text}}</span>
+	</div>
+	<div class="category-common add-category">+</div>
+	<div class="category-horiz-line"></div>
+</div>
