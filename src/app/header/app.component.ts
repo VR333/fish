@@ -18,6 +18,7 @@ export class HeaderComponent {
     isMoreActive :boolean = false;
     isLanguageChoiceActive :boolean = false;
     isSettingsActive :boolean = false;
+    isReplaceActive :boolean = false;
     selectActiveOptions = [
       'Усі',
       'Нічого',
@@ -68,5 +69,22 @@ export class HeaderComponent {
 
     showSettings() {
         this.isSettingsActive = !this.isSettingsActive;
+    }
+
+    makeReplaceBtnActive() {
+        this.isReplaceActive = !this.isReplaceActive;
+    }
+
+    changeCategory(category) {
+        this.msg.changeMessageCategory(category);
+        this.isReplaceActive = false;
+    }
+
+    changeType(newType) {
+        this.msg.changeMessageType(newType);
+    }
+
+    deleteMsg () {
+        this.msg.deleteMessage()
     }
 }

@@ -55,11 +55,31 @@
 				</div>
 
 				<div class='folder-mark btn-wrap'>
-					<div class='btn btn-inline'>
+					<div class='btn btn-inline' (click)='makeReplaceBtnActive()'>
 						<i class="fas fa-folder"></i>
+						<span class='triangle-fix'>&#9701;</span>
+						<ul class='tooltip-title'
+							[ngClass]="{'tooltip-title-active' : isReplaceActive}">
+							<li class='fmail-title-info'>Перемістити у</li>
+							<li class='fmail-title-option' (click)="changeCategory('social')">Соцмережі</li>
+							<li class='fmail-title-option'(click)="changeCategory('advertisment')">Реклама</li>
+							<li class='fmail-title-option' (click)="changeCategory('updates')">Оновлення</li>
+							<li class='fmail-title-option' (click)="changeCategory('forums')">Форуми</li>
+
+							<hr class='separation-line'/>
+
+							<li class='fmail-title-option' (click)="changeType('spam')">Спам</li>
+							<li class='fmail-title-option' (click)='deleteMsg()'>Кошик</li>
+
+							<hr class='separation-line'/>
+
+							<li class='fmail-title-option'>Створити нову</li>
+							<li class='fmail-title-option'>Керування мітками</li>
+						</ul>
 					</div>
 					<div class='btn btn-inline'>
 						<i class="fas fa-bookmark"></i>
+						<span class='triangle-fix'>&#9701;</span>
 					</div>
 				</div>
 		</div>

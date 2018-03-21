@@ -124,6 +124,28 @@ export class ManageMessagesService {
         });
     }
 
+    changeMessageCategory(newCategory) {
+        this.messages.map( msg => {
+            if (msg.active) {
+                msg.category = newCategory;
+                msg.active = false;
+            }
+            
+            this.checkIfActive();
+        });
+    }
+
+    changeMessageType(newType) {
+        this.messages.map( msg => {
+            if (msg.active) {
+                msg.type = newType;
+                msg.active = false;
+            }
+            
+            this.checkIfActive();
+        });
+    }
+
     // Used by MainComponent
 
     makeMessageActive(message) {
