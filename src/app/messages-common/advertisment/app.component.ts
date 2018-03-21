@@ -14,14 +14,14 @@ export class AdvertismentComponent implements OnInit, DoCheck {
         private view: ManageViewService
     ) {}
 
-    messages = MESSAGES.filter( message => message.category === 'advertisment');
+    messages = MESSAGES.filter( message => message.type === 'advertisment');
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'advertisment';
+        this.msg.currentMessagesType = 'advertisment';
         this.msg.checkIfActive();
     }
 
     ngDoCheck() {
-        this.messages = MESSAGES.filter( message => message.category === 'advertisment');
+        this.messages = MESSAGES.filter( message => message.type === 'advertisment');
     }
 }

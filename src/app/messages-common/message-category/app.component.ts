@@ -19,23 +19,27 @@ export class MessagesCategoryComponent {
             id: 0,
             class: 'category-common category grey jump-fix',
             icon: 'fas fa-inbox',
-            text: 'Основні'
+            text: 'Основні',
+            category: 'main'
         },
         {
             id: 1,
             class: 'category-common category blue jump-fix',
             icon: 'fas fa-users',
-            text: 'Соцмережі'
+            text: 'Соцмережі',
+            category: 'social'
         },
         {
             id: 2,
             class: 'category-common category green jump-fix',
             icon: 'fas fa-tags',
-            text: 'Реклама'
+            text: 'Реклама',
+            category: 'advertisment'
         }
     ];
 
-    makeCategoryActive(categoryId) {
+    makeCategoryActive(categoryId, category) {
         this.categoryButtonActive = categoryId;
+        this.msg.currentCategoryActive = category;
     }
 }

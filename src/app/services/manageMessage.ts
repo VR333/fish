@@ -5,18 +5,19 @@ import { MESSAGES } from './../messages-common/messages';
 export class ManageMessagesService {
     showActiveMessageButton: boolean = false;
     allMessagesActive: boolean = false;
-    currentMessagesCategory;
+    currentMessagesType;
+    currentCategoryActive = 'main';
 
     messages = MESSAGES;
 
     // general methods
 
     getNeededMessages() {
-        if (this.currentMessagesCategory === 'starred') {
+        if (this.currentMessagesType === 'starred') {
             return this.messages.filter( msg => msg.starred );
-        } else if (this.currentMessagesCategory) {
+        } else if (this.currentMessagesType) {
             return this.messages.filter(
-                msg => msg.category === this.currentMessagesCategory
+                msg => msg.type === this.currentMessagesType
             );
         } else {
             return this.messages;
@@ -29,7 +30,7 @@ export class ManageMessagesService {
         this.allMessagesActive = (tempExpression === this.getNeededMessages().length) ? true : false;
     }
 
-    // Used by Header
+    // Used by HeaderComponent
 
     selectMessages(selectOption) {
         let neededMessages = this.getNeededMessages();
@@ -61,11 +62,11 @@ export class ManageMessagesService {
 
         duplicate.map( msg => {
             if (msg.active) {
-                if (msg.category === 'basket') {
+                if (msg.type === 'basket') {
                     let indexPoint = this.messages.findIndex( a => a === msg );
                     this.messages.splice(indexPoint, 1);
                 } else {
-                    msg.category = 'basket';
+                    msg.type = 'basket';
                     msg.active = false;
                     msg.starred = false;
                 }
@@ -123,7 +124,7 @@ export class ManageMessagesService {
         });
     }
 
-    // Used by Main
+    // Used by MainComponent
 
     makeMessageActive(message) {
       message.active = !message.active;

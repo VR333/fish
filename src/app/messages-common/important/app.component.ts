@@ -14,14 +14,14 @@ export class ImportantComponent implements OnInit, DoCheck {
         private view: ManageViewService
     ) {}
 
-    messages = MESSAGES.filter( message => message.category === 'important');
+    messages = MESSAGES.filter( message => message.important);
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'important';
+        this.msg.currentMessagesType = 'important';
         this.msg.checkIfActive();
     }
 
     ngDoCheck() {
-        this.messages = MESSAGES.filter( message => message.category === 'important');
+        this.messages = MESSAGES.filter( message => message.important);
     }
 }

@@ -14,14 +14,14 @@ export class UpdatesComponent implements OnInit, DoCheck {
         private view: ManageViewService
     ) {}
 
-    messages = MESSAGES.filter( message => message.category === 'updates');
+    messages = MESSAGES.filter( message => message.type === 'updates');
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'updates';
+        this.msg.currentMessagesType = 'updates';
         this.msg.checkIfActive();
     }
 
     ngDoCheck() {
-        this.messages = MESSAGES.filter( message => message.category === 'updates');
+        this.messages = MESSAGES.filter( message => message.type === 'updates');
     }
 }

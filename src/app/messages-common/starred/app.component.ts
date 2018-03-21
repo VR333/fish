@@ -17,7 +17,7 @@ export class StarredComponent implements OnInit, DoCheck {
     messages = MESSAGES.filter( message => message.starred);
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'starred';
+        this.msg.currentMessagesType = 'starred';
         this.msg.checkIfActive();
     }
 

@@ -14,14 +14,14 @@ export class ChatsComponent implements OnInit, DoCheck {
         private view: ManageViewService
     ) {}
 
-    messages = MESSAGES.filter( message => message.category === 'chat');
+    messages = MESSAGES.filter( message => message.type === 'chat');
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'chat';
+        this.msg.currentMessagesType = 'chat';
         this.msg.checkIfActive();
     }
 
     ngDoCheck() {
-        this.messages = MESSAGES.filter( message => message.category === 'chat');
+        this.messages = MESSAGES.filter( message => message.type === 'chat');
     }
 }

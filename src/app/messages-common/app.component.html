@@ -1,11 +1,13 @@
 <div class='messages-container'>
-	<fish-messages-category *ngIf="msg.currentMessagesCategory === 'income' ">
+	<fish-messages-category *ngIf="msg.currentMessagesType === 'income' ">
 	</fish-messages-category>
 
-	<div class='messages-wrapper' [ngClass]="{
-		'usual-version': view.viewSizeType === 'usual',
-		'medium-version': view.viewSizeType === 'medium',
-		'compact-version': view.viewSizeType === 'compact'
+	<div *ngIf="messages.length"
+		class='messages-wrapper'
+		[ngClass]="{
+			'usual-version': view.viewSizeType === 'usual',
+			'medium-version': view.viewSizeType === 'medium',
+			'compact-version': view.viewSizeType === 'compact'
 	}">
 		<div class='message' *ngFor='let message of messages'
 			 [ngClass]="{'active-message': message.active,
@@ -22,7 +24,8 @@
 
 		    <div class='inline-info star'
 				 [ngClass]="{ 'star-active': message.starred}"
-				 (click)='msg.makeMessageChangeStar(message)'>★</div>
+				 (click)='msg.makeMessageChangeStar(message)'>★
+			</div>
 
 		    <div class='inline-info name'>{{message.title}}</div>
 		  </div>
@@ -38,4 +41,6 @@
 		  </div>
 		</div>
 	</div>
+
+	<div *ngIf="!messages.length" class='empty-folder'>Sorry, nothing to display here..</div>
 </div>

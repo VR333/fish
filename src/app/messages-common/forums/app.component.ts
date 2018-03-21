@@ -14,14 +14,14 @@ export class ForumsComponent implements OnInit, DoCheck {
         private view: ManageViewService
     ) {}
 
-    messages = MESSAGES.filter( message => message.category === 'forums');
+    messages = MESSAGES.filter( message => message.type === 'forums');
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'forums';
+        this.msg.currentMessagesType = 'forums';
         this.msg.checkIfActive();
     }
 
     ngDoCheck() {
-        this.messages = MESSAGES.filter( message => message.category === 'forums');
+        this.messages = MESSAGES.filter( message => message.type === 'forums');
     }
 }

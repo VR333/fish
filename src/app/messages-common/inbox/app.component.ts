@@ -14,14 +14,14 @@ export class InboxComponent implements OnInit, DoCheck {
         private view: ManageViewService
     ) {}
 
-    messages = MESSAGES.filter( message => message.category === 'income');
+    messages = MESSAGES.filter( message => message.type === 'income');
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'income';
+        this.msg.currentMessagesType = 'income';
         this.msg.checkIfActive();
     }
 
     ngDoCheck() {
-        this.messages = MESSAGES.filter( message => message.category === 'income');
+        this.messages = MESSAGES.filter( message => message.type === 'income' && message.category === this.msg.currentCategoryActive);
     }
 }

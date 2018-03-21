@@ -17,7 +17,7 @@ export class AllComponent implements OnInit {
     messages = MESSAGES;
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = false;
+        this.msg.currentMessagesType = false;
         this.msg.checkIfActive();
     }
 }

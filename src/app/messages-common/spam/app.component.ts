@@ -14,14 +14,14 @@ export class SpamComponent implements OnInit, DoCheck {
         private view: ManageViewService
     ) {}
 
-    messages = MESSAGES.filter( message => message.category === 'spam');
+    messages = MESSAGES.filter( message => message.type === 'spam');
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'spam';
+        this.msg.currentMessagesType = 'spam';
         this.msg.checkIfActive();
     }
 
     ngDoCheck() {
-        this.messages = MESSAGES.filter( message => message.category === 'spam');
+        this.messages = MESSAGES.filter( message => message.type === 'spam');
     }
 }

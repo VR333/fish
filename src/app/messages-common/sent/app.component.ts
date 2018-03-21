@@ -14,14 +14,14 @@ export class SentComponent implements OnInit, DoCheck {
         private view: ManageViewService
     ) {}
 
-    messages = MESSAGES.filter( message => message.category === 'sent');
+    messages = MESSAGES.filter( message => message.type === 'sent');
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'sent';
+        this.msg.currentMessagesType = 'sent';
         this.msg.checkIfActive();
     }
 
     ngDoCheck() {
-        this.messages = MESSAGES.filter( message => message.category === 'sent');
+        this.messages = MESSAGES.filter( message => message.type === 'sent');
     }
 }

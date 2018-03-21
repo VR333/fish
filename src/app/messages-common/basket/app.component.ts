@@ -14,14 +14,14 @@ export class BasketComponent implements OnInit, DoCheck {
         private view: ManageViewService
     ) {}
 
-    messages = MESSAGES.filter( message => message.category === 'basket');
+    messages = MESSAGES.filter( message => message.type === 'basket');
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'basket';
+        this.msg.currentMessagesType = 'basket';
         this.msg.checkIfActive();
     }
 
     ngDoCheck() {
-        this.messages = MESSAGES.filter( message => message.category === 'basket');
+        this.messages = MESSAGES.filter( message => message.type === 'basket');
     }
 }

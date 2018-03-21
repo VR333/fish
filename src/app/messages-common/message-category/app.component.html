@@ -6,7 +6,7 @@
 	<div *ngFor="let btn of categoryButtons"
 		 [class]="btn.class"
 		 [ngClass]="{ 'category-active': btn.id === categoryButtonActive }"
-		 (click)="makeCategoryActive(btn.id)">
+		 (click)="makeCategoryActive(btn.id, btn.category)">
 		<span class='category-icon'>
 			<i [ngClass]="btn.icon"></i>
 		</span>

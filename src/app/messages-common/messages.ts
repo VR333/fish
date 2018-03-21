@@ -6,10 +6,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Rostyslavfgdfghdfghdfgfghdfghfghdfghhdfghdgfhgfhdfghdfgh',
     date: '07.03.18',
     clip: true,
-    category: 'income',
+    type: 'income',
     starred: true,
     read: true,
-    important: false
+    important: false,
+    category: 'main'
   },
   {
     id: 1,
@@ -18,10 +19,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text Sent',
     date: '07.03.18',
     clip: true,
-    category: 'sent',
+    type: 'sent',
     starred: true,
     read: true,
-    important: false
+    important: false,
+    category: 'main'
   },
   {
     id: 2,
@@ -30,10 +32,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '2 бер.',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: true,
     read: false,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 3,
@@ -42,10 +45,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: true,
     read: true,
-    important: true
+    important: true,
+    category: 'social'
   },
   {
     id: 4,
@@ -54,10 +58,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'social'
   },
   {
     id: 5,
@@ -66,10 +71,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'social'
   },
   {
     id: 6,
@@ -78,10 +84,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 7,
@@ -90,10 +97,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 8,
@@ -102,10 +110,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 9,
@@ -114,10 +123,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 10,
@@ -126,10 +136,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 11,
@@ -138,10 +149,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 12,
@@ -150,10 +162,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 13,
@@ -162,10 +175,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 14,
@@ -174,10 +188,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 15,
@@ -186,10 +201,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 16,
@@ -198,10 +214,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 17,
@@ -210,10 +227,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 18,
@@ -222,10 +240,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 19,
@@ -234,10 +253,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 20,
@@ -246,10 +266,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 21,
@@ -258,10 +279,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 22,
@@ -270,10 +292,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 23,
@@ -282,10 +305,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 24,
@@ -294,10 +318,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 25,
@@ -306,10 +331,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 26,
@@ -318,10 +344,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 27,
@@ -330,10 +357,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 28,
@@ -342,10 +370,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 29,
@@ -354,10 +383,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 30,
@@ -366,10 +396,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 31,
@@ -378,10 +409,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 32,
@@ -390,10 +422,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 33,
@@ -402,10 +435,11 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   },
   {
     id: 34,
@@ -414,9 +448,10 @@ export const MESSAGES = [
     content: 'Hi, my name is Sample Text',
     date: '07.03.18',
     clip: false,
-    category: 'income',
+    type: 'income',
     starred: false,
     read: true,
-    important: true
+    important: true,
+    category: 'main'
   }
 ];

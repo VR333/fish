@@ -12,16 +12,16 @@ export class DraftComponent implements OnInit, DoCheck  {
     constructor(
         private msg: ManageMessagesService,
         private view: ManageViewService
-    ) {}         
+    ) {}
 
-    messages = MESSAGES.filter( message => message.category === 'draft');
+    messages = MESSAGES.filter( message => message.type === 'draft');
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'draft';
+        this.msg.currentMessagesType = 'draft';
         this.msg.checkIfActive();
     }
 
     ngDoCheck() {
-        this.messages = MESSAGES.filter( message => message.category === 'draft');
+        this.messages = MESSAGES.filter( message => message.type === 'draft');
     }
 }

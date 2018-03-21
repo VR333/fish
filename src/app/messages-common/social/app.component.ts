@@ -14,14 +14,14 @@ export class SocialComponent implements OnInit, DoCheck {
         private view: ManageViewService
     ) {}
 
-    messages = MESSAGES.filter( message => message.category === 'social');
+    messages = MESSAGES.filter( message => message.type === 'social');
 
     ngOnInit() {
-        this.msg.currentMessagesCategory = 'social';
+        this.msg.currentMessagesType = 'social';
         this.msg.checkIfActive();
     }
 
     ngDoCheck() {
-        this.messages = MESSAGES.filter( message => message.category === 'social');
+        this.messages = MESSAGES.filter( message => message.type === 'social');
     }
 }
