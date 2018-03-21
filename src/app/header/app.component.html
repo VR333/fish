@@ -16,7 +16,10 @@
 		<div class='btn btn-wrap actions tooltip-anchor' (click)='showActions()'>
 			<div class='square' (click)='changeActiveness($event)'>
 				<div *ngIf="(msg.showActiveMessageButton && !msg.allMessagesActive)" class='horiz-line'></div>
+
 				<span class='check-symbol' *ngIf="msg.showActiveMessageButton && msg.allMessagesActive">&#10003;</span>
+
+
 			</div>
 			<span class='triangle-fix'>&#9701;</span>
 
@@ -156,9 +159,18 @@
 			<span class='tooltip'>Налаштування</span>
 			<ul class='tooltip-title'
 				[ngClass]="{'tooltip-title-active' : isSettingsActive}">
-				<li class='fmail-title-option' (click)="view.manageSize('usual')">Звичайний</li>
-				<li class='fmail-title-option' (click)="view.manageSize('medium')">Середній</li>
-				<li class='fmail-title-option' (click)="view.manageSize('compact')">Компактний</li>
+				<li class='fmail-title-option' (click)="view.manageSize('usual')">
+					<span class='check-symbol-view' *ngIf="view.viewSizeType === 'usual'">&#10003;</span>
+					Звичайний
+				</li>
+				<li class='fmail-title-option' (click)="view.manageSize('medium')">
+					<span class='check-symbol-view' *ngIf="view.viewSizeType === 'medium'">&#10003;</span>
+					Середній
+				</li>
+				<li class='fmail-title-option' (click)="view.manageSize('compact')">
+					<span class='check-symbol-view' *ngIf="view.viewSizeType === 'compact'">&#10003;</span>
+					Компактний
+				</li>
 
 				<hr class='separation-line'/>
 

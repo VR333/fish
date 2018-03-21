@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ManageViewService {
-	viewSizeType: string;
+	viewSizeType = 'usual';
 
 	manageSize(sizeType) {
 		this.viewSizeType = sizeType;
