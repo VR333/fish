@@ -1,0 +1,222 @@
+@media screen and (max-width: 1069px) {
+	div.btn {
+		width: auto;
+		max-width: 73px;
+	}
+}
+
+.triangle-fix {
+	width: 0px;
+	height: 0px;
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	right: -10px;
+	font-size: 7px;
+	transform: rotate(135deg);
+}
+
+ul.tooltip-title-active {
+	visibility: visible;
+}
+
+.tooltip-title {
+	width: 300px;
+	line-height: normal;
+	padding: 7px 0;
+	position: absolute;
+	top: 25px;
+	left: -2px;
+	font-size: 13px;
+	font-weight: normal;
+	text-align: left;
+	color: black;
+	background-color: white;
+	box-shadow: 0px 4px 10px #c2c2c2;
+	list-style-type: none;
+	border: 1px solid #c6c6c6;
+	z-index: 1;
+	visibility: hidden;
+
+
+	li.option-disabled {
+		color: #e2e2e2;
+		cursor: default;
+
+		&:hover {
+			background-color: white;
+		}
+	}
+
+	.fmail-title-info {
+		padding-left: 15px;
+		padding-bottom: 10px;
+	}
+
+	.fmail-title-option {
+		position: relative;
+		padding: 2px 0 2px 25px;
+		cursor: pointer;
+
+		.title-link {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		&:hover {
+			background-color: #eee;
+		}
+	}
+
+	.option-logo {
+		font-weight: bold;
+		color: #dd4b39;
+
+		&:hover {
+			color: black;
+		}
+	}
+}
+
+.fish-title-active {
+	border-color: #a6c7ff;
+	border-radius: 3px;
+
+	.tooltip-title {
+		visibility: visible;
+	}
+
+}
+
+.btn {
+	width: 73px;
+	height: 28px;
+	line-height: 16px;
+	padding: 5px 15px;
+	position: relative;
+	vertical-align: middle;
+	text-align: center;
+	color: grey;
+	background-color: #f2f2f2;
+	border: 1px solid #d9d9d9;
+	border-radius: 1px;
+
+	&:hover {
+		color: black;
+		background-color: #f4f4f4;
+		border: 1px solid #c6c6c6;
+
+		.tooltip {
+			visibility: visible;
+			transition: visibility 0s linear 0.4s;
+		}
+	}
+}
+
+.tooltip-anchor {
+		position: relative;
+}
+
+.tooltip {
+	padding: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+	background-color: black;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 30px;
+	visibility: hidden;
+	white-space: nowrap;
+	z-index: 2;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: -10px;
+		left: 45%;
+		border-width: 5px;
+		border-style: solid;
+		border-color: transparent transparent black transparent;
+	}
+}
+
+.btn-wrap {
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.btn-inline {
+		margin-right: -6px;
+		display: inline-block;
+}
+
+:host {
+	display: inline-block;
+	margin-left: 108px;
+
+	.square {
+		width: 13px;
+		height: 13px;
+		display: inline-block;
+		position: relative;
+		left: -4px;
+		border: 1px solid #c6c6c6;
+
+		&:hover {
+			border-color: #a6a6a6;
+		}
+
+		.horiz-line {
+				width: 80%;
+				height: 2px;
+				margin: auto;
+				position: relative;
+				top: 40%;
+				background-color: grey;
+		}
+
+		.check-symbol {
+			position: absolute;
+			color: grey;
+			font-size: 17px;
+			top: -2px;
+			left: 0px;
+		}
+	}
+
+	.more {
+		font-size: 11px;
+		font-weight: bold;
+		padding: 5px 7px;
+		color: black;
+
+		.triangle-fix {
+			color: grey;
+			width: 12px;
+			right: -7px;
+			top: 10px;
+		}
+	}
+}
+
+.separation-line {
+	margin: 5px 0;
+	border-color: rgba(255, 255, 255, 0.3);
+}
+.system-message {
+	margin-top: 5px;
+	padding: 5px 20px;
+	border-top: 1px solid #e2e2e2;
+	color: grey;
+	font-style: italic;
+}
+
+.additioanl-option {
+	padding: 5px 20px;
+
+	&:hover {
+		background-color: #eee;
+	}
+}

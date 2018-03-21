@@ -1,0 +1,304 @@
+@media screen and (max-width: 1069px) {
+	div.compact-version {
+		min-width: 916px;
+		div.btn {
+			width: auto;
+			max-width: 73px;
+		}
+
+		.right-buttons {
+			div.settings {
+				span.cogwheel {
+					right: 0px;
+				}
+
+				span.triangle-fix {
+					width: 0px;
+					right: -10px;
+					top: 4px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 918px) {
+	div.compact-version {
+		min-width: 850px;
+
+		div.right-buttons {
+			span.messages-counter {
+				display: none;
+			}
+		}
+	}
+}
+
+.triangle-fix {
+	width: 0px;
+	height: 0px;
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	right: -10px;
+	font-size: 7px;
+	transform: rotate(135deg);
+}
+
+ul.tooltip-title-active {
+	visibility: visible;
+}
+
+.tooltip-title {
+	width: 300px;
+	line-height: normal;
+	padding: 7px 0;
+	position: absolute;
+	top: 25px;
+	left: -2px;
+	font-size: 13px;
+	font-weight: normal;
+	text-align: left;
+	color: black;
+	background-color: white;
+	box-shadow: 0px 4px 10px #c2c2c2;
+	list-style-type: none;
+	border: 1px solid #c6c6c6;
+	z-index: 1;
+	visibility: hidden;
+
+	.fmail-title-option {
+		position: relative;
+		padding: 2px 0 2px 25px;
+		cursor: pointer;
+
+		.title-link {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		&:hover {
+			background-color: #eee;
+		}
+	}
+}
+
+.btn {
+	width: 73px;
+	height: 28px;
+	line-height: 16px;
+	padding: 5px 15px;
+	position: relative;
+	vertical-align: middle;
+	text-align: center;
+	color: grey;
+	background-color: #f2f2f2;
+	border: 1px solid #d9d9d9;
+	border-radius: 1px;
+
+	&:hover {
+		color: black;
+		background-color: #f4f4f4;
+		border: 1px solid #c6c6c6;
+
+		.tooltip {
+			visibility: visible;
+			transition: visibility 0s linear 0.4s;
+		}
+	}
+}
+
+.tooltip-anchor {
+		position: relative;
+}
+
+.tooltip {
+	padding: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+	background-color: black;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 30px;
+	visibility: hidden;
+	white-space: nowrap;
+	z-index: 2;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: -10px;
+		left: 45%;
+		border-width: 5px;
+		border-style: solid;
+		border-color: transparent transparent black transparent;
+	}
+}
+
+.btn-wrap {
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.btn-inline {
+		margin-right: -6px;
+		display: inline-block;
+}
+
+.check-symbol-view {
+	position: absolute;
+	color: grey;
+	font-size: 17px;
+	top: -3px;
+	left: 5px;
+}
+
+.right-buttons {
+	float: right;
+	text-align: right;
+
+	.messages-counter {
+		position: relative;
+		padding: 2px;
+		font-size: 13px;
+		border: 1px solid transparent;
+		cursor: pointer;
+
+		&:hover {
+			border-color:#e1e1e1;
+
+			.tooltip-title {
+				top: 20px;
+				visibility: visible;
+				transition: visibility 0s linear 0.4s;
+			}
+		}
+	}
+
+	.arrows {
+		margin: 0px 18px 0px 5px;
+
+		.arrow {
+			width: 36px;
+			margin-right: -8px;
+			padding: 5px 0;
+			display: inline-block;
+			font-size: 17px;
+			font-weight: bold;
+
+			.tooltip {
+				right: auto;
+
+				&::after {
+					left: 38%;
+				}
+			}
+		}
+	}
+
+	.language {
+		width: auto;
+		padding: 0px;
+
+		.language-show {
+			width: 35px;
+			margin-right: -8px;
+			padding: 5px;
+			display: inline-block;
+			border-right: 1px solid #c6c6c6;
+
+			&:hover {
+				border: 1px solid #d9d9d9;
+				box-shadow: 0px 3px 5px #c6c6c6;
+				transition: .3s;
+			}
+
+			.tooltip {
+				left: -150px;
+				right: auto;
+
+				&::after {
+					left: 53%;
+				}
+			}
+		}
+
+		.language-choose {
+			width: 22px;
+			padding: 5px 0;
+			display: inline-block;
+
+			.triangle-fix {
+				width: 12px;
+				right: -6px;
+				top: 10px;
+			}
+
+
+			&:hover {
+				border: 1px solid #d9d9d9;
+				box-shadow: 2px 3px 5px #c6c6c6;
+				transition: box-shadow .3s;
+			}
+
+			.tooltip {
+				left: -47px;
+				right: auto;
+
+				&::after {
+					left: 47%;
+				}
+			}
+
+			.tooltip-title {
+				width: 240px;
+				left: unset;
+				right: -2px;
+			}
+		}
+	}
+
+	.settings {
+		height: 28px;
+		margin-right: 12px;
+
+		.triangle-fix {
+			width: 12px;
+			right: -7px;
+			top: 6px;
+		}
+
+		.cogwheel {
+			font-size: 18px;
+	    	position: relative;
+	    	top: -2px;
+			right: -5px;
+		}
+
+		.tooltip {
+			left: unset;
+			right: -16px;
+		}
+
+		.tooltip-title {
+			width: 240px;
+			left: unset;
+			right: -2px;
+		}
+	}
+}
+
+.separation-line {
+	margin: 5px 0;
+	border-color: rgba(255, 255, 255, 0.3);
+}
+
+.additioanl-option {
+	padding: 5px 20px;
+
+	&:hover {
+		background-color: #eee;
+	}
+}
