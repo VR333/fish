@@ -1,35 +1,32 @@
 @media screen and (max-width: 1069px) {
-	div.compact-version {
-		min-width: 916px;
-		div.btn {
-			width: auto;
-			max-width: 73px;
-		}
+	// div.compact-version {
+	// 	min-width: 916px;
+	// }
 
-		.right-buttons {
-			div.settings {
-				span.cogwheel {
-					right: 0px;
-				}
+	div.btn {
+		width: auto;
+		max-width: 73px;
+	}
 
-				span.triangle-fix {
-					width: 0px;
-					right: -10px;
-					top: 4px;
-				}
+	div.right-buttons {
+		div.settings {
+			span.cogwheel {
+				right: 0px;
+			}
+
+			span.triangle-fix {
+				width: 0px;
+				right: -10px;
+				top: 4px;
 			}
 		}
 	}
 }
 
-@media screen and (max-width: 918px) {
+@media screen and (max-width: 926px) {
 	div.compact-version {
-		min-width: 850px;
-
-		div.right-buttons {
-			span.messages-counter {
-				display: none;
-			}
+		span.messages-counter {
+			display: none;
 		}
 	}
 }
