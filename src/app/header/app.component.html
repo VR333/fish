@@ -1,7 +1,8 @@
 <div class='header' [ngClass]="{
 		'header-min-width-1100px compact-version': msg.showActiveMessageButton,
-		'header-min-width-820px': !msg.showActiveMessageButton}">
-		<span class='fish-title' (click)='showTitles()'
+		'header-min-width-820px': !msg.showActiveMessageButton}"
+		(click)="hideTitles()">
+		<span class='fish-title' (click)='showTitles($event)'
 			[ngClass]="{'fish-title-active' : isTitleActive}">Fmail
 			<span class='triangle-fix'>&#9701;</span>
 
