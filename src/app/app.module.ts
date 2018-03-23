@@ -33,6 +33,7 @@ import { ForumsComponent } from './messages-common/forums/app.component';
 
 import { ManageMessagesService } from './services/manageMessage';
 import { ManageViewService } from './services/manageView';
+import { ManageHeaderBtnsService } from './services/manageHeaderBtns';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ManageViewService } from './services/manageView';
   ],
   providers: [
       ManageMessagesService,
-      ManageViewService
+      ManageViewService,
+      ManageHeaderBtnsService
   ],
   bootstrap: [ AppComponent ]
 })

@@ -23,12 +23,12 @@
 			Ук
 			<span class='tooltip'>Увімкнення/вимкнення транслітерації (Ctrl-Shift-K)</span>
 		</div>
-		<div class='btn language-choose tooltip-anchor' (click)='showLanguageChoice()'>
+		<div class='btn language-choose tooltip-anchor' (click)='showLanguageChoice($event)'>
 			<span class='triangle-fix'>&#9701;</span>
 			<span class='tooltip'>Вибрати мову</span>
 
 			<ul class='tooltip-title'
-				[ngClass]="{'tooltip-title-active' : isLanguageChoiceActive}">
+				[ngClass]="{'tooltip-title-active' : ManageHeaderBtnsService.isLanguageChoiceActive}">
 				<li class='fmail-title-option'>Транслітерація</li>
 				<li class='fmail-title-option'>Екранна клавіатура</li>
 				<li class='fmail-title-option'>українська</li>
@@ -40,7 +40,7 @@
 		</div>
 	</div>
 
-	<div class='btn btn-wrap settings tooltip-anchor' (click)='showSettings()'>
+	<div class='btn btn-wrap settings tooltip-anchor' (click)='showSettings($event)'>
 		<span class='cogwheel'>
 			<i class="fas fa-cog"></i>
 		</span>
@@ -49,7 +49,7 @@
 
 		<span class='tooltip'>Налаштування</span>
 		<ul class='tooltip-title'
-			[ngClass]="{'tooltip-title-active' : isSettingsActive}">
+			[ngClass]="{'tooltip-title-active' : ManageHeaderBtnsService.isSettingsActive}">
 			<li class='fmail-title-option' (click)="view.manageSize('usual')">
 				<span class='check-symbol-view' *ngIf="view.viewSizeType === 'usual'">&#10003;</span>
 				Звичайний

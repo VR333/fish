@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ManageMessagesService } from './../services/manageMessage';
+import { ManageHeaderBtnsService } from './../services/manageHeaderBtns';
 
 @Component({
   selector: 'fish-header',
@@ -7,9 +8,10 @@ import { ManageMessagesService } from './../services/manageMessage';
   styleUrls: ['./app.component.scss']
 })
 export class HeaderComponent {
-    constructor(private msg: ManageMessagesService) {}
-
-    isTitleActive :boolean = false;
+    constructor(
+      private msg: ManageMessagesService,
+      private ManageHeaderBtnsService: ManageHeaderBtnsService
+    ) {}
 
     tooltipTitleOptions = [
         {
@@ -31,10 +33,6 @@ export class HeaderComponent {
 
     showTitles(event) {
         event.stopPropagation();
-        this.isTitleActive = !this.isTitleActive;
-    }
-
-    hideTitles() {
-        this.isTitleActive = false;
+        this.ManageHeaderBtnsService.isTitleActive = !this.ManageHeaderBtnsService.isTitleActive;
     }
 }

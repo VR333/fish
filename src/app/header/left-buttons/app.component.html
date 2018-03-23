@@ -1,5 +1,5 @@
 <div class='left-buttons'>
-	<div class='btn btn-wrap actions tooltip-anchor' (click)='showActions()'>
+	<div class='btn btn-wrap actions tooltip-anchor' (click)='showActions($event)'>
 		<div class='square' (click)='changeActiveness($event)'>
 			<div *ngIf="(msg.showActiveMessageButton && !msg.allMessagesActive)" class='horiz-line'></div>
 
@@ -12,7 +12,7 @@
 		<span class='tooltip'>Вибрати</span>
 
 		<ul class='tooltip-title'
-			[ngClass]="{'tooltip-title-active' : isActoinsActive}">
+			[ngClass]="{'tooltip-title-active' : ManageHeaderBtnsService.isActoinsActive}">
 
 			<li class='fmail-title-option'
 					*ngFor='let select of selectActiveOptions'
@@ -45,11 +45,11 @@
 			</div>
 
 			<div class='folder-mark btn-wrap'>
-				<div class='btn btn-inline' (click)='makeReplaceBtnActive()'>
+				<div class='btn btn-inline' (click)='makeReplaceBtnActive($event)'>
 					<i class="fas fa-folder"></i>
 					<span class='triangle-fix'>&#9701;</span>
 					<ul class='tooltip-title'
-						[ngClass]="{'tooltip-title-active' : isReplaceActive}">
+						[ngClass]="{'tooltip-title-active' : ManageHeaderBtnsService.isReplaceActive}">
 						<li class='fmail-title-info'>Перемістити у</li>
 						<li class='fmail-title-option' (click)="changeCategory('social')">Соцмережі</li>
 						<li class='fmail-title-option'(click)="changeCategory('advertisment')">Реклама</li>
@@ -74,11 +74,11 @@
 			</div>
 	</div>
 
-	<div class='btn btn-wrap more' (click)='showMore()'>
+	<div class='btn btn-wrap more' (click)='showMore($event)'>
 		Більше<span class='triangle-fix'>&#9701;</span>
 
 		<ul class='tooltip-title'
-			[ngClass]="{'tooltip-title-active' : isMoreActive}">
+			[ngClass]="{'tooltip-title-active' : ManageHeaderBtnsService.isMoreActive}">
 			<li *ngIf='!msg.showActiveMessageButton' class='fmail-title-option' (click)='msg.markAllasRead()'>Позначити всі як прочитані</li>
 			<li *ngIf='!msg.showActiveMessageButton' class='system-message'>Виберіть повідомлення, щоб відобразити більше дій</li>
 			<li *ngIf='msg.showActiveMessageButton' class='fmail-title-option' (click)='msg.changeReadState(true)'>Позначити як прочитане</li>
