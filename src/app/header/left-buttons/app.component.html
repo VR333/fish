@@ -21,12 +21,13 @@
 		</ul>
 	</div>
 
-	<div class='btn btn-wrap refresh tooltip-anchor' *ngIf="!msg.showActiveMessageButton">
-		<div class='reload'>
+		<div class='btn btn-wrap refresh tooltip-anchor reload'
+				*ngIf="!msg.showActiveMessageButton"
+				(click)="reloadPage()">
 			<i class="fas fa-redo-alt"></i>
+			<span class='tooltip'>Оновити</span>
 		</div>
-		<span class='tooltip'>Оновити</span>
-	</div>
+
 
 	<div class='btn-wrap active-msg-actions' *ngIf="msg.showActiveMessageButton">
 			<div class='dlt-spam-arch btn-wrap'>

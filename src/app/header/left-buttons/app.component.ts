@@ -30,6 +30,10 @@ export class HeaderLeftButtonsComponent {
         this.isActoinsActive = !this.isActoinsActive;
     }
 
+    reloadPage() {
+      location.reload();
+    }
+
     showMore() {
         this.isMoreActive = !this.isMoreActive;
     }
