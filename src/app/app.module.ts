@@ -34,6 +34,7 @@ import { ForumsComponent } from './messages-common/forums/app.component';
 import { ManageMessagesService } from './services/manageMessage';
 import { ManageViewService } from './services/manageView';
 import { ManageHeaderBtnsService } from './services/manageHeaderBtns';
+import { ManageMessagesNumber } from './services/manageMessagesNumber';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { ManageHeaderBtnsService } from './services/manageHeaderBtns';
   providers: [
       ManageMessagesService,
       ManageViewService,
-      ManageHeaderBtnsService
+      ManageHeaderBtnsService,
+      ManageMessagesNumber
   ],
   bootstrap: [ AppComponent ]
 })
