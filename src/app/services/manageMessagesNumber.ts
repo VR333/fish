@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { MESSAGES } from './../messages-common/messages';
 
 @Injectable()
 export class ManageMessagesNumber {
 	startMessageIndex :number = 0;
 	endMessageNumber: number;
 	msgPerPage = 35;
-	messages;
+	messages = MESSAGES;
 
 	getEndMessageIndex() {
 		if (this.messages.length > this.startMessageIndex + this.msgPerPage) {

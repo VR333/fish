@@ -130,7 +130,7 @@ export class ManageMessagesService {
                 msg.category = newCategory;
                 msg.active = false;
             }
-            
+
             this.checkIfActive();
         });
     }
@@ -141,7 +141,7 @@ export class ManageMessagesService {
                 msg.type = newType;
                 msg.active = false;
             }
-            
+
             this.checkIfActive();
         });
     }

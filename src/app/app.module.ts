@@ -14,27 +14,14 @@ import { MenuComponent } from './menu/app.component';
 import { MenuOptionsComponent } from './menu/menu-options/app.component';
 import { UserProfileComponent } from './menu/user-profile/app.component';
 import { MainContentComponent } from './main/app.component';
-import { InboxComponent } from './messages-common/inbox/app.component';
-import { SentComponent } from './messages-common/sent/app.component';
-import { StarredComponent } from './messages-common/starred/app.component';
-import { DraftComponent } from './messages-common/draft/app.component';
-import { ChatsComponent } from './messages-common/chats/app.component';
-import { BasketComponent } from './messages-common/basket/app.component';
-import { AllComponent } from './messages-common/all/app.component';
-import { ImportantComponent } from './messages-common/important/app.component';
-import { SpamComponent } from './messages-common/spam/app.component';
+import { MessageComponent } from './messages-common/app.component';
 import { MessagesCategoryComponent } from './messages-common/message-category/app.component';
-
-
-import { AdvertismentComponent } from './messages-common/advertisment/app.component';
-import { UpdatesComponent } from './messages-common/updates/app.component';
-import { SocialComponent } from './messages-common/social/app.component';
-import { ForumsComponent } from './messages-common/forums/app.component';
 
 import { ManageMessagesService } from './services/manageMessage';
 import { ManageViewService } from './services/manageView';
 import { ManageHeaderBtnsService } from './services/manageHeaderBtns';
 import { ManageMessagesNumber } from './services/manageMessagesNumber';
+import { MessageComponentHelper } from './services/messageComponentHelper';
 
 @NgModule({
   declarations: [
@@ -45,21 +32,9 @@ import { ManageMessagesNumber } from './services/manageMessagesNumber';
     ForbiddenComponent,
     MenuComponent,
     MainContentComponent,
-    InboxComponent,
-    SentComponent,
-    StarredComponent,
-    DraftComponent,
-    ChatsComponent,
-    BasketComponent,
-    AllComponent,
-    ImportantComponent,
-    SpamComponent,
+    MessageComponent,
     MenuOptionsComponent,
     UserProfileComponent,
-    AdvertismentComponent,
-    UpdatesComponent,
-    SocialComponent,
-    ForumsComponent,
     MessagesCategoryComponent
   ],
   imports: [
@@ -70,7 +45,8 @@ import { ManageMessagesNumber } from './services/manageMessagesNumber';
       ManageMessagesService,
       ManageViewService,
       ManageHeaderBtnsService,
-      ManageMessagesNumber
+      ManageMessagesNumber,
+      MessageComponentHelper
   ],
   bootstrap: [ AppComponent ]
 })
