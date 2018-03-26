@@ -1,4 +1,4 @@
-<div class='left-buttons'>
+<div class='left-buttons' [ngClass]="{'compact-version': msg.showActiveMessageButton }">
 	<div class='btn btn-wrap actions tooltip-anchor' (click)='showActions($event)'>
 		<div class='square' (click)='changeActiveness($event)'>
 			<div *ngIf="(msg.showActiveMessageButton && !msg.allMessagesActive)" class='horiz-line'></div>
