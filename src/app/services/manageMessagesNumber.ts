@@ -15,13 +15,22 @@ export class ManageMessagesNumber {
 	}
 
 	nextPage(filteredMessages) {
-		if (this.startMessageIndex < filteredMessages.length) {
-			this.startMessageIndex += 35;
+		if (this.startMessageIndex <= filteredMessages.length) {
+
+			if (this.startMessageIndex + 35 >= filteredMessages.length) {
+				if (this.endMessageNumber !== filteredMessages.length) {
+					this.startMessageIndex = filteredMessages.length;
+				}
+			} else {
+				this.startMessageIndex += 35;
+			}
 		}
 	}
 
 	prevPage() {
-		if (this.startMessageIndex > 0) {
+		if (this.startMessageIndex - 35 <= 0) {
+			this.startMessageIndex = 0;
+		} else {
 			this.startMessageIndex -= 35;
 		}
 	}
