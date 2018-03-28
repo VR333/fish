@@ -7,9 +7,13 @@ export class ManageMessagesService {
     allMessagesActive: boolean = false;
     currentMessagesType;
     currentCategoryActive = 'main';
-
     messages = MESSAGES;
 
+    // initialize method to get messages from a current pagination page
+
+    getCurrentPageMessages(currentPageMessages) {
+        this.messages = currentPageMessages;
+    }
     // general methods
 
     getNeededMessages() {

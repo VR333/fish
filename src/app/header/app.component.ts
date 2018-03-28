@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { ManageMessagesService } from './../services/manageMessage';
 import { ManageHeaderBtnsService } from './../services/manageHeaderBtns';
 
@@ -7,11 +7,16 @@ import { ManageHeaderBtnsService } from './../services/manageHeaderBtns';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements DoCheck {
     constructor(
-      private msg: ManageMessagesService,
+      private ManageMessagesService: ManageMessagesService,
       private ManageHeaderBtnsService: ManageHeaderBtnsService
     ) {}
+    isBig :boolean;
+
+    ngDoCheck() {
+        this.isBig = this.ManageMessagesService.showActiveMessageButton;
+    }
 
     tooltipTitleOptions = [
         {

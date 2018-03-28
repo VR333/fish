@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck} from '@angular/core';
+import { Component, DoCheck} from '@angular/core';
 import { ManageMessagesService } from './../services/manageMessage';
 import { ManageViewService } from './../services/manageView';
 import { ManageMessagesNumber } from './../services/manageMessagesNumber';
@@ -9,28 +9,21 @@ import { MessageComponentHelper } from './../services/messageComponentHelper';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class MessageComponent implements OnInit, DoCheck {
+export class MessageComponent implements DoCheck {
     constructor(
-        private msg: ManageMessagesService,
+        private ManageMessagesService: ManageMessagesService,
         private view: ManageViewService,
         private ManageMessagesNumber: ManageMessagesNumber,
         private MessageComponentHelper: MessageComponentHelper
     ) {}
-    messages = this.MessageComponentHelper.messages;
 
-
-    ngOnInit () {
-        this.messages = this.MessageComponentHelper.startEditingMessageComponent();
-    }
+    messages;
 
     ngDoCheck() {
         this.messages = this.MessageComponentHelper.startEditingMessageComponent();
         this.ManageMessagesNumber.getEndMessageIndex(this.messages);
 
-        this.messages = this.messages.filter( message => {
-            let firstCondition = this.ManageMessagesNumber.startMessageIndex <= this.messages.indexOf(message);
-            let secondCondition = this.messages.indexOf(message) < this.ManageMessagesNumber.getEndMessageIndex(this.messages);
-            return firstCondition && secondCondition;
-        });
+        this.messages = this.ManageMessagesNumber.paginateMessages(this.messages);
+        this.ManageMessagesService.getCurrentPageMessages(this.messages);
     }
 }

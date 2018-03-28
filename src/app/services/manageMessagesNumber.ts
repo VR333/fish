@@ -34,4 +34,12 @@ export class ManageMessagesNumber {
 			this.startMessageIndex -= this.msgPerPage;
 		}
 	}
+
+	paginateMessages(filteredMsgByType) {
+		return filteredMsgByType.filter( message => {
+            let firstCondition = this.startMessageIndex <= filteredMsgByType.indexOf(message);
+            let secondCondition = filteredMsgByType.indexOf(message) < this.getEndMessageIndex(filteredMsgByType);
+            return firstCondition && secondCondition;
+        })
+	}
 }

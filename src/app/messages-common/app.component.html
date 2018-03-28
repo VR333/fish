@@ -1,5 +1,5 @@
 <div class='messages-container'>
-	<fish-messages-category *ngIf="msg.currentMessagesType === 'income' ">
+	<fish-messages-category *ngIf="ManageMessagesService.currentMessagesType === 'income' ">
 	</fish-messages-category>
 
 	<div *ngIf="messages.length"
@@ -15,7 +15,7 @@
 		  <div class='message-actions'>
 		    <div class='inline-info drag-symbol'></div>
 
-		    <div class='inline-info square' (click)='msg.makeMessageActive(message)'>
+		    <div class='inline-info square' (click)='ManageMessagesService.makeMessageActive(message)'>
 				<span class='check-symbol'
 					[ngClass]="{'check-symbol-show': message.active}"
 					>&#10003;
@@ -24,7 +24,7 @@
 
 		    <div class='inline-info star'
 				 [ngClass]="{ 'star-active': message.starred}"
-				 (click)='msg.makeMessageChangeStar(message)'>★
+				 (click)='ManageMessagesService.makeMessageChangeStar(message)'>★
 			</div>
 
 		    <div class='inline-info name'>{{message.title}}</div>

@@ -21,6 +21,7 @@ export class MessageComponentHelper {
 		} else {
 			filteredMessages = this.makeMessagesToShow(this.location.path().slice(1));
 		}
+		
 		return filteredMessages;
 	}
 
