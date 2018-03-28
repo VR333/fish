@@ -1,4 +1,4 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, OnInit,DoCheck } from '@angular/core';
 import { ManageMessagesService } from './../../services/manageMessage';
 import { ManageViewService } from './../../services/manageView';
 import { ManageHeaderBtnsService } from './../../services/manageHeaderBtns';
@@ -11,9 +11,10 @@ import { MessageComponentHelper } from './../../services/messageComponentHelper'
   styleUrls: ['./app.component.scss']
 })
 
-export class HeaderRightButtonsComponent  implements DoCheck{
+export class HeaderRightButtonsComponent  implements OnInit, DoCheck{
     currentFirstMessageNumber :number;
     currentLastMessageNumber :number;
+    currentAllMessagesNumber :number;
     messages = this.MessageComponentHelper.messages;
 
     constructor(
@@ -24,9 +25,18 @@ export class HeaderRightButtonsComponent  implements DoCheck{
         private MessageComponentHelper: MessageComponentHelper
     ) {}
 
+    ngOnInit() {
+        this.messages = this.MessageComponentHelper.startEditingMessageComponent();
+        this.ManageMessagesNumber.getEndMessageIndex(this.messages);
+    }
+
     ngDoCheck() {
+        this.messages = this.MessageComponentHelper.startEditingMessageComponent();
+        this.ManageMessagesNumber.getEndMessageIndex(this.messages);
+
         this.currentFirstMessageNumber = this.ManageMessagesNumber.startMessageIndex + 1;
-        this.currentLastMessageNumber = this.ManageMessagesNumber.getEndMessageIndex();
+        this.currentLastMessageNumber = this.ManageMessagesNumber.endMessageNumber;
+        this.currentAllMessagesNumber = this.messages.length;
     }
 
     showLanguageChoice(event) {
@@ -37,5 +47,13 @@ export class HeaderRightButtonsComponent  implements DoCheck{
     showSettings(event) {
         event.stopPropagation();
         this.ManageHeaderBtnsService.isSettingsActive = !this.ManageHeaderBtnsService.isSettingsActive;
+    }
+
+    previousPage() {
+        this.ManageMessagesNumber.prevPage();
+    }
+
+    nextPage() {
+        this.ManageMessagesNumber.nextPage(this.messages);
     }
 }

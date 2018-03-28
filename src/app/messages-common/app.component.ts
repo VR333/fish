@@ -25,11 +25,11 @@ export class MessageComponent implements OnInit, DoCheck {
 
     ngDoCheck() {
         this.messages = this.MessageComponentHelper.startEditingMessageComponent();
-        this.ManageMessagesNumber.getEndMessageIndex();
+        this.ManageMessagesNumber.getEndMessageIndex(this.messages);
 
         this.messages = this.messages.filter( message => {
             let firstCondition = this.ManageMessagesNumber.startMessageIndex <= this.messages.indexOf(message);
-            let secondCondition = this.messages.indexOf(message) <= this.ManageMessagesNumber.getEndMessageIndex();
+            let secondCondition = this.messages.indexOf(message) < this.ManageMessagesNumber.getEndMessageIndex(this.messages);
             return firstCondition && secondCondition;
         });
     }

@@ -11,7 +11,8 @@ export class MessageComponentHelper {
 		private ManageMessagesNumber :ManageMessagesNumber,
 		private location :Location
 	){}
-	messages = this.ManageMessagesNumber.messages;
+
+	messages = MESSAGES;
 
 	startEditingMessageComponent() {
 		let filteredMessages;
