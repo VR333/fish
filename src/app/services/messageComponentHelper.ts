@@ -14,25 +14,27 @@ export class MessageComponentHelper {
 	messages = this.ManageMessagesNumber.messages;
 
 	startEditingMessageComponent() {
+		let filteredMessages;
 		if (this.location.path().slice(1) === 'inbox') {
-			this.makeMessagesToShow('income');
+			filteredMessages = this.makeMessagesToShow('income');
 		} else {
-			this.makeMessagesToShow(this.location.path().slice(1));
+			filteredMessages = this.makeMessagesToShow(this.location.path().slice(1));
 		}
+		return filteredMessages;
 	}
 
 	makeMessagesToShow(spesificMsg) {
-		// filtering stage
-
-		this.messages = this.messages.filter( message => {
-			return this.getConditionForSpesificMsg(spesificMsg, message);
-		});
-
 		// appropriation stage
 
 		this.ManageMessagesService.currentMessagesType = spesificMsg;
-        // this.ManageMessagesNumber.messages = messages;
+
 		this.ManageMessagesService.checkIfActive();
+
+		// filtering stage
+
+		return this.messages.filter( message => {
+			return this.getConditionForSpesificMsg(spesificMsg, message);
+		});
 	}
 
 	getConditionForSpesificMsg(spesificMsg, messageToCheck) {
