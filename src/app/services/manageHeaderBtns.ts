@@ -16,6 +16,7 @@ export class ManageHeaderBtnsService {
 
 	isLanguageChoiceActive :boolean = false;
 	isSettingsActive :boolean = false;
+	showPaginationMenu :boolean = true;
 
 	hidePopUps() {
 		this.isTitleActive = false;

@@ -17,21 +17,21 @@ export class ManageMessagesNumber {
 	nextPage(filteredMessages) {
 		if (this.startMessageIndex <= filteredMessages.length) {
 
-			if (this.startMessageIndex + 35 >= filteredMessages.length) {
+			if (this.startMessageIndex + this.msgPerPage >= filteredMessages.length) {
 				if (this.endMessageNumber !== filteredMessages.length) {
 					this.startMessageIndex = filteredMessages.length;
 				}
 			} else {
-				this.startMessageIndex += 35;
+				this.startMessageIndex += this.msgPerPage;
 			}
 		}
 	}
 
 	prevPage() {
-		if (this.startMessageIndex - 35 <= 0) {
+		if (this.startMessageIndex - this.msgPerPage <= 0) {
 			this.startMessageIndex = 0;
 		} else {
-			this.startMessageIndex -= 35;
+			this.startMessageIndex -= this.msgPerPage;
 		}
 	}
 }

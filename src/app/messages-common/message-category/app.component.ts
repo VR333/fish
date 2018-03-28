@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ManageMessagesService } from './../../services/manageMessage';
 import { ManageViewService } from './../../services/manageView';
+import { MessageComponentHelper } from './../../services/messageComponentHelper';
 
 @Component({
   selector: 'fish-messages-category',
@@ -10,7 +11,8 @@ import { ManageViewService } from './../../services/manageView';
 export class MessagesCategoryComponent {
     constructor(
         private msg: ManageMessagesService,
-        private view: ManageViewService
+        private view: ManageViewService,
+        private MessageComponentHelper: MessageComponentHelper
     ) {}
 
     categoryButtonActive: number = 0;

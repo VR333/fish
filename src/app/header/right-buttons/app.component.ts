@@ -1,4 +1,4 @@
-import { Component, OnInit,DoCheck } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { ManageMessagesService } from './../../services/manageMessage';
 import { ManageViewService } from './../../services/manageView';
 import { ManageHeaderBtnsService } from './../../services/manageHeaderBtns';
@@ -11,7 +11,7 @@ import { MessageComponentHelper } from './../../services/messageComponentHelper'
   styleUrls: ['./app.component.scss']
 })
 
-export class HeaderRightButtonsComponent  implements OnInit, DoCheck{
+export class HeaderRightButtonsComponent  implements DoCheck{
     currentFirstMessageNumber :number;
     currentLastMessageNumber :number;
     currentAllMessagesNumber :number;
@@ -25,11 +25,6 @@ export class HeaderRightButtonsComponent  implements OnInit, DoCheck{
         private MessageComponentHelper: MessageComponentHelper
     ) {}
 
-    ngOnInit() {
-        this.messages = this.MessageComponentHelper.startEditingMessageComponent();
-        this.ManageMessagesNumber.getEndMessageIndex(this.messages);
-    }
-
     ngDoCheck() {
         this.messages = this.MessageComponentHelper.startEditingMessageComponent();
         this.ManageMessagesNumber.getEndMessageIndex(this.messages);
@@ -37,6 +32,7 @@ export class HeaderRightButtonsComponent  implements OnInit, DoCheck{
         this.currentFirstMessageNumber = this.ManageMessagesNumber.startMessageIndex + 1;
         this.currentLastMessageNumber = this.ManageMessagesNumber.endMessageNumber;
         this.currentAllMessagesNumber = this.messages.length;
+        this.checkForPaginationMenuNeed();
     }
 
     showLanguageChoice(event) {
@@ -55,5 +51,13 @@ export class HeaderRightButtonsComponent  implements OnInit, DoCheck{
 
     nextPage() {
         this.ManageMessagesNumber.nextPage(this.messages);
+    }
+
+    checkForPaginationMenuNeed () {
+        if (this.MessageComponentHelper.startEditingMessageComponent().length === 0) {
+            this.ManageHeaderBtnsService.showPaginationMenu = false;
+        } else {
+            this.ManageHeaderBtnsService.showPaginationMenu = true;
+        }
     }
 }

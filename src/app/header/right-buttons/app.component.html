@@ -1,13 +1,13 @@
 <div class='right-buttons' [ngClass]="{'compact-version': msg.showActiveMessageButton }">
-	<span class='messages-counter'>
-		<b>{{currentFirstMessageNumber}}-{{currentLastMessageNumber}} of {{currentAllMessagesNumber}}</b>
+	<span class='messages-counter' *ngIf="ManageHeaderBtnsService.showPaginationMenu">
+		<b>{{currentFirstMessageNumber}}-{{currentLastMessageNumber}} з {{currentAllMessagesNumber}}</b>
 		<ul class='tooltip-title'>
 			<li class='fmail-title-option option-disabled'>Найновіші</li>
 			<li class='fmail-title-option'>Найстаріші</li>
 		</ul>
 	</span>
 
-	<div class='btn-wrap arrows'>
+	<div class='btn-wrap arrows' *ngIf="ManageHeaderBtnsService.showPaginationMenu">
 		<div class='btn arrow arrow-left tooltip-anchor' (click)="previousPage()">
 			<i class="fas fa-chevron-left"></i>
 			<span class='tooltip'>Новіші</span>
