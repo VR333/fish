@@ -20,7 +20,7 @@ import { MessagesCategoryComponent } from './messages-common/message-category/ap
 import { ManageMessagesService } from './services/manageMessage';
 import { ManageViewService } from './services/manageView';
 import { ManageHeaderBtnsService } from './services/manageHeaderBtns';
-import { ManageMessagesNumber } from './services/manageMessagesNumber';
+import { PaginateMessagesService } from './services/PaginateMessagesService';
 import { MessageComponentHelper } from './services/messageComponentHelper';
 
 @NgModule({
@@ -45,7 +45,7 @@ import { MessageComponentHelper } from './services/messageComponentHelper';
       ManageMessagesService,
       ManageViewService,
       ManageHeaderBtnsService,
-      ManageMessagesNumber,
+      PaginateMessagesService,
       MessageComponentHelper
   ],
   bootstrap: [ AppComponent ]

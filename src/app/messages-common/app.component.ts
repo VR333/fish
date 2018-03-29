@@ -1,7 +1,7 @@
 import { Component, DoCheck} from '@angular/core';
 import { ManageMessagesService } from './../services/manageMessage';
 import { ManageViewService } from './../services/manageView';
-import { ManageMessagesNumber } from './../services/manageMessagesNumber';
+import { PaginateMessagesService } from './../services/PaginateMessagesService';
 import { MessageComponentHelper } from './../services/messageComponentHelper';
 
 @Component({
@@ -13,7 +13,7 @@ export class MessageComponent implements DoCheck {
     constructor(
         private ManageMessagesService: ManageMessagesService,
         private view: ManageViewService,
-        private ManageMessagesNumber: ManageMessagesNumber,
+        private PaginateMessagesService: PaginateMessagesService,
         private MessageComponentHelper: MessageComponentHelper
     ) {}
 
@@ -21,11 +21,13 @@ export class MessageComponent implements DoCheck {
 
     ngDoCheck() {
         // order here matter, first we need to paginate, then - to manageMessagesService
+        // in other case you will be managing not paginated array
+        // which means managing all messages of a current category and type
 
         this.messages = this.MessageComponentHelper.startEditingMessageComponent();
-        this.ManageMessagesNumber.getEndMessageIndex(this.messages);
+        this.PaginateMessagesService.getEndMessageIndex(this.messages);
 
-        this.messages = this.ManageMessagesNumber.paginateMessages(this.messages);
+        this.messages = this.PaginateMessagesService.paginateMessages(this.messages);
         this.ManageMessagesService.getCurrentPageMessages(this.messages);
     }
 }

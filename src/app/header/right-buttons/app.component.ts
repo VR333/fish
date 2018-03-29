@@ -2,7 +2,7 @@ import { Component, DoCheck } from '@angular/core';
 import { ManageMessagesService } from './../../services/manageMessage';
 import { ManageViewService } from './../../services/manageView';
 import { ManageHeaderBtnsService } from './../../services/manageHeaderBtns';
-import { ManageMessagesNumber } from './../../services/manageMessagesNumber';
+import { PaginateMessagesService } from './../../services/PaginateMessagesService';
 import { MessageComponentHelper } from './../../services/messageComponentHelper';
 
 @Component({
@@ -21,16 +21,16 @@ export class HeaderRightButtonsComponent  implements DoCheck{
         private msg: ManageMessagesService,
         private view: ManageViewService,
         private ManageHeaderBtnsService: ManageHeaderBtnsService,
-        private ManageMessagesNumber: ManageMessagesNumber,
+        private PaginateMessagesService: PaginateMessagesService,
         private MessageComponentHelper: MessageComponentHelper
     ) {}
 
     ngDoCheck() {
         this.messages = this.MessageComponentHelper.startEditingMessageComponent();
-        this.ManageMessagesNumber.getEndMessageIndex(this.messages);
+        this.PaginateMessagesService.getEndMessageIndex(this.messages);
 
-        this.currentFirstMessageNumber = this.ManageMessagesNumber.startMessageIndex + 1;
-        this.currentLastMessageNumber = this.ManageMessagesNumber.endMessageNumber;
+        this.currentFirstMessageNumber = this.PaginateMessagesService.startMessageIndex + 1;
+        this.currentLastMessageNumber = this.PaginateMessagesService.endMessageNumber;
         this.currentAllMessagesNumber = this.messages.length;
         this.checkForPaginationMenuNeed();
     }
@@ -46,11 +46,11 @@ export class HeaderRightButtonsComponent  implements DoCheck{
     }
 
     previousPage() {
-        this.ManageMessagesNumber.prevPage();
+        this.PaginateMessagesService.prevPage();
     }
 
     nextPage() {
-        this.ManageMessagesNumber.nextPage(this.messages);
+        this.PaginateMessagesService.nextPage(this.messages);
     }
 
     checkForPaginationMenuNeed () {
@@ -62,11 +62,11 @@ export class HeaderRightButtonsComponent  implements DoCheck{
     }
 
     getOldest() {
-        this.ManageMessagesNumber.getOldest(this.messages);
+        this.PaginateMessagesService.getOldest(this.messages);
     }
 
     getNewest() {
-        this.ManageMessagesNumber.getNewest(this.messages);
+        this.PaginateMessagesService.getNewest(this.messages);
     }
 
     isNewest() {

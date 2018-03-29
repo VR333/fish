@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class ManageMessagesNumber {
+export class PaginateMessagesService {
 	startMessageIndex :number = 0;
 	endMessageNumber: number;
 	msgPerPage = 35;

@@ -51,7 +51,7 @@ export class ManageMessagesService {
     }
 
     deleteMessage() {
-        let duplicate = MESSAGES.slice(0);
+        let duplicate = this.messages.slice(0);
 
         duplicate.map( msg => {
             if (msg.active) {

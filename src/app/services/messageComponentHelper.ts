@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { MESSAGES } from './../messages-common/messages';
 import { ManageMessagesService } from './../services/manageMessage';
-import { ManageMessagesNumber } from './../services/manageMessagesNumber';
+import { PaginateMessagesService } from './../services/PaginateMessagesService';
 
 @Injectable()
 export class MessageComponentHelper {
 	constructor(
 		private ManageMessagesService :ManageMessagesService,
-		private ManageMessagesNumber :ManageMessagesNumber,
+		private PaginateMessagesService :PaginateMessagesService,
 		private location :Location
 	){}
 
