@@ -60,4 +60,12 @@ export class HeaderRightButtonsComponent  implements DoCheck{
             this.ManageHeaderBtnsService.showPaginationMenu = true;
         }
     }
+
+    getOldest() {
+        this.ManageMessagesNumber.getOldest(this.messages);
+    }
+
+    getNewest() {
+        this.ManageMessagesNumber.getNewest(this.messages);
+    }
 }

@@ -42,4 +42,22 @@ export class ManageMessagesNumber {
             return firstCondition && secondCondition;
         })
 	}
+
+	getOldest(filteredMsgByType) {
+        this.endMessageNumber = filteredMsgByType.length;
+		if (this.endMessageNumber - this.msgPerPage < 0) {
+			this.startMessageIndex = 0;
+		} else {
+			this.startMessageIndex = this.endMessageNumber - this.msgPerPage;
+		}
+    }
+
+    getNewest(filteredMsgByType) {
+        this.startMessageIndex = 0;
+		if (this.startMessageIndex + this.msgPerPage > filteredMsgByType.length) {
+			this.endMessageNumber = filteredMsgByType.length;
+		} else {
+			this.endMessageNumber = this.startMessageIndex + this.msgPerPage;
+		}
+    }
 }
