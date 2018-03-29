@@ -6,7 +6,7 @@ export const MESSAGES = [
         content: 'Hi, my name is Rostyslavfgdfghdfghdfgfghdfghfghdfghhdfghdgfhgfhdfghdfgh',
         date: '07.03.18',
         clip: true,
-        type: 'income',
+        type: 'basket',
         starred: true,
         read: true,
         important: false,

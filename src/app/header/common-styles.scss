@@ -1,0 +1,114 @@
+// this styles are common for all components inside HeaderComponent
+
+.triangle-fix {
+	width: 0px;
+	height: 0px;
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	right: -10px;
+	font-size: 7px;
+	transform: rotate(135deg);
+}
+
+ul.tooltip-title-active {
+	visibility: visible;
+}
+
+.tooltip-title {
+	width: 300px;
+	line-height: normal;
+	padding: 7px 0;
+	position: absolute;
+	top: 25px;
+	left: -2px;
+	font-size: 13px;
+	font-weight: normal;
+	text-align: left;
+	color: black;
+	background-color: white;
+	box-shadow: 0px 4px 10px #c2c2c2;
+	list-style-type: none;
+	border: 1px solid #c6c6c6;
+	z-index: 3;
+	visibility: hidden;
+
+	.fmail-title-option {
+		position: relative;
+		padding: 2px 0 2px 25px;
+		cursor: pointer;
+
+		.title-link {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		&:hover {
+			background-color: #eee;
+		}
+	}
+}
+
+.btn {
+	width: 73px;
+	height: 28px;
+	line-height: 16px;
+	padding: 5px 15px;
+	position: relative;
+	vertical-align: middle;
+	text-align: center;
+	color: grey;
+	background-color: #f2f2f2;
+	border: 1px solid #d9d9d9;
+	border-radius: 1px;
+
+	&:hover {
+		color: black;
+		background-color: #f4f4f4;
+		border: 1px solid #c6c6c6;
+
+		.tooltip {
+			visibility: visible;
+			transition: visibility 0s linear 0.4s;
+		}
+	}
+}
+
+.tooltip-anchor {
+	position: relative;
+}
+
+.tooltip {
+	padding: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+	background-color: black;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 30px;
+	visibility: hidden;
+	white-space: nowrap;
+	z-index: 2;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: -10px;
+		left: 45%;
+		border-width: 5px;
+		border-style: solid;
+		border-color: transparent transparent black transparent;
+	}
+}
+
+.btn-wrap {
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.btn-inline {
+	margin-right: -6px;
+	display: inline-block;
+}

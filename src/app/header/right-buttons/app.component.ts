@@ -68,4 +68,12 @@ export class HeaderRightButtonsComponent  implements DoCheck{
     getNewest() {
         this.ManageMessagesNumber.getNewest(this.messages);
     }
+
+    isNewest() {
+        return (this.currentFirstMessageNumber === 1) ? true : false;
+    }
+
+    isOldest() {
+        return (this.currentLastMessageNumber === this.messages.length) ? true : false;
+    }
 }

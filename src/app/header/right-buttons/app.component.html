@@ -2,17 +2,21 @@
 	<span class='messages-counter' *ngIf="ManageHeaderBtnsService.showPaginationMenu">
 		<b>{{currentFirstMessageNumber}}-{{currentLastMessageNumber}} з {{currentAllMessagesNumber}}</b>
 		<ul class='tooltip-title'>
-			<li class='fmail-title-option option-disabled' (click)="getNewest()">Найновіші</li>
-			<li class='fmail-title-option' (click)="getOldest()">Найстаріші</li>
+			<li class='fmail-title-option' (click)="getNewest()"
+				[ngClass]="{'inactive-option': isNewest() }">Найновіші</li>
+			<li class='fmail-title-option' (click)="getOldest()"
+				[ngClass]="{'inactive-option': isOldest() }">Найстаріші</li>
 		</ul>
 	</span>
 
 	<div class='btn-wrap arrows' *ngIf="ManageHeaderBtnsService.showPaginationMenu">
-		<div class='btn arrow arrow-left tooltip-anchor' (click)="previousPage()">
+		<div class='btn arrow arrow-left tooltip-anchor' (click)="previousPage()"
+			[ngClass]="{'inactive-option': isNewest() }">
 			<i class="fas fa-chevron-left"></i>
 			<span class='tooltip'>Новіші</span>
 		</div>
-		<div class='btn arrow arrow-right tooltip-anchor' (click)="nextPage()">
+		<div class='btn arrow arrow-right tooltip-anchor' (click)="nextPage()"
+			[ngClass]="{'inactive-option': isOldest() }">
 			<i class="fas fa-chevron-right"></i>
 			<span class='tooltip'>Старіші</span>
 		</div>

@@ -20,6 +20,8 @@ export class MessageComponent implements DoCheck {
     messages;
 
     ngDoCheck() {
+        // order here matter, first we need to paginate, then - to manageMessagesService
+
         this.messages = this.MessageComponentHelper.startEditingMessageComponent();
         this.ManageMessagesNumber.getEndMessageIndex(this.messages);
 

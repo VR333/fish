@@ -10,65 +10,54 @@ export class ManageMessagesService {
     messages = MESSAGES;
 
     // initialize method to get messages from a current pagination page
+    // note that messages will become filtered version of original array,
+    // after this method invoke
+    // if you want to modyfy original messages array, use MESSAGES directly instead
 
     getCurrentPageMessages(currentPageMessages) {
         this.messages = currentPageMessages;
     }
     // general methods
 
-    getNeededMessages() {
-        if (this.currentMessagesType === 'starred') {
-            return this.messages.filter( msg => msg.starred );
-        } else if (this.currentMessagesType) {
-            return this.messages.filter(
-                msg => msg.type === this.currentMessagesType
-            );
-        } else {
-            return this.messages;
-        }
-    }
-
     checkIfActive() {
-        let tempExpression = (this.getNeededMessages().filter( msg => msg.active).length);
+        let tempExpression = (this.messages.filter( msg => msg.active).length);
         this.showActiveMessageButton = (tempExpression) ? true : false;
-        this.allMessagesActive = (tempExpression === this.getNeededMessages().length) ? true : false;
+        this.allMessagesActive = (tempExpression === this.messages.length) ? true : false;
     }
 
     // Used by HeaderComponent
 
     selectMessages(selectOption) {
-        let neededMessages = this.getNeededMessages();
-
         switch (selectOption) {
             case 'Усі':
-              this.makeMessagesChangeActiveness(true, neededMessages);
+              this.makeMessagesChangeActiveness(true, this.messages);
               break;
             case 'Нічого':
-              this.makeMessagesChangeActiveness(false, neededMessages);
+              this.makeMessagesChangeActiveness(false, this.messages);
               break;
             case 'Прочитані':
-              this.makeMessagesActiveDueToRead(true, neededMessages);
+              this.makeMessagesActiveDueToRead(true, this.messages);
               break;
             case 'Непрочитані':
-              this.makeMessagesActiveDueToRead(false, neededMessages);
+              this.makeMessagesActiveDueToRead(false, this.messages);
               break;
             case 'Із зірочкою':
-              this.makeMessagesActiveDueToStarred(true, neededMessages);
+              this.makeMessagesActiveDueToStarred(true, this.messages);
               break;
             case 'Без зірочки':
-              this.makeMessagesActiveDueToStarred(false, neededMessages);
+              this.makeMessagesActiveDueToStarred(false, this.messages);
               break;
         }
     }
 
     deleteMessage() {
-        let duplicate = this.messages.slice(0);
+        let duplicate = MESSAGES.slice(0);
 
         duplicate.map( msg => {
             if (msg.active) {
                 if (msg.type === 'basket') {
-                    let indexPoint = this.messages.findIndex( a => a === msg );
-                    this.messages.splice(indexPoint, 1);
+                    let indexPoint = MESSAGES.findIndex( a => a === msg );
+                    MESSAGES.splice(indexPoint, 1);
                 } else {
                     msg.type = 'basket';
                     msg.active = false;
@@ -79,7 +68,7 @@ export class ManageMessagesService {
         this.checkIfActive();
     }
 
-    makeMessagesChangeActiveness( wantActive, neededMessages=this.getNeededMessages() ) {
+    makeMessagesChangeActiveness( wantActive, neededMessages=this.messages ) {
         neededMessages.map( msg => msg.active = wantActive);
         this.checkIfActive();
     }
@@ -101,7 +90,7 @@ export class ManageMessagesService {
     }
 
     markAllasRead() {
-        this.getNeededMessages().map( msg => msg.read = true);
+        this.messages.map( msg => msg.read = true);
     }
 
     changeReadState(wantAsRead) {
