@@ -12,10 +12,11 @@ import { HeaderRightButtonsComponent } from './header/right-buttons/app.componen
 
 import { MenuComponent } from './menu/app.component';
 import { MenuOptionsComponent } from './menu/menu-options/app.component';
-import { UserProfileComponent } from './menu/user-profile/app.component';
+import { MenuUserProfileComponent } from './menu/menu-user-profile/app.component';
 import { MainContentComponent } from './main/app.component';
 import { MessageComponent } from './messages-common/app.component';
 import { MessagesCategoryComponent } from './messages-common/message-category/app.component';
+import { NewMessagesComponent } from './new-messages/app.component';
 
 import { ManageMessagesService } from './services/manageMessage';
 import { ManageViewService } from './services/manageView';
@@ -31,11 +32,12 @@ import { MessageComponentHelper } from './services/messageComponentHelper';
     HeaderRightButtonsComponent,
     ForbiddenComponent,
     MenuComponent,
+    MenuOptionsComponent,
+    MenuUserProfileComponent,
     MainContentComponent,
     MessageComponent,
-    MenuOptionsComponent,
-    UserProfileComponent,
-    MessagesCategoryComponent
+    MessagesCategoryComponent,
+    NewMessagesComponent
   ],
   imports: [
     BrowserModule,

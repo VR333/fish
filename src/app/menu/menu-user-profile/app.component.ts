@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class UserProfileComponent {
+export class MenuUserProfileComponent {
     showChatCreation:boolean = false;
 
     createChat() {
