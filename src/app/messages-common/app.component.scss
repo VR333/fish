@@ -53,13 +53,13 @@
 	min-height: 400px;
 	display: block;
 	font-size: 13px;
-	cursor: pointer;
 	background-color: white;
 
 	.messages-wrapper {
 		border-width: 1px;
 		border-style: solid;
 		border-color: #e2e2e2 transparent transparent transparent;
+		cursor: pointer;
 
 		div.unread-message {
 			font-weight: bold;

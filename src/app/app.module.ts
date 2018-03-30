@@ -23,6 +23,7 @@ import { ManageViewService } from './services/manageView';
 import { ManageHeaderBtnsService } from './services/manageHeaderBtns';
 import { PaginateMessagesService } from './services/PaginateMessagesService';
 import { MessageComponentHelper } from './services/messageComponentHelper';
+import { NewMessageService } from './services/NewMessageService';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MessageComponentHelper } from './services/messageComponentHelper';
       ManageViewService,
       ManageHeaderBtnsService,
       PaginateMessagesService,
-      MessageComponentHelper
+      MessageComponentHelper,
+      NewMessageService
   ],
   bootstrap: [ AppComponent ]
 })
