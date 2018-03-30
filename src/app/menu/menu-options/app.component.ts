@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ManageViewService } from './../../services/manageView';
+import { NewMessageService } from './../../services/NewMessageService';
 
 @Component({
   selector: 'fish-menu-options',
@@ -7,7 +8,10 @@ import { ManageViewService } from './../../services/manageView';
   styleUrls: ['./app.component.scss']
 })
 export class MenuOptionsComponent {
-    constructor( private view: ManageViewService) {}
+    constructor(
+        private view: ManageViewService,
+        private NewMessageService: NewMessageService
+    ) {}
 
     showExtendedMenu:boolean = false;
     showExtendedCategory:boolean = false;
@@ -87,5 +91,9 @@ export class MenuOptionsComponent {
 
     toShowExtendedCategory() {
         this.showExtendedCategory = !this.showExtendedCategory;
+    }
+
+    makeNewMesageTemplate() {
+        this.NewMessageService.createMessageTemplate();
     }
 }

@@ -1,10 +1,12 @@
-<div class="new-message-template">
+<div class="new-message-template" *ngFor="let temp of newMessages">
 	<div class="template-header">
 		<span class='header-title'>Нове повідомлення</span>
 		<div class='header-buttons'>
 			<div class='button-icon'><i class="fas fa-window-minimize minimize"></i></div>
 			<div class='button-icon'><i class="fas fa-arrows-alt-v rotate"></i></div>
-			<div class='button-icon'><i class="fas fa-times"></i></div>
+			<div class='button-icon' (click)="deleteTemplate()">
+				<i class="fas fa-times"></i>
+			</div>
 		</div>
 	</div>
 	<div class="template-input-container receiver"></div>
