@@ -10,7 +10,7 @@ export class NewMessagesComponent {
     constructor(private NewMessageService: NewMessageService) {}
     newMessages = this.NewMessageService.newMessages;
 
-    deleteTemplate() {
-        this.NewMessageService.deleteMessageTemplate();
+    deleteTemplate(message) {
+        this.NewMessageService.deleteMessageTemplate(message);
     }
 }

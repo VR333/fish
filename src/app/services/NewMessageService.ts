@@ -8,7 +8,8 @@ export class NewMessageService {
 		this.newMessages.push({});
 	}
 
-	deleteMessageTemplate() {
-		this.newMessages.pop();
+	deleteMessageTemplate(message) {
+		let index = this.newMessages.indexOf(message);
+		this.newMessages.splice(index, 1);
 	}
 }
