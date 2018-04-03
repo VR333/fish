@@ -73,10 +73,12 @@
 
 		.message {
 			min-width: 510px;
+			position: relative;
 			background-color: #f1f1f1;
 			border-width: 1px;
 			border-style: solid;
 			border-color: transparent transparent #e2e2e2 transparent;
+			z-index: 5;
 
 			&:hover .message-actions .drag-symbol {
 				visibility: visible;
