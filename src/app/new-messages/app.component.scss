@@ -12,7 +12,7 @@
     .new-message-template {
         width: 47%;
         max-width: 580px;
-        min-width: 232px;
+        min-width: 345px;
         margin-left: 5px;
         position: relative;
         float: right;
@@ -106,8 +106,69 @@
 
         .navigation-panel {
             height: 45px;
+            padding-top: 6px;
             background-color: #f5f5f5;
             border-top: 1px solid #d7d7d7;
+            cursor: default;
+
+            .panel-option-wrapper {
+                height: 28px;
+                width: 28px;
+                line-height: 28px;
+                display: inline-block;
+                color: #a2a2a2;
+                font-size: 13px;
+                text-align: center;
+                border: 1px solid transparent;
+
+                &:hover {
+                    box-shadow: 0px 0px  3px rgb(200, 200, 200);
+                    border-color: #c8c8c8;
+                }
+            }
+
+            .company-brand-btn {
+                font-weight: bold;
+                color: grey;
+            }
+
+            .panel-btn-separator {
+                width: 1px;
+                height: 20px;
+                display: inline-block;
+                vertical-align: middle;
+                background-color: #a2a2a2;
+            }
+
+            .left-buttons {
+                display: inline-block;
+
+                .write-btn {
+                    width: 70px;
+                    height: 28px;
+                    display: inline-block;
+                    margin-left: 7px;
+                    line-height: 28px;
+                    font-weight: bold;
+                    font-size: 11px;
+                    text-align: center;
+                    color: white;
+                    background-color: #3079ed;
+                    border-radius: 2px;
+                    user-select: none;
+
+                    &:hover {
+                        background-color: #3f78d4;
+                    }
+                }
+
+            }
+
+            .right-buttons {
+                display: inline-block;
+                position: absolute;
+                right: 4px;
+            }
         }
     }
 }
