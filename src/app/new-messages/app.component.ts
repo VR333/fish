@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { NewMessageService } from './../services/NewMessageService';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'fish-new-messages',
@@ -7,9 +8,9 @@ import { NewMessageService } from './../services/NewMessageService';
   styleUrls: ['./app.component.scss']
 })
 export class NewMessagesComponent {
-    @ViewChild('msgTitle') msgTitle;
-    @ViewChild('msgTopic') msgTopic;
-    @ViewChild('msgContent') msgContent;
+    msgTitle: string;
+    msgTopic: string;
+    msgContent: string;
 
     constructor(private NewMessageService: NewMessageService) {}
     newMessages = this.NewMessageService.newMessages;
@@ -19,18 +20,14 @@ export class NewMessagesComponent {
     }
 
     sendNewMessage(newMessage) {
-        let title = this.msgTitle.nativeElement.value;
-        let content = this.msgContent.nativeElement.value;
-        let topic = this.msgTopic.nativeElement.value;
-
         let warningMessage = "Надіслати це повідомлення без теми і тексту?";
-        let isReceiverSet = !!title;
-        let isTopicOrContentSet = !!content || !!topic;
+        let isReceiverSet = !!this.msgTitle;
+        let isTopicOrContentSet = !!this.msgContent || !!this.msgTopic;
 
         if (isReceiverSet) {
 
             if (isTopicOrContentSet || confirm(warningMessage) ) {
-                this.NewMessageService.sendMessage(title, topic, content);
+                this.NewMessageService.sendMessage(this.msgTitle, this.msgTopic, this.msgContent);
                 this.NewMessageService.deleteMessageTemplate(newMessage);
             }
 

@@ -15,6 +15,8 @@ export class NewMessageService {
 		this.newMessages.splice(index, 1);
 	}
 
+	// rewrite to model
+	
 	sendMessage(title, topic, content) {
 		this.messages.push({
 			id: this.messages.length,

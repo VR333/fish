@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routes.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ForbiddenComponent } from './forbidden/app.component';
@@ -42,7 +43,8 @@ import { NewMessageService } from './services/NewMessageService';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
       ManageMessagesService,

@@ -12,16 +12,16 @@
 
 	<div class="template-input-container receiver">
 		<span class='text'>Кому</span>
-		<input class='template-input space-left' autofocus #msgTitle />
+		<input class='template-input space-left' autofocus [(ngModel)]="msgTitle" name="title"/>
 		<span class='text'>Копія</span>
 		<span class='text'>Прихована копія</span>
 	</div>
 
 	<div class="template-input-container topic">
-		<input class='template-input wide' placeholder="Тема" #msgTopic/>
+		<input class='template-input wide' placeholder="Тема" [(ngModel)]="msgTopic" name="topic"/>
 	</div>
 
-	<textarea class='message-text' #msgContent ></textarea>
+	<textarea class='message-text' [(ngModel)]="msgContent" name="content"></textarea>
 
 	<div class="navigation-panel">
 		<div class="left-buttons">
