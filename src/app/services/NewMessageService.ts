@@ -35,17 +35,3 @@ export class NewMessageService {
 		return new Date().toLocaleDateString('ua');
 	}
 }
-
-// {
-// 	id: 0,
-// 	active: false,
-// 	title: 'Fish Site',
-// 	content: 'Hi, my name is Rostyslavfgdfghdfghdfgfghdfghfghdfghhdfghdgfhgfhdfghdfgh',
-// 	date: '07.03.18',
-// 	clip: true,
-// 	type: 'income',
-// 	starred: true,
-// 	read: true,
-// 	important: false,
-// 	category: 'main'
-// },
