@@ -90,7 +90,7 @@ ul.tooltip-title-active {
 	top: 30px;
 	visibility: hidden;
 	white-space: nowrap;
-	z-index: 2;
+	z-index: 6;
 
 	&::after {
 		content: "";

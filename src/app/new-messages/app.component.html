@@ -12,20 +12,20 @@
 
 	<div class="template-input-container receiver">
 		<span class='text'>Кому</span>
-		<input class='template-input space-left'/>
+		<input class='template-input space-left' autofocus #msgTitle />
 		<span class='text'>Копія</span>
 		<span class='text'>Прихована копія</span>
 	</div>
 
 	<div class="template-input-container topic">
-		<input class='template-input wide' placeholder="Тема"/>
+		<input class='template-input wide' placeholder="Тема" #msgTopic/>
 	</div>
 
-	<textarea class='message-text'></textarea>
+	<textarea class='message-text' #msgContent ></textarea>
 
 	<div class="navigation-panel">
 		<div class="left-buttons">
-			<div class='write-btn'>Надіслати</div>
+			<div class='write-btn' (click)="sendNewMessage(message)">Надіслати</div>
 			<div class="panel-option-wrapper">
 				<i class="fas fa-font"></i>
 			</div>
