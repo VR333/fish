@@ -10,18 +10,18 @@ export class MessageComponentHelper {
 		private ManageMessagesService :ManageMessagesService,
 		private PaginateMessagesService :PaginateMessagesService,
 		private location :Location
-	){}
+    ) {}
 
 	messages = MESSAGES;
 
-	startEditingMessageComponent() {
+	startEditingMessageComponent(type) {
 		let filteredMessages;
-		if (this.location.path().slice(1) === 'inbox') {
+		if (type === 'inbox') {
 			filteredMessages = this.makeMessagesToShow('income');
 		} else {
-			filteredMessages = this.makeMessagesToShow(this.location.path().slice(1));
+			filteredMessages = this.makeMessagesToShow(type);
 		}
-		
+
 		return filteredMessages;
 	}
 

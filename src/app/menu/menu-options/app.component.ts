@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ManageViewService } from './../../services/manageView';
 import { NewMessageService } from './../../services/NewMessageService';
+// import { messages/Router } from '@angular/router';
 
 @Component({
   selector: 'fish-menu-options',
@@ -11,6 +12,7 @@ export class MenuOptionsComponent {
     constructor(
         private view: ManageViewService,
         private NewMessageService: NewMessageService
+         // private router: Router
     ) {}
 
     showExtendedMenu:boolean = false;
@@ -19,42 +21,42 @@ export class MenuOptionsComponent {
     coreMenuOptions = [
         {
             text: 'Вхідні',
-            link: 'inbox'
+            link: 'messages/inbox'
         },
         {
             text: 'Із зірочкою',
-            link: 'starred'
+            link: 'messages/starred'
         },
         {
             text: 'Надіслані',
-            link: 'sent'
+            link: 'messages/sent'
         },
         {
             text: 'Чернетки',
-            link: 'draft'
+            link: 'messages/draft'
         }
     ];
 
     extendedMenuOptions = [
         {
             text: 'Важливі',
-            link: 'important'
+            link: 'messages/important'
         },
         {
             text: 'Чати',
-            link: 'chats'
+            link: 'messages/chats'
         },
         {
             text: 'Уся пошта',
-            link: 'all'
+            link: 'messages/all'
         },
         {
             text: 'Спам',
-            link: 'spam'
+            link: 'messages/spam'
         },
         {
             text: 'Кошик',
-            link: 'basket'
+            link: 'messages/basket'
         }
     ];
 
@@ -84,6 +86,10 @@ export class MenuOptionsComponent {
             link: 'category/forums'
         }
     ];
+
+    // navigateTo(link) {
+    //     this.router.navigate(['messages', link]);
+    // }
 
     toShowExtendedMenu() {
         this.showExtendedMenu = !this.showExtendedMenu;

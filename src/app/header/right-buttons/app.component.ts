@@ -4,6 +4,7 @@ import { ManageViewService } from './../../services/manageView';
 import { ManageHeaderBtnsService } from './../../services/manageHeaderBtns';
 import { PaginateMessagesService } from './../../services/PaginateMessagesService';
 import { MessageComponentHelper } from './../../services/messageComponentHelper';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'fish-header-right-buttons',
@@ -22,11 +23,20 @@ export class HeaderRightButtonsComponent  implements DoCheck{
         private view: ManageViewService,
         private ManageHeaderBtnsService: ManageHeaderBtnsService,
         private PaginateMessagesService: PaginateMessagesService,
-        private MessageComponentHelper: MessageComponentHelper
-    ) {}
+        private MessageComponentHelper: MessageComponentHelper,
+        private route: ActivatedRoute
+    ) {
+        this.route.params.subscribe( params =>  {
+            if (params.type) {
+                this.msgType = params.type;
+            }
+        } );
+    }
+
+    msgType: string;
 
     ngDoCheck() {
-        this.messages = this.MessageComponentHelper.startEditingMessageComponent();
+        this.messages = this.MessageComponentHelper.startEditingMessageComponent(this.msgType);
         this.PaginateMessagesService.getEndMessageIndex(this.messages);
 
         this.currentFirstMessageNumber = this.PaginateMessagesService.startMessageIndex + 1;
@@ -54,7 +64,7 @@ export class HeaderRightButtonsComponent  implements DoCheck{
     }
 
     checkForPaginationMenuNeed () {
-        if (this.MessageComponentHelper.startEditingMessageComponent().length === 0) {
+        if (this.MessageComponentHelper.startEditingMessageComponent(this.msgType).length === 0) {
             this.ManageHeaderBtnsService.showPaginationMenu = false;
         } else {
             this.ManageHeaderBtnsService.showPaginationMenu = true;
